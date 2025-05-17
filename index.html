@@ -854,6 +854,25 @@
             document.body.removeChild(tempLink);
     });
   });
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    ScrollReveal({
+      reset: true,
+      distance: '60px',
+      duration: 800,
+      delay: 200,
+      easing: 'ease-in-out'
+    });
+
+    ScrollReveal().reveal('.reveal-top', { origin: 'top' });
+    ScrollReveal().reveal('.reveal-left', { origin: 'left' });
+    ScrollReveal().reveal('.reveal-bottom', { origin: 'bottom' });
+    ScrollReveal().reveal('.reveal-scale', { scale: 0.8 });
+
+    // You can also override default settings for specific elements using data attributes
+    // like 'data-sr-delay' and 'data-sr-duration' in the HTML.
+  </script>
+
     </script>
    
 
