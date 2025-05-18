@@ -93,14 +93,7 @@
         .skill-bar {
             transition: width 1.5s ease-in-out;
         }
-        #menu-btn i {
-              transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Example transition */
-            }
-            
-            /* Optional: Style the button when the menu is open */
-            #menu-btn.open {
-              /* Add any button-specific open state styles here */
-            }
+       
         
         .nav-link {
             position: relative;
@@ -370,9 +363,8 @@
                 </div>
                 <div class="md:hidden flex items-center">
                     <button id="menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
+                        <i class="fas fa-bars menu-icon text-xl"></i>
+                        <i class="fas fa-times close-icon text-xl"></i>
                     </button>
                 </div>
             </div>
