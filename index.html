@@ -63,6 +63,7 @@
         #menu-btn.active .close-icon {
             opacity: 1;
         }
+        
         /* Enhanced Glassmorphism */
         .glass-card {
             background: rgba(15, 15, 15, 0.15);
@@ -92,6 +93,14 @@
         .skill-bar {
             transition: width 1.5s ease-in-out;
         }
+        #menu-btn i {
+              transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Example transition */
+            }
+            
+            /* Optional: Style the button when the menu is open */
+            #menu-btn.open {
+              /* Add any button-specific open state styles here */
+            }
         
         .nav-link {
             position: relative;
