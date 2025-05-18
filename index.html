@@ -801,40 +801,20 @@
         </div>
     </footer>
         <script>
-       document.getElementById('menu-btn').addEventListener('click', function() {
-              const mobileMenu = document.getElementById('mobile-menu');
-              const menuBtnIcon = this.querySelector('i');
-            
-              mobileMenu.classList.toggle('hidden');
-              this.classList.toggle('open'); // Add a class to the button for styling
-            
-              if (!mobileMenu.classList.contains('hidden')) {
-                menuBtnIcon.classList.remove('fa-bars');
-                menuBtnIcon.classList.add('fa-times');
-              } else {
-                menuBtnIcon.classList.remove('fa-times');
-                menuBtnIcon.classList.add('fa-bars');
-              }
-            });
-            
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-              anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                  behavior: 'smooth'
-                });
+     // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            this.classList.toggle('active');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
                 document.getElementById('mobile-menu').classList.add('hidden');
-            
-                // Reset the menu icon when the mobile menu is closed via a link
-                const menuBtn = document.getElementById('menu-btn');
-                const menuBtnIcon = menuBtn.querySelector('i');
-                menuBtn.classList.remove('open');
-                if (menuBtnIcon.classList.contains('fa-times')) {
-                  menuBtnIcon.classList.remove('fa-times');
-                  menuBtnIcon.classList.add('fa-bars');
-                }
-              });
+                document.getElementById('menu-btn').classList.remove('active');
             });
+        });
         
         // Highlight active navigation link
         const sections = document.querySelectorAll('section');
