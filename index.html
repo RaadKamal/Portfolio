@@ -43,7 +43,39 @@
             background-clip: text;
             color: transparent;
         }
+        #menu-btn i.fa-bars {
+  transform: rotate(0deg);
+  opacity: 1;
+}
+
+        #menu-btn.open i.fa-bars {
+          transform: rotate(90deg); /* Or some other rotation */
+          opacity: 0;
+        }
         
+        #menu-btn i.fa-times {
+          transform: rotate(-90deg); /* Start rotated */
+          opacity: 0;
+          position: absolute; /* To overlap the bars */
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(-90deg); /* Center and rotate */
+        }
+        
+        #menu-btn.open i.fa-times {
+          transform: translate(-50%, -50%) rotate(0deg);
+          opacity: 1;
+        }
+        
+        #menu-btn i {
+          transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+          font-size: 1.5em; /* Adjust size */
+        }
+        
+        #menu-btn {
+          position: relative; /* For absolute positioning of the close icon */
+          /* Other button styles */
+        }
         /* Enhanced Glassmorphism */
         .glass-card {
             background: rgba(15, 15, 15, 0.15);
@@ -350,9 +382,7 @@
             </div>
         </div>
         <!-- Mobile menu -->
-        <button id="menu-btn">
-            <i class="fas fa-bars"></i>
-          </button>
+        
         <div id="mobile-menu" class="hidden md:hidden" style="border: none;">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Home</a>
