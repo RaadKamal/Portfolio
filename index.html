@@ -39,6 +39,18 @@
             color: transparent;
         }
 
+        .icon-item-js {
+              opacity: 0;
+              transform: scale(0.5) rotate(-15deg); /* Optional: different starting appearance */
+              transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+            }
+            
+            .icon-item-js.visible {
+              opacity: 1;
+              transform: scale(1) rotate(0deg);
+            }
+                    
+
             #menu-btn i {
               transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Example transition */
             }
@@ -731,21 +743,21 @@
                         </div>
                         <div class="mt-8">
                             <h4 class="font-medium mb-4">Follow Me</h4>
-                            <div class="flex space-x-4">
-                                <a href="https://www.x.com/KamalRaad52013" class="social-icon glass-accent p-3 rounded-full text-black-400 hover:bg-gray-800 transition duration-300">
-                                    <i class="fab fa-x reveal-left data-sr-duration="20000""></i>
+                            <div class="flex space-x-4 icon-container-js">
+                                <a href="https://www.x.com/KamalRaad52013" class="social-icon glass-accent p-3 rounded-full text-black-400 hover:bg-gray-800 transition duration-300 icon-item-js">
+                                    <i class="fab fa-x "></i>
                                 </a>
-                                <a href="https://www.github.com/RaadKamal" class="social-icon glass-accent p-3 rounded-full text-gray-300 hover:bg-gray-800 transition duration-300">
-                                    <i class="fab fa-github reveal-left data-sr-duration="30000""></i>
+                                <a href="https://www.github.com/RaadKamal" class="social-icon glass-accent p-3 rounded-full text-gray-300 hover:bg-gray-800 transition duration-300 icon-item-js">
+                                    <i class="fab fa-github "></i>
                                 </a>
-                                <a href="https://www.linkedin.com/in/raadkamal99" class="social-icon glass-accent p-3 rounded-full text-blue-400 hover:bg-gray-800 transition duration-300">
-                                    <i class="fab fa-linkedin reveal-left data-sr-duration="40000""></i>
+                                <a href="https://www.linkedin.com/in/raadkamal99" class="social-icon glass-accent p-3 rounded-full text-blue-400 hover:bg-gray-800 transition duration-300 icon-item-js">
+                                    <i class="fab fa-linkedin "></i>
                                 </a>
-                                <a href="https://www.facebook.com/mostafaraad.kamal.1/" class="social-icon glass-accent p-3 rounded-full text-blue-500 hover:bg-gray-800 transition duration-300">
-                                    <i class="fab fa-facebook-f reveal-left data-sr-duration="50000""></i>
+                                <a href="https://www.facebook.com/mostafaraad.kamal.1/" class="social-icon glass-accent p-3 rounded-full text-blue-500 hover:bg-gray-800 transition duration-300 icon-item-js">
+                                    <i class="fab fa-facebook-f "></i>
                                 </a>
-                                <a href="https://www.instagram.com/kammd1702/" class="social-icon glass-accent p-3 rounded-full text-red-500 hover:bg-gray-800 transition duration-300">
-                                    <i class="fab fa-instagram reveal-left data-sr-duration="60000""></i>
+                                <a href="https://www.instagram.com/kammd1702/" class="social-icon glass-accent p-3 rounded-full text-red-500 hover:bg-gray-800 transition duration-300 icon-item-js">
+                                    <i class="fab fa-instagram "></i>
                                 </a>
                             </div>
                         </div>
@@ -896,6 +908,18 @@
       
             // Remove the temporary link
             document.body.removeChild(tempLink);
+    });
+  });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const icons = document.querySelectorAll('.icon-container-js .icon-item-js');
+    const staggerDelay = 200; // Delay in milliseconds between each icon appearing
+
+    icons.forEach((icon, index) => {
+      setTimeout(() => {
+        icon.classList.add('visible');
+      }, index * staggerDelay);
     });
   });
   
