@@ -921,8 +921,13 @@ document.addEventListener('DOMContentLoaded', () => {
           }, index * staggerDelay);
         });
 
-        // Optionally, stop observing once the animation has started
-        observer.unobserve(iconContainer);
+        // REMOVED: observer.unobserve(iconContainer);
+      } else {
+        // The icon container is no longer in the viewport
+        // Optionally, you might want to reset the state of the icons here
+        icons.forEach(icon => {
+          icon.classList.remove('visible');
+        });
       }
     });
   }, {
