@@ -10,10 +10,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
 
-    <link rel="icon" href="tablink.ico" type="image/x-icon sizes="198x198"">
+    <link rel="icon" href="tablink.ico" type="image/x-icon ">
    
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         
@@ -27,6 +27,15 @@
             min-height: 100vh;
             color: #e5e7eb;
         }
+
+        #menu-btn i {
+              transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Example transition */
+            }
+            
+            /* Optional: Style the button when the menu is open */
+            #menu-btn.open {
+              /* Add any button-specific open state styles here */
+            }
         
         .gradient-text {
             background: linear-gradient(90deg, #4ade80, #3b82f6);
@@ -341,6 +350,9 @@
             </div>
         </div>
         <!-- Mobile menu -->
+        <button id="menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
         <div id="mobile-menu" class="hidden md:hidden" style="border: none;">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Home</a>
@@ -767,24 +779,40 @@
         </div>
     </footer>
         <script>
-        // Mobile menu toggle
-        document.getElementById('menu-btn').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                document.getElementById('mobile-menu').classList.add('hidden');
+       document.getElementById('menu-btn').addEventListener('click', function() {
+              const mobileMenu = document.getElementById('mobile-menu');
+              const menuBtnIcon = this.querySelector('i');
+            
+              mobileMenu.classList.toggle('hidden');
+              this.classList.toggle('open'); // Add a class to the button for styling
+            
+              if (!mobileMenu.classList.contains('hidden')) {
+                menuBtnIcon.classList.remove('fa-bars');
+                menuBtnIcon.classList.add('fa-times');
+              } else {
+                menuBtnIcon.classList.remove('fa-times');
+                menuBtnIcon.classList.add('fa-bars');
+              }
             });
-        });
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+              anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                  behavior: 'smooth'
+                });
+                document.getElementById('mobile-menu').classList.add('hidden');
+            
+                // Reset the menu icon when the mobile menu is closed via a link
+                const menuBtn = document.getElementById('menu-btn');
+                const menuBtnIcon = menuBtn.querySelector('i');
+                menuBtn.classList.remove('open');
+                if (menuBtnIcon.classList.contains('fa-times')) {
+                  menuBtnIcon.classList.remove('fa-times');
+                  menuBtnIcon.classList.add('fa-bars');
+                }
+              });
+            });
         
         // Highlight active navigation link
         const sections = document.querySelectorAll('section');
