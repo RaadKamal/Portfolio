@@ -44,13 +44,14 @@
             color: transparent;
         }
         
-   /* Mobile menu button animation */
+        /* Mobile menu button animation */
         #menu-btn {
             transition: all 0.3s ease;
             position: relative;
             width: 24px;
             height: 24px;
         }
+
         #menu-btn .menu-icon,
         #menu-btn .close-icon {
             position: absolute;
@@ -59,12 +60,15 @@
             transform: translate(-50%, -50%);
             transition: all 0.3s ease;
         }
+
         #menu-btn .close-icon {
             opacity: 0;
         }
+
         #menu-btn.active .menu-icon {
             opacity: 0;
         }
+
         #menu-btn.active .close-icon {
             opacity: 1;
         }
@@ -800,7 +804,7 @@
         </div>
     </footer>
         <script>
-     // Mobile menu toggle
+           // Mobile menu toggle
         document.getElementById('menu-btn').addEventListener('click', function() {
             this.classList.toggle('active');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -814,6 +818,7 @@
                 document.getElementById('menu-btn').classList.remove('active');
             });
         });
+
         
         // Highlight active navigation link
         const sections = document.querySelectorAll('section');
