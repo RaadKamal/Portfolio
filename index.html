@@ -905,17 +905,35 @@
   });
 
 
-    document.addEventListener('DOMContentLoaded', () => {
-    const icons = document.querySelectorAll('.icon-container-js .icon-item-js');
-    const staggerDelay = 600; // Delay in milliseconds between each icon appearing
 
-    icons.forEach((icon, index) => {
-      setTimeout(() => {
-        icon.classList.add('visible');
-      }, index * staggerDelay);
+  document.addEventListener('DOMContentLoaded', () => {
+  const iconContainer = document.querySelector('.icon-container-js');
+  const icons = document.querySelectorAll('.icon-container-js .icon-item-js');
+  const staggerDelay = 600;
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // The icon container is now in the viewport
+        icons.forEach((icon, index) => {
+          setTimeout(() => {
+            icon.classList.add('visible');
+          }, index * staggerDelay);
+        });
+
+        // Optionally, stop observing once the animation has started
+        observer.unobserve(iconContainer);
+      }
     });
+  }, {
+    threshold: 0.1 // Trigger when at least 10% of the container is visible
   });
-  
+
+  // Start observing the icon container
+  if (iconContainer) {
+    observer.observe(iconContainer);
+  }
+});
   
     ScrollReveal({
       reset: true,
