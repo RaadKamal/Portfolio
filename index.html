@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Mostafa Raad Kamal - Portfolio</title>
 
     <meta property="og:image" content="klipartz.com.png" />
@@ -11,12 +11,12 @@
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <link rel="icon" href="tablink.ico" type="image/x-icon ">
-   
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
@@ -44,15 +44,15 @@
               transform: scale(0.5) rotate(-15deg); /* Optional: different starting appearance */
               transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
             }
-            
+
             .icon-item-js.visible {
               opacity: 1;
               transform: scale(1) rotate(0deg);
             }
-                    
 
 
-        
+
+
         /* Mobile menu button animation */
         #menu-btn {
             transition: all 0.3s ease;
@@ -81,43 +81,43 @@
         #menu-btn.active .close-icon {
             opacity: 1;
         }
-        
+
         /* Enhanced Glassmorphism */
         .glass-card {
             background: rgba(15, 15, 15, 0.15);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
             border-radius: 20px;
-            
+
             box-shadow: 0 8px 42px 0 rgba(0, 0, 0, 0.8);
             transition: all 0.3s ease;
             color: #f3f4f6;
         }
-        
+
         .glass-card:hover {
             background: rgba(0, 0, 0, 0);
             box-shadow: 0 8px 42px 0 rgba(0, 0, 0, 0.9);
             transform: translateY(-2px);
         }
-        
+
         .glass-accent {
             background: rgba(20, 20, 20, 0.2);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            
+
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
         }
-        
+
         .skill-bar {
             transition: width 1.5s ease-in-out;
         }
-       
-        
+
+
         .nav-link {
             position: relative;
             color: #f3f4f6;
         }
-        
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -128,15 +128,15 @@
             background: linear-gradient(90deg, #4ade80, #3b82f6);
             transition: width 0.3s ease;
         }
-        
+
         .nav-link:hover::after {
             width: 100%;
         }
-        
+
         .active::after {
             width: 100%;
         }
-        
+
         .typewriter {
             overflow: hidden;
             border-right: .15em solid #cc5a18;
@@ -147,22 +147,22 @@
                 typing 3.5s steps(40, end),
                 blink-caret .75s step-end infinite;
         }
-        
+
         @keyframes typing {
             from { width: 0 }
             to { width: 100% }
         }
-        
+
         @keyframes blink-caret {
             from, to { border-color: transparent }
             50% { border-color: #cc5a18; }
         }
-        
+
         .section-title {
             position: relative;
             display: inline-block;
         }
-        
+
         .section-title::after {
             content: '';
             position: absolute;
@@ -173,7 +173,7 @@
             background: linear-gradient(90deg, #4ade80, #3b82f6);
             border-radius: 2px;
         }
-        
+
         input, textarea {
             background-color: rgba(15, 15, 15, 0.2);
             backdrop-filter: blur(10px);
@@ -181,23 +181,23 @@
             color: #f3f4f6;
             transition: all 0.3s ease;
         }
-        
+
         input:focus, textarea:focus {
             background-color: rgba(25, 25, 25, 0.3);
             border-color: #3b82f6;
             outline: none;
             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4);
         }
-        
+
         label {
             color: #f3f4f6;
         }
-        
+
         footer {
             background-color: rgba(10, 10, 10, 0.7);
             backdrop-filter: blur(15px);
         }
-        
+
         .project-image {
             height: 200px;
             width: 100%;
@@ -205,7 +205,7 @@
             border-top-left-radius: 16px;
             border-top-right-radius: 16px;
         }
-        
+
         /* Enhanced Profile Circle */
         .profile-circle {
             position: relative;
@@ -220,7 +220,7 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.25);
         }
-        
+
         .profile-img {
             width: 230px;
             height: 230px;
@@ -229,7 +229,7 @@
             border: 4px solid rgba(15, 15, 15, 0.8);
             box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6);
         }
-        
+
         .profile-badge {
             position: absolute;
             bottom: 20px;
@@ -245,55 +245,55 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.25);
         }
-        
+
         /* Floating elements effect */
         .float {
             animation: float 6s ease-in-out infinite;
         }
-        
+
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-15px); }
             100% { transform: translateY(0px); }
         }
-        
+
         /* Enhanced glow effect */
         .glow-effect {
             transition: all 0.3s ease;
         }
-        
+
         .glow-effect:hover {
-            
+
             box-shadow: 0 0 25px rgba(59, 130, 246, 0.7);
             transform: translateY(-3px);
         }
-        
+
         /* Social icons */
         .social-icon {
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
         }
-        
+
         .social-icon:hover {
             transform: scale(1.1) translateY(-3px);
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
         }
-        
+
         .contact-info-item {
             background: rgba(20, 20, 20, 0.2);
             backdrop-filter: blur(15px);
             border-radius: 16px;
             padding: 16px;
             margin-bottom: 16px;
-            
+
             transition: all 0.3s ease;
         }
-        
+
         .contact-info-item:hover {
             background: rgba(25, 25, 25, 0.3);
             border-color: rgba(255, 255, 255, 0.25);
         }
-        
+
         .contact-icon {
             background: linear-gradient(135deg, rgba(74, 222, 128, 0.8), rgba(59, 130, 246, 0.8));
             width: 48px;
@@ -305,7 +305,7 @@
             margin-right: 16px;
             box-shadow: 0 0 20px rgba(74, 222, 128, 0.6);
         }
-        
+
         .about-icon {
             background: linear-gradient(135deg, rgba(74, 222, 128, 0.8), rgba(59, 130, 246, 0.8));
             width: 48px;
@@ -317,7 +317,7 @@
             margin-right: 16px;
             box-shadow: 0 0 20px rgba(74, 222, 128, 0.6);
         }
-        
+
         .about-item {
             background: rgba(20, 20, 20, 0.2);
             backdrop-filter: blur(15px);
@@ -326,19 +326,19 @@
             margin-bottom: 16px;
             transition: all 0.3s ease;
         }
-        
+
         .about-item:hover {
             background: rgba(25, 25, 25, 0.3);
             border-color: rgba(255, 255, 255, 0.25);
         }
-        
+
         /* Enhanced glass buttons */
         .glass-button {
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
-        
+
         /* Enhanced navigation - Borderless */
         .nav-glass {
             background: rgba(15, 15, 15, 0.2);
@@ -346,14 +346,14 @@
             -webkit-backdrop-filter: blur(20px);
             border: none !important;
         }
-        
+
         /* More pronounced glass effect for project cards */
         .project-glass {
             background: rgba(20, 20, 20, 0.15);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
         }
-        
+
         /* Full width navigation */
         .full-width-nav {
             width: 100%;
@@ -389,7 +389,7 @@
             </div>
         </div>
         <!-- Mobile menu -->
-        
+
         <div id="mobile-menu" class="hidden md:hidden" style="border: none;">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Home</a>
@@ -402,23 +402,23 @@
         </div>
     </nav>
     <!-- Hero Section -->
-    <section id="home" class="pt-16 pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom data-sr-duration="1200"">          
+    <section id="home" class="pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom data-sr-duration="1200"">
         <div class="glass-card p-8 md:p-12 rounded-2xl">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
                         Hi, I'm <span class="gradient-text">Mostafa Raad Kamal</span>
                     </h1>
-                   
+
                     <h2 class="text-2xl md:text-3xl font-medium mb-6 text-orange-400 typewriter">
                         Full Stack Developer
                     </h2>
-                    
+
                      <p class="text-gray-300 mb-8 text-lg">
                         "<b>Every conflict is an iteration upon the last. Every scar, a victory</b>"
                     </p>
-                    
-                    
+
+
                     <div class="flex flex-wrap gap-4">
                         <a href="#projects" class="glass-button bg-gradient-to-r from-green-500 to-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition duration-300 glow-effect">
                             View My Work
@@ -442,7 +442,6 @@
 
     <!-- About Section -->
     <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom data-sr-duration="1200"">
-                                           
         <div class="glass-card p-8 md:p-12 rounded-2xl">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold section-title gradient-text">About him</h2>
@@ -451,7 +450,7 @@
                 <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center float">
                     <div class="profile-circle">
                         <img src="1000001484.jpg" alt="Raad Kamal1" class="profile-img">
-                        
+
                     </div>
                 </div>
                 <div class="md:w-2/3 md:pl-12">
@@ -459,6 +458,7 @@
                         Raised by his Engineer brother, he was around both physical and technical systems at an early stage. Since he had an affinity for complex systems, therefore it was straightforward for him to excel in Pure Science.
                     <p class="text-gray-300 mb-6 text-lg">
                         His journey in software development originated from an inquisitive nature regarding the mechanism of technology, which evolved into a career in resolving complex challenges through advanced breaching techniques. He is now a dedicated Full Stack Developer with the technical expertise in crafting systems that are reliable (Robust), seamless in functioning (Scalable), and visually captivating (Enhanced UI/UX) while utilising the latest technologies.
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4"> while
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4"> 
                         <div class="about-item flex items-center">
                             <div class="about-icon">
@@ -486,7 +486,7 @@
 
     <!-- Skills Section -->
     <section id="skills" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom data-sr-duration="1200"">
-                        
+
         <div class="glass-card p-8 md:p-12 rounded-2xl">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold section-title gradient-text">His Skills</h2>
@@ -494,7 +494,7 @@
                     Here are the technologies and tools I work with on a daily basis.
                 </p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                 <div class="glass-accent p-6 rounded-xl glow-effect">
                     <h3 class="text-xl font-semibold mb-4">Frontend Development</h3>
@@ -537,7 +537,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="glass-accent p-6 rounded-xl glow-effect">
                     <h3 class="text-xl font-semibold mb-4">Backend Development</h3>
                     <div class="space-y-4">
@@ -580,7 +580,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="text-center">
                 <h3 class="text-xl font-semibold mb-6">Other Tools & Technologies</h3>
                 <div class="flex flex-wrap justify-center gap-4">
@@ -622,7 +622,7 @@
                     Here are some of his recent projects. Each one was built to solve a specific problem or explore new technologies.
                 </p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
                 <div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1">
@@ -651,7 +651,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Project 2 -->
                 <div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1">
                     <div class="h-48 overflow-hidden">
@@ -682,8 +682,8 @@
                         </div>
                     </div>
                 </div>
-                
-                
+
+
                 <!-- Project 3 -->
                 <div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1">
                     <div class="h-48 overflow-hidden">
@@ -712,7 +712,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="text-center mt-12">
                 <a href="https://github.com/RaadKamal?tab=repositories" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 glass-accent glow-effect">
                     View All Projects
@@ -731,7 +731,7 @@
                     Have a project in mind or want to discuss potential opportunities? Feel free to reach him out!
                 </p>
             </div>
-            
+
             <div class="flex flex-col md:flex-row gap-8">
                 <div class="md:w-1/2 mb-8 md:mb-0">
                     <form class="space-y-6">
@@ -761,7 +761,7 @@
                         </div>
                     </form>
                 </div>
-                
+
                 <div class="md:w-1/2">
                     <div class="space-y-4">
                         <div class="contact-info-item flex items-start">
@@ -811,11 +811,11 @@
                     &copy; 2026 Mostafa Raad Kamal. All rights reserved.
                 </p>
                 <div class="flex space-x-4">
-                    
+
                     <a href="#" class="social-icon text-gray-500 hover:text-white transition duration-300">
                         <i class="fab fa-twitter"></i>
                     </a>
-                   
+
                 </div>
             </div>
         </div>
@@ -836,23 +836,23 @@
             });
         });
 
-        
+
         // Highlight active navigation link
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-link');
-        
+
         window.addEventListener('scroll', () => {
             let current = '';
-            
+
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-                
+
                 if (window.pageYOffset >= (sectionTop - 100)) {
                     current = section.getAttribute('id');
                 }
             });
-            
+
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === `#${current}`) {
@@ -860,10 +860,10 @@
                 }
             });
         });
-        
+
         // Animate skill bars on scroll
         const skillBars = document.querySelectorAll('.skill-bar');
-        
+
         const animateSkillBars = () => {
             skillBars.forEach(bar => {
                 const width = bar.style.width;
@@ -873,7 +873,7 @@
                 }, 100);
             });
         };
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -882,28 +882,28 @@
                 }
             });
         }, { threshold: 0.1 });
-        
+
         document.querySelectorAll('#skills').forEach(section => {
             observer.observe(section);
         });
         document.addEventListener('DOMContentLoaded', function() {
           const sendMessageButton = document.getElementById('sendMessageButton');
-      
+
           sendMessageButton.addEventListener('click', function() {
             const recipient = 'mostafaraadkamal9@gmail.com';
             const subject = encodeURIComponent('Inquiry for Interview');
             const body = encodeURIComponent('Hello, I am contacting you...');
             const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
-      
+
             // Create a temporary <a> element
             const tempLink = document.createElement('a');
             tempLink.href = mailtoLink;
             tempLink.style.display = 'none'; // Hide it from the user
             document.body.appendChild(tempLink);
-      
+
             // Programmatically click the link
             tempLink.click();
-      
+
             // Remove the temporary link
             document.body.removeChild(tempLink);
     });
@@ -944,14 +944,14 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(iconContainer);
   }
 });
-  
+
     ScrollReveal({
       reset: true,
       distance: '60px',
       duration: 800,
       delay: 200,
       easing: 'ease-in-out'
-      
+
     });
 
     ScrollReveal().reveal('.reveal-top', { origin: 'top' });
@@ -961,13 +961,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // You can also override default settings for specific elements using data attributes
     // like 'data-sr-delay' and 'data-sr-duration' in the HTML.
-  
+
 
     </script>
-   
-      <p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with Logic</p>
- 
-   </body>
-    
- 
+
+
+</body>
+    <p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with Logic</p>
+
 </html>
