@@ -318,14 +318,37 @@
             background: rgba(25, 25, 25, 0.3);
             border-color: rgba(255, 255, 255, 0.25);
         }
-        .glass-button {
-          /* Glass effect */
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
-          transition: all 0.3s ease;
-        
-          /* Tailwind classes will handle most of the visual styling */
-        }
+        .glass-button-gradient {
+              /* Core glass morphism effect */
+              backdrop-filter: blur(10px);
+              -webkit-backdrop-filter: blur(10px);
+              transition: all 0.3s ease;
+            
+              /* Semi-transparent white background for the "glass" */
+              background-color: rgba(255, 255, 255, 0.15);
+            
+              /* Subtle border for definition */
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            
+              /* Gradient text */
+              background-image: linear-gradient(90deg, #4ade80, #3b82f6); /* Your gradient colors */
+              -webkit-background-clip: text;
+              background-clip: text;
+              color: transparent; /* Make the text transparent to show the gradient */
+            
+              /* Padding, rounded corners, font, etc. */
+              padding: 12px 24px;
+              border-radius: 8px;
+              font-family: sans-serif; /* Or your preferred font */
+              font-weight: bold;
+              text-decoration: none; /* Remove underline if used on an <a> tag */
+              display: inline-block; /* Or block, depending on your layout */
+            }
+            
+            .glass-button-gradient:hover {
+              /* Slightly darken the background on hover */
+              background-color: rgba(255, 255, 255, 0.25);
+            }
         
         /* If you have custom glow-effect styles, they would also be defined separately */
        
@@ -430,7 +453,7 @@
                         <a href="#projects" class="glass-button bg-gradient-to-r from-green-500 to-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition duration-300 glow-effect">
                             View My Work
                         </a>
-                        <a href="#contact" class="glass-button border-2 border-indigo-400 text-white-300 px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition duration-300 glow-effect">
+                        <a href="#contact" class="glass-button-gradient">
                             Contact Me
                         </a>
                     </div>
@@ -781,7 +804,7 @@
             </div>
 
             <div class="text-center mt-12">
-                <a href="https://github.com/RaadKamal?tab=repositories" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 glass-accent glow-effect">
+                <a href="https://github.com/RaadKamal?tab=repositories" class="glass-button-gradient">
                     View All Projects
                     <i class="fas fa-arrow-right ml-2"></i>
                 </a>
@@ -803,7 +826,7 @@
                 <div class="md:w-1/2 mb-8 md:mb-0">
                     <form class="space-y-6">
                         <div>
-                          <button type="button" id="sendMessageButton" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 glass-accent glow-effect">
+                          <button type="button" id="sendMessageButton" class="glass-button-gradient">
                             Send Message
                         </div>
                         <div class="mt-8">
