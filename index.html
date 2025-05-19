@@ -329,12 +329,25 @@
             background: rgba(25, 25, 25, 0.3);
             border-color: rgba(255, 255, 255, 0.25);
         }
-
-        /* Enhanced glass buttons */
         .glass-button {
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+          /* Glass effect */
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          transition: all 0.3s ease;
+        
+          /* Tailwind classes will handle most of the visual styling */
+        }
+        
+        /* If you have custom glow-effect styles, they would also be defined separately */
+        .glow-effect {
+          /* Your glow effect styles here */
+          box-shadow: 0 0 10px rgba(79, 70, 229, 0.7); /* Example glow using indigo */
+        }
+        
+        .glass-button:hover {
+          /* You can add specific hover styles that complement the Tailwind hover */
+          backdrop-filter: blur(12px); /* Slightly increase blur on hover */
+          -webkit-backdrop-filter: blur(12px);
         }
 
         /* Enhanced navigation - Borderless */
@@ -428,7 +441,7 @@
                 </div>
                 <div class="md:w-1/2 flex justify-center float">
                     <div class="profile-circle">
-                        <img src="Profile.jpg" alt="Raad Kamal" class="profile-img">
+                        <img src="Profile1.jpg" alt="Raad Kamal" class="profile-img">
                         <div class="profile-badge">
                             <i class="fas fa-code text-white text-xl"></i>
                         </div>
@@ -447,7 +460,7 @@
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center float">
                     <div class="profile-circle">
-                        <img src="1000001484.jpg" alt="Raad Kamal1" class="profile-img">
+                        <img src="Profile2.jpg" alt="Raad Kamal1" class="profile-img">
 
                     </div>
                 </div>
@@ -643,7 +656,7 @@
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">React</span>
-                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Google.= Cloud</span>
+                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Google Cloud</span>
                             <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Node.js</span>
                         </div>
                         <div class="flex justify-between">
