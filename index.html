@@ -255,17 +255,6 @@
             100% { transform: translateY(0px); }
         }
 
-        /* Enhanced glow effect */
-        .glow-effect {
-            transition: all 0.3s ease;
-        }
-
-        .glow-effect:hover {
-
-            box-shadow: 0 0 25px rgba(59, 130, 246, 0.7);
-            transform: translateY(-3px);
-        }
-
         /* Social icons */
         .social-icon {
             transition: all 0.3s ease;
@@ -340,8 +329,8 @@
         
         /* If you have custom glow-effect styles, they would also be defined separately */
         .glow-effect {
-          /* Your glow effect styles here */
-          box-shadow: 0 0 10px rgba(79, 70, 229, 0.7); /* Example glow using indigo */
+              box-shadow: 0 0 10px rgba(79, 70, 229, 0.7),
+              inset 0 1px 0 rgba(255, 255, 255, 0.3); /* Subtle inner highlight */
         }
         
         .glass-button:hover {
