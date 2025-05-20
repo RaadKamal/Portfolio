@@ -48,6 +48,27 @@
               transform: scale(1) rotate(0deg);
             }
 
+        .background-video {
+          position: fixed; /* Stay in place during scroll */
+          top: 0;
+          left: 0;
+          width: 100%; /* Cover full width */
+          height: 100%; /* Cover full height */
+          overflow: hidden; /* Hide any overflow */
+          z-index: -1; /* Place behind content */
+        }
+        
+        .background-video video {
+          min-width: 100%; /* Ensure video width covers */
+          min-height: 100%; /* Ensure video height covers */
+          width: auto;
+          height: auto;
+          position: absolute;
+          top: 50%; /* Center vertically */
+          left: 50%; /* Center horizontally */
+          transform: translate(-50%, -50%); /* Adjust for actual centering */
+        }
+        
 
 
 
@@ -394,6 +415,13 @@
     </style>
 </head>
 <body class="min-h-screen">
+    <div class="background-video">
+  <video autoplay loop muted playsinline>
+    <source src="GlobalWorldwide.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+ 
+</div>
     <!-- Navigation -->
     <nav class="fixed w-full z-50 nav-glass full-width-nav">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
