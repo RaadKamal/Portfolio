@@ -1,11 +1,12 @@
 ---
-title: awesome
+title: Awesome
 emoji: 🐳
 colorFrom: red
 colorTo: gray
 sdk: static
 pinned: false
 tags:
+
   - deepsite
 ---
 
