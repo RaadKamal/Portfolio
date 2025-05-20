@@ -48,27 +48,33 @@
               transform: scale(1) rotate(0deg);
             }
 
-        .background-video {
-          position: fixed; /* Stay in place during scroll */
-          top: 0;
-          left: 0;
-          width: 100%; /* Cover full width */
-          height: 100%; /* Cover full height */
-          overflow: hidden; /* Hide any overflow */
-          z-index: -1; /* Place behind content */
-        }
-        
-        .background-video video {
-          min-width: 100%; /* Ensure video width covers */
-          min-height: 100%; /* Ensure video height covers */
-          width: auto;
-          height: auto;
-          position: absolute;
-          top: 50%; /* Center vertically */
-          left: 50%; /* Center horizontally */
-          transform: translate(-50%, -50%); /* Adjust for actual centering */
-        }
-        
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Use viewport width */
+  height: 100vh; /* Use viewport height */
+  overflow: hidden;
+  z-index: -1;
+}
+
+.background-video video {
+  /* Cover the viewport while maintaining aspect ratio */
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* Important for scaling */
+  position: fixed; /* Ensure it stays fullscreen */
+  top: 0;
+  left: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
 
 
 
