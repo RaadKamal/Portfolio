@@ -37,6 +37,47 @@
             color: transparent;
         }
 
+        /* Basic styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Make body take at least the full viewport height */
+    margin: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Style for the blinking text */
+.blinking-text {
+    font-size: 3em; /* Larger font size for impact */
+    font-weight: bold;
+    color: #e74c3c; /* A nice red color for the text */
+
+    /* The animation property */
+    animation: blink-animation 1s steps(1, start) infinite;
+    /*
+     * animation-name:      blink-animation (refers to our @keyframes block)
+     * duration:            1s (one second for each full blink cycle)
+     * timing-function:     steps(1, start) (makes the text appear/disappear instantly, no fade)
+     * iteration-count:     infinite (makes the animation repeat forever)
+     */
+}
+
+/* Define the blinking animation */
+@keyframes blink-animation {
+    0% {
+        opacity: 1; /* At the start, the text is fully visible */
+    }
+    50% {
+        opacity: 0; /* At the halfway point, the text is fully transparent (invisible) */
+    }
+    100% {
+        opacity: 1; /* At the end, the text is back to fully visible */
+    }
+}
+
         .icon-item-js {
               opacity: 0;
               transform: scale(0.5) rotate(-15deg); /* Optional: different starting appearance */
@@ -890,7 +931,7 @@
                         <div class="flex justify-between">
                             
                             <a class="text-green-400 hover:text-blue-300 font-medium flex items-center">
-                                <i class=" mr-1"></i> In Development
+                                <i class="blinking-text mr-1"></i> In Development
                             </a>
                            
                         </div>
