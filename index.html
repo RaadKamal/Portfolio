@@ -40,33 +40,25 @@
         /* Basic styling for the body */
 
 
-/* Style for the blinking text */
-.blinking-text {
-    font-size: 3em; /* Larger font size for impact */
-    font-weight: bold;
-    color: #45de1b; /* A nice red color for the text */
+/* Ensure your Tailwind CSS is imported or linked before this CSS */
 
-    /* The animation property */
-    animation: blink-animation 1s steps(1, start) infinite;
-    /*
-     * animation-name:      blink-animation (refers to our @keyframes block)
-     * duration:            1s (one second for each full blink cycle)
-     * timing-function:     steps(1, start) (makes the text appear/disappear instantly, no fade)
-     * iteration-count:     infinite (makes the animation repeat forever)
-     */
+/* Keyframes for blinking opacity */
+@keyframes blink-animation {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
-/* Define the blinking animation */
-@keyframes blink-animation {
-    0% {
-        opacity: 1; /* At the start, the text is fully visible */
-    }
-    50% {
-        opacity: 0; /* At the halfway point, the text is fully transparent (invisible) */
-    }
-    100% {
-        opacity: 1; /* At the end, the text is back to fully visible */
-    }
+.blinking-dot {
+    /* Make the <i> tag a visible circle */
+    display: inline-block; /* Essential to give it width/height */
+    width: 8px; /* Size of the dot */
+    height: 8px;
+    background-color: #ef4444; /* A red color for the dot */
+    border-radius: 50%; /* Makes it a circle */
+    margin-right: 8px; /* Space between the dot and text */
+
+    /* Apply the blinking animation */
+    animation: blink-animation 1s steps(1, start) infinite;
 }
 
         .icon-item-js {
@@ -922,7 +914,7 @@
                         <div class="flex justify-between">
                             
                             <a class="text-green-400 hover:text-blue-300 font-medium flex items-center">
-                                <i class="blinking-text"></i> In Development
+                                <i class="blinking-dot mr-1"></i> In Development
                             </a>
                            
                         </div>
