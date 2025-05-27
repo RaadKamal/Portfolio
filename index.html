@@ -994,14 +994,14 @@
                     
                 </p>
                    <h1>My Document</h1>
-
-    <button id="pdfToggleButton" class="toggle-button">Show PDF</button>
-
-    <div id="pdfWrapper" class="pdf-container collapsed">
-        <iframe class="pdf-viewer" src="your-document.pdf#toolbar=0&navpanes=0"></iframe>
-        </div>
-
-    <p>Some other content on the page.</p>
+            
+                <button id="pdfToggleButton" class="toggle-button">Expand</button>
+            
+                <div id="pdfWrapper" class="pdf-container collapsed">
+                    <iframe class="pdf-viewer" src="your-document.pdf#toolbar=0&navpanes=0"></iframe>
+                    </div>
+            
+                <p>Some other content on the page.</p>
             </div>
         </div>
     </section>
@@ -1267,7 +1267,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 pdfWrapper.classList.remove('collapsed');
                 // Set the height back to its expanded height (or auto, but fixed height is often smoother for transitions)
                 pdfWrapper.style.height = pdfViewer.style.height || '800px'; // Use default viewer height or 800px
-                pdfToggleButton.textContent = 'Hide PDF';
+                pdfToggleButton.textContent = 'Collapse';
             }
             isPdfVisible = !isPdfVisible; // Toggle the state
         });
