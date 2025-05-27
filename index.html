@@ -456,7 +456,6 @@
         }
 
         .glow-effect:hover {
-
             box-shadow: 0 0 25px rgba(59, 130, 246, 0.7);
             transform: translateY(-3px);
         }
@@ -995,7 +994,7 @@
                 </p>
                    <h1>My Document</h1>
             
-                <button id="pdfToggleButton" class="toggle-button">Expand</button>
+                <button id="pdfToggleButton" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 glass-accent glow-effect"></button>
             
                 <div id="pdfWrapper" class="pdf-container collapsed">
                     <iframe class="pdf-viewer" src="your-document.pdf#toolbar=0&navpanes=0"></iframe>
@@ -1261,7 +1260,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Collapse the PDF
                 pdfWrapper.classList.add('collapsed');
                 pdfWrapper.style.height = '0'; // Explicitly set height to 0 for collapsing
-                pdfToggleButton.textContent = 'Show PDF';
+                pdfToggleButton.textContent = 'Expand PDF';
             } else {
                 // Expand the PDF
                 pdfWrapper.classList.remove('collapsed');
