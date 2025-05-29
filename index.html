@@ -45,7 +45,7 @@
         }
 
         .pdf-container.collapsed {
-            height: 200px; /* Or a small initial height, e.g., 50px for a preview */
+            height: 0px; /* Or a small initial height, e.g., 50px for a preview */
         }
 
         .pdf-viewer {
@@ -53,6 +53,11 @@
             height: 800px; /* Default height when expanded */
             border: none;
         }
+	    #pdfWrapper {
+    /* ... (existing styles) ... */
+    margin-top: 20px;    /* Adds 20 pixels of space above the PDF wrapper */
+    margin-bottom: 20px; /* Adds 20 pixels of space below the PDF wrapper */
+}
 
         .toggle-button {
             background-color: #007bff;
@@ -1005,7 +1010,7 @@
                 <div id="pdfWrapper" class="pdf-container collapsed">
                     <iframe class="pdf-viewer" src="My_Resume.pdf#toolbar=0&navpanes=0"></iframe>
                 </div>
-                <button id="pdfToggleButton" class="inline-flex items-center px-6 pt-3 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 glass-accent glow-effect"> Expand PDF </button>
+                <button id="pdfToggleButton" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 glass-accent glow-effect"> Expand PDF </button>
        
             </div>
         </div>
