@@ -37,22 +37,34 @@
             color: transparent;
         }
 
-                .pdf-container {
-            border: 1px solid #ccc;
-            margin-top: 10px;
-            overflow: hidden; /* Hide overflow when collapsed */
-            transition: height 0.3s ease-in-out; /* Smooth transition for height */
-        }
+#pdfWrapper {
+    /* Initial state: collapsed sideways */
+    width: 0; /* Starts hidden horizontally */
+    overflow: hidden; /* Hides content outside the width */
+    transition: width 0.5s ease-in-out; /* Smooth transition for width */
+    white-space: nowrap; /* Prevents content inside from wrapping, useful for horizontal layouts */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 
-        .pdf-container.collapsed {
-            height: 0; /* Or a small initial height, e.g., 50px for a preview */
-        }
+    /* Optional: Set a max-width or a fixed height for the expanded state */
+    max-width: 800px; /* Or a fixed width like 800px if you know it */
+    height: 600px; /* Define the height of your PDF viewer */
+    border: 1px solid #ccc; /* Just for visualization */
+    background-color: #f9f9f9; /* Just for visualization */
+}
 
-        .pdf-viewer {
-            width: 100%;
-            height: 800px; /* Default height when expanded */
-            border: none;
-        }
+#pdfWrapper.expanded {
+    /* Expanded state: full width */
+    width: 800px; /* Or whatever maximum width you want for the expanded PDF */
+    /* If you used max-width above, you might set width: auto or a specific value here */
+}
+
+/* Ensure the content inside (e.g., iframe) takes up the available space */
+#pdfWrapper iframe,
+#pdfWrapper #pdfViewer { /* If you use a div for PDF.js */
+    width: 100%;
+    height: 100%;
+    display: block; /* Important for iframes to remove extra space */
+}
 
         .toggle-button {
             background-color: #007bff;
@@ -1000,15 +1012,19 @@
                 <p class="text-gray-300 mt-6 max-w-2xl mx-auto">
                     
                 </p>
-                   <h1></h1>
-            
-                <button id="pdfToggleButton" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 glass-accent glow-effect"> File </button>
-            
-                <div id="pdfWrapper" class="pdf-container collapsed">
+           
+                <div id="pdfWrapper" class="pdf-container collapsed inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 glass-accent glow-effect">
                     <iframe class="pdf-viewer" src="My_Resume.pdf#toolbar=0&navpanes=0"></iframe>
                     </div>
             
-       
+<button id="pdfToggleButton">Expand PDF</button>
+<div id="pdfWrapper">
+    <iframe src="My_Resume.pdf" width="100%" height="100%" style="border: none;"></iframe>
+    </div>
+
+
+
+		    
             </div>
         </div>
     </section>
@@ -1253,32 +1269,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // You can also override default settings for specific elements using data attributes
     // like 'data-sr-delay' and 'data-sr-duration' in the HTML.
+document.addEventListener('DOMContentLoaded', () => {
     const pdfToggleButton = document.getElementById('pdfToggleButton');
-        const pdfWrapper = document.getElementById('pdfWrapper');
-        const pdfViewer = document.querySelector('.pdf-viewer'); // Get the iframe/embed element
+    const pdfWrapper = document.getElementById('pdfWrapper');
 
-        let isPdfVisible = false; // Track the state of the PDF
+    let isPdfVisible = false; // Initial state: PDF is collapsed
 
-        // Set initial height for collapsed state (if you want a small preview)
-        // If you want it completely hidden, set height: 0 in CSS and remove this.
-        // pdfWrapper.style.height = '50px'; // Example: show a 50px high preview
-
-        pdfToggleButton.addEventListener('click', () => {
-            if (isPdfVisible) {
-                // Collapse the PDF
-                pdfWrapper.classList.add('collapsed');
-                pdfWrapper.style.height = '2'; // Explicitly set height to 0 for collapsing
-                pdfToggleButton.textContent = 'Expand PDF';
-            } else {
-                // Expand the PDF
-                pdfWrapper.classList.remove('collapsed');
-                // Set the height back to its expanded height (or auto, but fixed height is often smoother for transitions)
-                pdfWrapper.style.height = '800px'; // Use default viewer height or 800px
-                pdfToggleButton.textContent = 'Collapse';
-            }
-            isPdfVisible = !isPdfVisible; // Toggle the state
-        });
-
+    pdfToggleButton.addEventListener('click', () => {
+        if (isPdfVisible) {
+            // Collapse the PDF sideways
+            pdfWrapper.classList.remove('expanded'); // Remove the expanded class
+            // The CSS transition will handle setting width to 0
+            pdfToggleButton.textContent = 'Expand PDF';
+        } else {
+            // Expand the PDF sideways
+            pdfWrapper.classList.add('expanded'); // Add the expanded class
+            // The CSS transition will handle setting width to the expanded size
+            pdfToggleButton.textContent = 'Collapse PDF';
+        }
+        isPdfVisible = !isPdfVisible; // Toggle the state
+    });
+});
         // Optional: If you want to load the PDF only when expanded (for performance)
         // pdfViewer.src = ''; // Initially empty
         // pdfToggleButton.addEventListener('click', () => {
