@@ -501,34 +501,34 @@
             margin: 0;
             border-radius: 0;
         }
-	    .super-flowing-glow {
-    width: 100px; /* Example dimensions */
-    height: 100px;
-    background-color: #333; /* For contrast */
-    border-radius: 10px; /* Optional: for a softer look */
-    margin: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-family: sans-serif;
-
-    /* Base glow */
-    box-shadow: 0 0 15px rgba(245, 158, 11, 0.6);
-    animation: superGlow 2.5s infinite ease-in-out alternate;
-}
+.super-flowing-glow {
+	    width: 100%; /* Example dimensions  height: 100%; */
+	  
+	    background-color: #333; /* For contrast */
+	    border-radius: 10px; /* Optional: for a softer look */
+	    margin: 50px;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    color: white;
+	    font-family: sans-serif;
+	
+	    /* Base glow */
+	    box-shadow: 0 0 15px rgba(245, 158, 11, 0.6);
+	    animation: superGlow 2.5s infinite ease-in-out alternate;
+	}
 
 @keyframes superGlow {
-    0% {
-        box-shadow: 0 0 15px rgba(245, 158, 11, 0.6); /* Smaller, less intense */
-    }
-    50% {
-        box-shadow: 0 0 45px rgba(245, 158, 11, 1), /* Larger, full intensity */
-                    0 0 60px rgba(245, 158, 11, 0.4); /* Extra wider, softer layer */
-    }
-    100% {
-        box-shadow: 0 0 15px rgba(245, 158, 11, 0.6); /* Back to start */
-    }
+	    0% {
+	        box-shadow: 0 0 15px rgba(245, 158, 11, 0.6); /* Smaller, less intense */
+	    }
+	    50% {
+	        box-shadow: 0 0 45px rgba(245, 158, 11, 1), /* Larger, full intensity */
+	                    0 0 60px rgba(245, 158, 11, 0.4); /* Extra wider, softer layer */
+	    }
+	    100% {
+	        box-shadow: 0 0 15px rgba(245, 158, 11, 0.6); /* Back to start */
+	    }
 }
     </style>
 </head>
