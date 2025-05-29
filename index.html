@@ -502,7 +502,7 @@
             border-radius: 0;
         }
 .super-flowing-glow {
-	width: 80%; /* Example dimensions height: 100%; */
+	width: 100%; /* Example dimensions height: 100%; */
 	
 	background-color: #333; /* For contrast */
 	border-radius: 7px; /* Optional: for a softer look */
@@ -514,20 +514,20 @@
 	font-family: sans-serif;
 
 	/* Base glow */
-	box-shadow: 0 0 15px rgba(128, 0, 128, 0.6); /* Purple shade */
+	box-shadow: 0 0 45px rgba(128, 0, 128, 0.6); /* Purple shade */
 	animation: superGlow 2.5s infinite ease-in-out alternate;
 }
 
 @keyframes superGlow {
 	0% {
-		box-shadow: 0 0 15px rgba(128, 0, 128, 0.6); /* Purple shade */
+		box-shadow: 0 0 25px rgba(128, 0, 128, 0.6); /* Purple shade */
 	}
 	50% {
-		box-shadow: 0 0 45px rgba(128, 0, 128, 1), /* Darker, full intensity purple */
+		box-shadow: 0 0 55px rgba(128, 0, 128, 1), /* Darker, full intensity purple */
 					0 0 60px rgba(128, 0, 128, 0.4); /* Lighter, softer purple layer */
 	}
 	100% {
-		box-shadow: 0 0 15px rgba(128, 0, 128, 0.6); /* Purple shade */
+		box-shadow: 0 0 25px rgba(128, 0, 128, 0.6); /* Purple shade */
 	}
 }
     </style>
