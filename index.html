@@ -501,6 +501,35 @@
             margin: 0;
             border-radius: 0;
         }
+	    .super-flowing-glow {
+    width: 100px; /* Example dimensions */
+    height: 100px;
+    background-color: #333; /* For contrast */
+    border-radius: 10px; /* Optional: for a softer look */
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: sans-serif;
+
+    /* Base glow */
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.6);
+    animation: superGlow 2.5s infinite ease-in-out alternate;
+}
+
+@keyframes superGlow {
+    0% {
+        box-shadow: 0 0 15px rgba(245, 158, 11, 0.6); /* Smaller, less intense */
+    }
+    50% {
+        box-shadow: 0 0 45px rgba(245, 158, 11, 1), /* Larger, full intensity */
+                    0 0 60px rgba(245, 158, 11, 0.4); /* Extra wider, softer layer */
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(245, 158, 11, 0.6); /* Back to start */
+    }
+}
     </style>
 </head>
 <body class="min-h-screen">
@@ -1007,7 +1036,7 @@
                 </p>
                    <h1></h1>
 
-                <div id="pdfWrapper" class="pdf-container collapsed orange-glow">
+                <div id="pdfWrapper" class="pdf-container collapsed super-flowing-glow">
                     <iframe class="pdf-viewer" src="My_Resume.pdf#toolbar=0&navpanes=0"></iframe>
                 </div>
                 <button id="pdfToggleButton" class="inline-flex items-center px-6 py-2 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 glass-accent glow-effect"> Expand PDF </button>
