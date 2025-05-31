@@ -1,1418 +1,1344 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="prolink.jpeg" />
-    <title>Mostafa Raad Kamal - Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:image" content="prolink.jpeg" />
+<title>Mostafa Raad Kamal - Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
 
-    <link rel="icon" href="tablink.ico" type="image/ico" sizes="128x128" >
+<link rel="icon" href="tablink.ico" type="image/ico" sizes="128x128" >
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-            background-color: #0a0a0a;
-            background-image: 
-                radial-gradient(at 81% 27%, rgba(31, 120, 31, 0.15) 0, transparent 50%), 
-                radial-gradient(at 9% 89%, rgba(46, 139, 46, 0.15) 0, transparent 50%);
-            min-height: 100vh;
-            color: #e5e7eb;
-        }
-        #sendMessageButton:active,
-            #sendMessageButton:focus {
-              outline: none; /* Remove the default focus outline */
-              box-shadow: 0 0 0 2px darkgreen; /* Add a dark green "border" using box-shadow */
-            }
-        .gradient-text {
-            background: linear-gradient(90deg, #4ade80, #3b82f6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
+body {
+font-family: 'Poppins', sans-serif;
+scroll-behavior: smooth;
+background-color: #0a0a0a;
+background-image: 
+radial-gradient(at 81% 27%, rgba(31, 120, 31, 0.15) 0, transparent 50%), 
+radial-gradient(at 9% 89%, rgba(46, 139, 46, 0.15) 0, transparent 50%);
+min-height: 100vh;
+color: #e5e7eb;
+}
+#sendMessageButton:active,
+#sendMessageButton:focus {
+outline: none; /* Remove the default focus outline */
+box-shadow: 0 0 0 2px darkgreen; /* Add a dark green "border" using box-shadow */
+}
+.gradient-text {
+background: linear-gradient(90deg, #4ade80, #3b82f6);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+}
 
-        .pdf-container {
-            border: 3px solid #FFA500;
-            margin-top: 10px;
-            overflow: hidden; /* Hide overflow when collapsed */
-            transition: height 0.3s ease-in-out; /* Smooth transition for height */
-        }
+.pdf-container {
+border: 3px solid #FFA500;
+margin-top: 10px;
+overflow: hidden; /* Hide overflow when collapsed */
+transition: height 0.3s ease-in-out; /* Smooth transition for height */
+}
 
-        .pdf-container.collapsed {
-            height: 155px; /* Or a small initial height, e.g., 50px for a preview */
-        }
+.pdf-container.collapsed {
+height: 155px; /* Or a small initial height, e.g., 50px for a preview */
+}
 
-        .pdf-viewer {
-            width: 100%;
-            height: 650px; /* Default height when expanded */
-            border: none;
-        }
-	    #pdfWrapper {
-    /* ... (existing styles) ... */
-		    margin-top: 50px;    /* Adds 20 pixels of space above the PDF wrapper */
-		    margin-bottom: 50px; /* Adds 20 pixels of space below the PDF wrapper */
-		}
+.pdf-viewer {
+width: 100%;
+height: 650px; /* Default height when expanded */
+border: none;
+}
+#pdfWrapper {
+/* ... (existing styles) ... */
+margin-top: 50px;    /* Adds 20 pixels of space above the PDF wrapper */
+margin-bottom: 50px; /* Adds 20 pixels of space below the PDF wrapper */
+}
 
-        .toggle-button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
+.toggle-button {
+background-color: #007bff;
+color: white;
+padding: 10px 15px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 16px;
+}
 
-        .toggle-button:hover {
-            background-color: #0056b3;
-        }
+.toggle-button:hover {
+background-color: #0056b3;
+}
 
-        /* Basic styling for the body */
+/* Basic styling for the body */
 
-        /* Orange Glow Elements */
-        .orange-glow {
-            transition: all 0.3s ease;
-        }
-        
-        .orange-glow:hover {
-            box-shadow: 0 0 25px rgba(245, 158, 11, 0.7);
-	    box-shadow: 0 0 25px rgba(59, 130, 246, 0.7);
-        }
+/* Orange Glow Elements */
+.orange-glow {
+transition: all 0.3s ease;
+}
+
+.orange-glow:hover {
+box-shadow: 0 0 25px rgba(245, 158, 11, 0.7);
+box-shadow: 0 0 25px rgba(59, 130, 246, 0.7);
+}
 /* Ensure your Tailwind CSS is imported or linked before this CSS */
 
 /* Keyframes for blinking opacity */
 @keyframes blink-animation {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+0%, 100% { opacity: 1; }
+50% { opacity: 0; }
 }
 
 .blinking-dot {
-    /* Make the <i> tag a visible circle */
-    display: inline-block; /* Essential to give it width/height */
-    width: 8px; /* Size of the dot */
-    height: 8px;
-    background-color: #ff0000; /* A red color for the dot */
-    border-radius: 50%; /* Makes it a circle */
-    margin-right: 8px; /* Space between the dot and text */
+/* Make the <i> tag a visible circle */
+display: inline-block; /* Essential to give it width/height */
+width: 8px; /* Size of the dot */
+height: 8px;
+background-color: #ff0000; /* A red color for the dot */
+border-radius: 50%; /* Makes it a circle */
+margin-right: 8px; /* Space between the dot and text */
 
-    /* Apply the blinking animation */
-    animation: blink-animation 1s steps(1, start) infinite;
+/* Apply the blinking animation */
+animation: blink-animation 1s steps(1, start) infinite;
 }
 
-        .icon-item-js {
-              opacity: 0;
-              transform: scale(0.5) rotate(-15deg); /* Optional: different starting appearance */
-              transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-            }
+.icon-item-js {
+opacity: 0;
+transform: scale(0.5) rotate(-15deg); /* Optional: different starting appearance */
+transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
 
-            .icon-item-js.visible {
-              opacity: 1;
-              transform: scale(1) rotate(0deg);
-            }
+.icon-item-js.visible {
+opacity: 1;
+transform: scale(1) rotate(0deg);
+}
 
 .background-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw; /* Use viewport width */
-  height: 100vh; /* Use viewport height */
-  overflow: hidden;
-  z-index: -1;
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw; /* Use viewport width */
+height: 100vh; /* Use viewport height */
+overflow: hidden;
+z-index: -1;
 }
 
 .background-video video {
-  /* Cover the viewport while maintaining aspect ratio */
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover; /* Important for scaling */
-  position: fixed; /* Ensure it stays fullscreen */
-  top: 0;
-  left: 0;
+/* Cover the viewport while maintaining aspect ratio */
+width: 100vw;
+height: 100vh;
+object-fit: cover; /* Important for scaling */
+position: fixed; /* Ensure it stays fullscreen */
+top: 0;
+left: 0;
 }
 
 .content {
-  position: relative;
-  z-index: 1;
-  color: white;
-  padding: 20px;
-  text-align: center;
+position: relative;
+z-index: 1;
+color: white;
+padding: 20px;
+text-align: center;
 }
 
 
 
-        /* Mobile menu button animation */
-        #menu-btn {
-            transition: all 0.3s ease;
-            position: relative;
-            width: 24px;
-            height: 24px;
-        }
+/* Mobile menu button animation */
+#menu-btn {
+transition: all 0.3s ease;
+position: relative;
+width: 24px;
+height: 24px;
+}
 
-        #menu-btn .menu-icon,
-        #menu-btn .close-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            transition: all 0.3s ease;
-        }
+#menu-btn .menu-icon,
+#menu-btn .close-icon {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+transition: all 0.3s ease;
+}
 
-        #menu-btn .close-icon {
-            opacity: 0;
-        }
+#menu-btn .close-icon {
+opacity: 0;
+}
 
-        #menu-btn.active .menu-icon {
-            opacity: 0;
-        }
+#menu-btn.active .menu-icon {
+opacity: 0;
+}
 
-        #menu-btn.active .close-icon {
-            opacity: 1;
-        }
+#menu-btn.active .close-icon {
+opacity: 1;
+}
 
-        /* Enhanced Glassmorphism */
-        .glass-card {
-            background: rgba(15, 15, 15, 0.15);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border-radius: 20px;
+/* Enhanced Glassmorphism */
+.glass-card {
+background: rgba(15, 15, 15, 0.15);
+backdrop-filter: blur(25px);
+-webkit-backdrop-filter: blur(25px);
+border-radius: 20px;
 
-            box-shadow: 0 8px 42px 0 rgba(0, 0, 0, 0.8);
-            transition: all 0.3s ease;
-            color: #f3f4f6;
-        }
+box-shadow: 0 8px 42px 0 rgba(0, 0, 0, 0.8);
+transition: all 0.3s ease;
+color: #f3f4f6;
+}
 
-        .glass-card:hover {
-            background: rgba(0, 0, 0, 0);
-            box-shadow: 0 8px 42px 0 rgba(0, 0, 0, 0.9);
-            transform: translateY(-2px);
-        }
+.glass-card:hover {
+background: rgba(0, 0, 0, 0);
+box-shadow: 0 8px 42px 0 rgba(0, 0, 0, 0.9);
+transform: translateY(-2px);
+}
 
-        .glass-accent {
-            background: rgba(20, 20, 20, 0.2);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+.glass-accent {
+background: rgba(20, 20, 20, 0.2);
+backdrop-filter: blur(15px);
+-webkit-backdrop-filter: blur(15px);
 
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-        }
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
 
-        .skill-bar {
-            transition: width 1.5s ease-in-out;
-        }
+.skill-bar {
+transition: width 1.5s ease-in-out;
+}
 
 
-        .nav-link {
-            position: relative;
-            color: #f3f4f6;
-        }
+.nav-link {
+position: relative;
+color: #f3f4f6;
+}
 
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background: linear-gradient(90deg, #4ade80, #3b82f6);
-            transition: width 0.3s ease;
-        }
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: 0;
+left: 0;
+background: linear-gradient(90deg, #4ade80, #3b82f6);
+transition: width 0.3s ease;
+}
 
-        .nav-link:hover::after {
-            width: 100%;
-        }
+.nav-link:hover::after {
+width: 100%;
+}
 
-        .active::after {
-            width: 100%;
-        }
+.active::after {
+width: 100%;
+}
 
-        .typewriter {
-            overflow: hidden;
-            border-right: .11em solid #cc5a18;
-            white-space: nowrap;
-            margin: 0 auto;
-            letter-spacing: .15em;
-            animation: 
-                typing 3.5s steps(40, end),
-                blink-caret .75s step-end infinite;
-        }
+.typewriter {
+overflow: hidden;
+border-right: .11em solid #cc5a18;
+white-space: nowrap;
+margin: 0 auto;
+letter-spacing: .15em;
+animation: 
+typing 3.5s steps(40, end),
+blink-caret .75s step-end infinite;
+}
 
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
+@keyframes typing {
+from { width: 0 }
+to { width: 100% }
+}
 
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #cc5a18; }
-        }
+@keyframes blink-caret {
+from, to { border-color: transparent }
+50% { border-color: #cc5a18; }
+}
 
-        .section-title {
-            position: relative;
-            display: inline-block;
-        }
+.section-title {
+position: relative;
+display: inline-block;
+}
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 4px;
-            bottom: -8px;
-            left: 0;
-            background: linear-gradient(90deg, #4ade80, #3b82f6);
-            border-radius: 2px;
-        }
+.section-title::after {
+content: '';
+position: absolute;
+width: 100%;
+height: 4px;
+bottom: -8px;
+left: 0;
+background: linear-gradient(90deg, #4ade80, #3b82f6);
+border-radius: 2px;
+}
 
-        input, textarea {
-            background-color: rgba(15, 15, 15, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: #f3f4f6;
-            transition: all 0.3s ease;
-        }
+input, textarea {
+background-color: rgba(15, 15, 15, 0.2);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.15);
+color: #f3f4f6;
+transition: all 0.3s ease;
+}
 
-        input:focus, textarea:focus {
-            background-color: rgba(25, 25, 25, 0.3);
-            border-color: #3b82f6;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4);
-        }
+input:focus, textarea:focus {
+background-color: rgba(25, 25, 25, 0.3);
+border-color: #3b82f6;
+outline: none;
+box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4);
+}
 
-        label {
-            color: #f3f4f6;
-        }
+label {
+color: #f3f4f6;
+}
 
-        footer {
-            background-color: rgba(10, 10, 10, 0.7);
-            backdrop-filter: blur(15px);
-        }
+footer {
+background-color: rgba(10, 10, 10, 0.7);
+backdrop-filter: blur(15px);
+}
 
-        .project-image {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-            border-top-left-radius: 16px;
-            border-top-right-radius: 16px;
-        }
-                /* Project card footer */
-        .project-footer {
-            display: flex;
-            justify-content: space-between;
-            margin-top: auto;
-            padding-top: 16px;
-        }
+.project-image {
+height: 200px;
+width: 100%;
+object-fit: cover;
+border-top-left-radius: 16px;
+border-top-right-radius: 16px;
+}
+/* Project card footer */
+.project-footer {
+display: flex;
+justify-content: space-between;
+margin-top: auto;
+padding-top: 16px;
+}
 
-        .project-live-demo {
-            margin-right: auto;
-        }
+.project-live-demo {
+margin-right: auto;
+}
 
-        .project-code {
-            margin-left: auto;
-        }
+.project-code {
+margin-left: auto;
+}
 
 .profile-circle {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, rgba(74, 222, 128, 0.8), rgba(59, 130, 246, 0.8));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 40px rgba(74, 222, 128, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-        }
+position: relative;
+width: 300px;
+height: 300px;
+border-radius: 50%;
+background: linear-gradient(135deg, rgba(74, 222, 128, 0.8), rgba(59, 130, 246, 0.8));
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 0 40px rgba(74, 222, 128, 0.6);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.25);
+}
 
 
 
-        .profile-img {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6);
-        }
+.profile-img {
+width: 280px;
+height: 280px;
+border-radius: 50%;
+object-fit: cover;
+box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6);
+}
 
-        .profile-badge {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, rgb(255, 140, 0, .9), rgb(255,165,0,.9));
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-        }
+.profile-badge {
+position: absolute;
+bottom: 20px;
+right: 20px;
+background: linear-gradient(135deg, rgb(255, 140, 0, .9), rgb(255,165,0,.9));
+width: 70px;
+height: 70px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.25);
+}
 
 
-        /* Floating elements effect */
-        .float {
-            animation: float 6s ease-in-out infinite;
-        }
+/* Floating elements effect */
+.float {
+animation: float 6s ease-in-out infinite;
+}
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
+@keyframes float {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-15px); }
+100% { transform: translateY(0px); }
+}
 
-        /* Social icons */
-        .social-icon {
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
+/* Social icons */
+.social-icon {
+transition: all 0.3s ease;
+backdrop-filter: blur(10px);
+}
 
-        .social-icon:hover {
-            transform: scale(1.1) translateY(-3px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-        }
+.social-icon:hover {
+transform: scale(1.1) translateY(-3px);
+box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
 
-        .contact-info-item {
-            background: rgba(20, 20, 20, 0.2);
-            backdrop-filter: blur(15px);
-            border-radius: 16px;
-            padding: 16px;
-            margin-bottom: 16px;
+.contact-info-item {
+background: rgba(20, 20, 20, 0.2);
+backdrop-filter: blur(15px);
+border-radius: 16px;
+padding: 16px;
+margin-bottom: 16px;
 
-            transition: all 0.3s ease;
-        }
+transition: all 0.3s ease;
+}
 
-        .contact-info-item:hover {
-            background: rgba(25, 25, 25, 0.3);
-            border-color: rgba(255, 255, 255, 0.25);
-        }
+.contact-info-item:hover {
+background: rgba(25, 25, 25, 0.3);
+border-color: rgba(255, 255, 255, 0.25);
+}
 
-        .contact-icon {
-            background: linear-gradient(135deg, rgba(74, 222, 128, 0.8), rgba(59, 130, 246, 0.8));
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 16px;
-            box-shadow: 0 0 20px rgba(74, 222, 128, 0.6);
-        }
+.contact-icon {
+background: linear-gradient(135deg, rgba(74, 222, 128, 0.8), rgba(59, 130, 246, 0.8));
+width: 48px;
+height: 48px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-right: 16px;
+box-shadow: 0 0 20px rgba(74, 222, 128, 0.6);
+}
 
-        .about-icon {
-            background: linear-gradient(135deg, rgba(74, 222, 128, 0.8), rgba(59, 130, 246, 0.8));
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 16px;
-            box-shadow: 0 0 20px rgba(74, 222, 128, 0.6);
-        }
+.about-icon {
+background: linear-gradient(135deg, rgba(74, 222, 128, 0.8), rgba(59, 130, 246, 0.8));
+width: 48px;
+height: 48px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-right: 16px;
+box-shadow: 0 0 20px rgba(74, 222, 128, 0.6);
+}
 
-        .about-item {
-            background: rgba(20, 20, 20, 0.2);
-            backdrop-filter: blur(15px);
-            border-radius: 16px;
-            padding: 16px;
-            margin-bottom: 16px;
-            transition: all 0.3s ease;
-        }
+.about-item {
+background: rgba(20, 20, 20, 0.2);
+backdrop-filter: blur(15px);
+border-radius: 16px;
+padding: 16px;
+margin-bottom: 16px;
+transition: all 0.3s ease;
+}
 
-        .about-item:hover {
-            background: rgba(25, 25, 25, 0.3);
-            border-color: rgba(255, 255, 255, 0.25);
-        }
-        .glass-button-gradient {
-              /* Core glass morphism effect */
-              backdrop-filter: blur(10px);
-              -webkit-backdrop-filter: blur(10px);
-              transition: all 0.3s ease;
-            
-              /* Semi-transparent white background for the "glass" */
-              background-color: rgba(255, 255, 255, 0.15);
-            
-              /* Subtle border for definition */
-              border: 1px solid rgba(255, 255, 255, 0.2);
-            
-              /* Gradient text */
-              background-image: linear-gradient(90deg, #006400, #00008B);/* Your gradient colors */
-              -webkit-background-clip: text;
-              background-clip: text;
-              color: transparent; /* Make the text transparent to show the gradient */
-            
-              /* Padding, rounded corners, font, etc. */
-              padding: 12px 24px;
-              border-radius: 8px;
-              font-family: sans-serif; /* Or your preferred font */
-              font-weight: bold;
-              text-decoration: none; /* Remove underline if used on an <a> tag */
-              display: inline-block; /* Or block, depending on your layout */
-            }
-            
-            .glass-button-gradient:hover {
-              /* Slightly darken the background on hover */
-              background-color: rgba(255, 255, 255, 0.25);
-            }
-        
-        /* If you have custom glow-effect styles, they would also be defined separately */
-       
-        /* Enhanced glow effect */
-        .glow-effect {
-            transition: all 0.3s ease;
-        }
+.about-item:hover {
+background: rgba(25, 25, 25, 0.3);
+border-color: rgba(255, 255, 255, 0.25);
+}
+.glass-button-gradient {
+/* Core glass morphism effect */
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+transition: all 0.3s ease;
 
-        .glow-effect:hover {
-            box-shadow: 0 0 25px rgba(59, 130, 246, 0.7);
-            transform: translateY(-3px);
-        }
+/* Semi-transparent white background for the "glass" */
+background-color: rgba(255, 255, 255, 0.15);
 
-        .glass-button:hover {
-          /* You can add specific hover styles that complement the Tailwind hover */
-          backdrop-filter: blur(12px); /* Slightly increase blur on hover */
-          -webkit-backdrop-filter: blur(12px);
-        }
+/* Subtle border for definition */
+border: 1px solid rgba(255, 255, 255, 0.2);
 
-        /* Enhanced navigation - Borderless */
-        .nav-glass {
-            background: rgba(15, 15, 15, 0.2);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: none !important;
-        }
+/* Gradient text */
+background-image: linear-gradient(90deg, #006400, #00008B);/* Your gradient colors */
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent; /* Make the text transparent to show the gradient */
 
-        /* More pronounced glass effect for project cards */
-        .project-glass {
-            background: rgba(20, 20, 20, 0.15);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
+/* Padding, rounded corners, font, etc. */
+padding: 12px 24px;
+border-radius: 8px;
+font-family: sans-serif; /* Or your preferred font */
+font-weight: bold;
+text-decoration: none; /* Remove underline if used on an <a> tag */
+display: inline-block; /* Or block, depending on your layout */
+}
 
-        /* Full width navigation */
-        .full-width-nav {
-            width: 100%;
-            padding: 0px;
-            margin: 0;
-            border-radius: 0;
-        }
+.glass-button-gradient:hover {
+/* Slightly darken the background on hover */
+background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* If you have custom glow-effect styles, they would also be defined separately */
+
+/* Enhanced glow effect */
+.glow-effect {
+transition: all 0.3s ease;
+}
+
+.glow-effect:hover {
+box-shadow: 0 0 25px rgba(59, 130, 246, 0.7);
+transform: translateY(-3px);
+}
+
+.glass-button:hover {
+/* You can add specific hover styles that complement the Tailwind hover */
+backdrop-filter: blur(12px); /* Slightly increase blur on hover */
+-webkit-backdrop-filter: blur(12px);
+}
+
+/* Enhanced navigation - Borderless */
+.nav-glass {
+background: rgba(15, 15, 15, 0.2);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+border: none !important;
+}
+
+/* More pronounced glass effect for project cards */
+.project-glass {
+background: rgba(20, 20, 20, 0.15);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+}
+
+/* Full width navigation */
+.full-width-nav {
+width: 100%;
+padding: 0px;
+margin: 0;
+border-radius: 0;
+}
 .super-flowing-glow {More actions
-	width: auto ; /* Example dimensions height: 100%; */
-	background-color: #333; /* For contrast */
-	border-radius: 7px; /* Optional: for a softer look */
-	margin: 50px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: white;
-	font-family: sans-serif;
+width: auto ; /* Example dimensions height: 100%; */
+background-color: #333; /* For contrast */
+border-radius: 7px; /* Optional: for a softer look */
+margin: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
+font-family: sans-serif;
 
-	/* Base glow */
-	box-shadow: 0 0 45px rgba(128, 0, 128, 0.6); /* Purple shade */
-	animation: superGlow 2.5s infinite ease-in-out alternate;
+/* Base glow */
+box-shadow: 0 0 45px rgba(128, 0, 128, 0.6); /* Purple shade */
+animation: superGlow 2.5s infinite ease-in-out alternate;
 }
 
 @keyframes superGlow {
-	0% {
-		box-shadow: 0 0 25px rgba(128, 0, 128, 0.6); /* Purple shade */
-	}
-	50% {
-		box-shadow: 0 0 55px rgba(128, 0, 128, 1), /* Darker, full intensity purple */
-					0 0 60px rgba(128, 0, 128, 0.4); /* Lighter, softer purple layer */
-	}
-	100% {
-		box-shadow: 0 0 25px rgba(128, 0, 128, 0.6); /* Purple shade */
-	}
+0% {
+box-shadow: 0 0 25px rgba(128, 0, 128, 0.6); /* Purple shade */
 }
-    </style>
+50% {
+box-shadow: 0 0 55px rgba(128, 0, 128, 1), /* Darker, full intensity purple */
+0 0 60px rgba(128, 0, 128, 0.4); /* Lighter, softer purple layer */
+}
+100% {
+box-shadow: 0 0 25px rgba(128, 0, 128, 0.6); /* Purple shade */
+}
+}
+</style>
 </head>
 <body class="min-h-screen">
-    <div class="background-video">
-  <video autoplay loop muted playsinline>
-    <source src="0.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
- 
+<div class="background-video">
+<video autoplay loop muted playsinline>
+<source src="0.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
 </div>
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 nav-glass full-width-nav">
-        <div class="max-w-3x2 mx-auto px-0 sm:px-1 lg:px-8" >
-            <div class="flex justify-between h-16 items-center" style="border: none;">
-                <div class="flex items-center">
-                     <img src="tablink.ico" alt="Welcome Image" width="45" height="45" style="vertical-align: middle; margin-right: 3x;">
-                    <a href="#" class="text-xl font-bold gradient-text">Welcome to my Portfolio!</a>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Home</a>
-                    <a href="#about" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">About</a>
-                    <a href="#skills" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Skills</a>
-                    <a href="#projects" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Projects</a>
-                    <a href="My_Resume.pdf" download="My_Resume.pdf" class="glass-button border-2 border-indigo-400 text-white-300 px-3 py-2 rounded-lg font-medium hover:bg-white-800 transition duration-300 glow-effect">Resume <i class="fa fa-download"></i></a>
-                    <a href="#contact" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Contact</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
-                        <i class="fas fa-bars menu-icon text-xl"></i>
-                        <i class="fas fa-times close-icon text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile menu -->
+<!-- Navigation -->
+<nav class="fixed w-full z-50 nav-glass full-width-nav">
+<div class="max-w-3x2 mx-auto px-0 sm:px-1 lg:px-8" >
+<div class="flex justify-between h-16 items-center" style="border: none;">
+<div class="flex items-center">
+<img src="tablink.ico" alt="Welcome Image" width="45" height="45" style="vertical-align: middle; margin-right: 3x;">
+<a href="#" class="text-xl font-bold gradient-text">Welcome to my Portfolio!</a>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a href="#home" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Home</a>
+<a href="#about" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">About</a>
+<a href="#skills" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Skills</a>
+<a href="#projects" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Projects</a>
+<a href="My_Resume.pdf" download="My_Resume.pdf" class="glass-button border-2 border-indigo-400 text-white-300 px-3 py-2 rounded-lg font-medium hover:bg-white-800 transition duration-300 glow-effect">Resume <i class="fa fa-download"></i></a>
+<a href="#contact" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Contact</a>
+</div>
+<div class="md:hidden flex items-center">
+<button id="menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+<i class="fas fa-bars menu-icon text-xl"></i>
+<i class="fas fa-times close-icon text-xl"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Mobile menu -->
 
-        <div id="mobile-menu" class="hidden md:hidden" style="border: none;">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
-                <a href="#home" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Home</a>
-                <a href="#about" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">About</a>
-                <a href="#skills" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Skills</a>
-                <a href="#projects" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Projects</a>
-                <a href="My_Resume.pdf" download="My_Resume.pdf" class="nav-link hover:text-white-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Resume <i class="fa fa-download"></i></a>
-                <a href="#contact" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Contact</a>
-            </div>
-        </div>
-    </nav>
-    <!-- Hero Section -->
-    <section id="home" class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1200">
-        <div class="glass-card p-8 md:p-12 rounded-2xl">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="w-full md:w-1/2 mb-10 md:mb-0 max-w-lg mx-auto md:max-w-none">
-                   <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                        Hey, I'm <span class="gradient-text ">Mostafa Raad Kamal</span>
-                    </h1>
-
-
-                    <h2 class="text-2xl md:text-3xl font-medium mb-6 text-orange-400 typewriter">
-                        <b>Full Stack Dev</b>
-                    </h2>
-                        
-
-                     <p class="text-gray-300 mb-8 ">
-                        "Every conflict is an iteration upon the last. Every bug, a victory"
-                    </p>
+<div id="mobile-menu" class="hidden md:hidden" style="border: none;">
+<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
+<a href="#home" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Home</a>
+<a href="#about" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">About</a>
+<a href="#skills" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Skills</a>
+<a href="#projects" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Projects</a>
+<a href="My_Resume.pdf" download="My_Resume.pdf" class="nav-link hover:text-white-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Resume <i class="fa fa-download"></i></a>
+<a href="#contact" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Contact</a>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section id="home" class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1200">
+<div class="glass-card p-8 md:p-12 rounded-2xl">
+<div class="flex flex-col md:flex-row items-center">
+<div class="w-full md:w-1/2 mb-10 md:mb-0 max-w-lg mx-auto md:max-w-none">
+<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+Hey, I'm <span class="gradient-text ">Mostafa Raad Kamal</span>
+</h1>
 
 
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="glass-button bg-gradient-to-r from-green-500 to-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition duration-300 glow-effect">
-                            View My Work
-                        </a>
-                        <a href="#contact" class="glass-button border-2 border-indigo-400 text-white-300 px-8 py-3 rounded-lg font-medium hover:bg-white-800 transition duration-300 glow-effect">
-                            Contact Me
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center float">
-                    <div class="profile-circle">
-                        <img src="Profile1.jpg" alt="Raad Kamal" class="profile-img">
-                        <div class="profile-badge">
-                            <b><i class="fas fa-code fa-lg text-white text-xl"></i></b>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <nav class="fixed w-full z-50 nav-glass full-width-nav">
-        <div class="max-w-3x2 mx-auto px-0 sm:px-1 lg:px-8" >
-            <div class="flex justify-between h-16 items-center" style="border: none;">
-                <div class="flex items-center">
-                     <img src="tablink.ico" alt="Welcome Image" width="45" height="45" style="vertical-align: middle; margin-right: 3x;">
-                    <a href="#" class="text-xl font-bold gradient-text">Welcome to my Portfolio!</a>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Home</a>
-                    <a href="#about" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">About</a>
-                    <a href="#skills" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Skills</a>
-                    <a href="#projects" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Projects</a>
-                    <a href="My_Resume.pdf" download="My_Resume.pdf" class="glass-button border-2 border-indigo-400 text-white-300 px-3 py-2 rounded-lg font-medium hover:bg-white-800 transition duration-300 glow-effect">Resume <i class="fa fa-download"></i></a>
-                    <a href="#contact" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Contact</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
-                        <i class="fas fa-bars menu-icon text-xl"></i>
-                        <i class="fas fa-times close-icon text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile menu -->
-
-        <div id="mobile-menu" class="hidden md:hidden" style="border: none;">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
-                <a href="#home" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Home</a>
-                <a href="#about" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">About</a>
-                <a href="#skills" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Skills</a>
-                <a href="#projects" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Projects</a>
-                <a href="My_Resume.pdf" download="My_Resume.pdf" class="nav-link hover:text-white-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Resume <i class="fa fa-download"></i></a>
-                <a href="#contact" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Contact</a>
-            </div>
-        </div>
-    </nav>
-    <!-- Hero Section -->
-    <section id="home" class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1200">
-        <div class="glass-card p-8 md:p-12 rounded-2xl">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="w-full md:w-1/2 mb-10 md:mb-0 max-w-lg mx-auto md:max-w-none">
-                   <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                        Hey, I'm <span class="gradient-text ">Mostafa Raad Kamal</span>
-                    </h1>
+<h2 class="text-2xl md:text-3xl font-medium mb-6 text-orange-400 typewriter">
+<b>Full Stack Dev</b>
+</h2>
 
 
-                    <h2 class="text-2xl md:text-3xl font-medium mb-6 text-orange-400 typewriter">
-                        <b>Full Stack Dev</b>
-                    </h2>
-                        
-
-                     <p class="text-gray-300 mb-8 ">
-                        "Every conflict is an iteration upon the last. Every bug, a victory"
-                    </p>
+<p class="text-gray-300 mb-8 ">
+"Every conflict is an iteration upon the last. Every bug, a victory"
+</p>
 
 
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="glass-button bg-gradient-to-r from-green-500 to-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition duration-300 glow-effect">
-                            View My Work
-                        </a>
-                        <a href="#contact" class="glass-button border-2 border-indigo-400 text-white-300 px-8 py-3 rounded-lg font-medium hover:bg-white-800 transition duration-300 glow-effect">
-                            Contact Me
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center float">
-                    <div class="profile-circle">
-                        <img src="Profile1.jpg" alt="Raad Kamal" class="profile-img">
-                        <div class="profile-badge">
-                            <b><i class="fas fa-code fa-lg text-white text-xl"></i></b>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="flex flex-wrap gap-4">
+<a href="#projects" class="glass-button bg-gradient-to-r from-green-500 to-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition duration-300 glow-effect">
+View My Work
+</a>
+<a href="#contact" class="glass-button border-2 border-indigo-400 text-white-300 px-8 py-3 rounded-lg font-medium hover:bg-white-800 transition duration-300 glow-effect">
+Contact Me
+</a>
+</div>
+</div>
+<div class="md:w-1/2 flex justify-center float">
+<div class="profile-circle">
+<img src="Profile1.jpg" alt="Raad Kamal" class="profile-img">
+<div class="profile-badge">
+<b><i class="fas fa-code fa-lg text-white text-xl"></i></b>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- About Section -->
- <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1200">
-        <div class="glass-card p-8 md:p-12 rounded-2xl">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold section-title gradient-text">Biography</h2>
-                <p class="text-gray-300 mt-6 max-w-2xl mx-auto">
-                    Here is a brief overview of my background.
-                </p>
-            </div>
+<!-- About Section -->
+<section id="about" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1200">
+<div class="glass-card p-8 md:p-12 rounded-2xl">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold section-title gradient-text">Biography</h2>
+<p class="text-gray-300 mt-6 max-w-2xl mx-auto">
+Here is a brief overview of my background.
+</p>
+</div>
 
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center float">
-                    <div class="profile-circle">
-                        <img src="Profile2.jpg" alt="Raad Kamal1" class="profile-img">
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/3 mb-8 md:mb-0 flex justify-center float">
+<div class="profile-circle">
+<img src="Profile2.jpg" alt="Raad Kamal1" class="profile-img">
 
-                    </div>
-                </div>
-                <div class="md:w-2/3 md:pl-12 ">
-                    <p class="text-gray-300 mb-4 text-justify tracking-wide">
-                        Raised by my engineer elder brother, I was around both physical and technical systems at an early stage. Since I had an affinity for complex systems, therefore it was an exciting intellectual validation for me excelling in Pure Science.</p>
-                    <p class="text-gray-300 mb-4 text-justify tracking-wide">
-                        My trajectory in software development was initially catalyzed by an inquisitive nature concerning the underlying operational paradigms of system, which evolved into a career in resolving intractable challenges through advanced breaching techniques. I am now a dedicated Full Stack Developer with the technical expertise in crafting digital systems that are reliable (Robust), seamless in functionality (Scalable), and visually captivating (Enhanced UI/UX) while utilising the latest technologies.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-                        <div class="about-item flex items-center">
-                            <div class="about-icon">
-                                <i class="fas fa-user-graduate text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Education</h4>
-                                <p class="text-gray-400 text-sm">BSc in Computer Science</p>
-                            </div>
-                        </div>
-                        <div class="about-item flex items-center">
-                            <div class="about-icon">
-                                <i class="fas fa-briefcase text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Experience</h4>
-                                <p class="text-gray-400 text-sm">3+ Years</p>
-                            </div>
-                        </div>
-                            <div class="about-item flex items-center">
-                            <div class="about-icon">
-                                <i class="fas fa-laptop-code text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Projects</h4>
-                                <p class="text-gray-400 text-sm">8+ Completed</p>
-                            </div>
-                        </div>
-                           <div class="about-item flex items-center">
-                            <div class="about-icon">
-                                <i class="fas fa-book-journal-whills text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Research Paper</h4>
-                                <p class="text-gray-400 text-sm">3+</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
- 
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1200">
-
-        <div class="glass-card p-8 md:p-12 rounded-2xl">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold section-title gradient-text">Skills</h2>
-                <p class="text-gray-300 mt-6 max-w-2xl mx-auto">
-                    Here are the technologies and tools I work with on a daily basis.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+</div>
+</div>
+<div class="md:w-2/3 md:pl-12 ">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                 <div class="glass-accent p-6 rounded-xl glow-effect">
-                    <h3 class="text-xl font-semibold mb-4">Frontend Development</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium">HTML/CSS</span>
-                                <span class="text-sm font-medium">95%</span>
-                            </div>
-                            <div class="w-full bg-gray-800 rounded-full h-2.5">
-                                <div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-orange-300 to-orange-500" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium">JavaScript</span>
-                                <span class="text-sm font-medium">90%</span>
-                            </div>
-                            <div class="w-full bg-gray-800 rounded-full h-2.5">
-                                <div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-orange-300 to-orange-500" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium">React</span>
-                                <span class="text-sm font-medium">85%</span>
-                            </div>
-                            <div class="w-full bg-gray-800 rounded-full h-2.5">
-                                <div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-orange-300 to-orange-500" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium">Vue.js</span>
-                                <span class="text-sm font-medium">80%</span>
-                            </div>
-                            <div class="w-full bg-gray-800 rounded-full h-2.5">
-                                <div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-orange-300 to-orange-500" style="width: 80%"></div>
-                            </div>
-                        </div>
-                    </div>
+		
+<p class="text-gray-300 mb-4 text-justify tracking-wide">
+Raised by my engineer elder brother, I was around both physical and technical systems at an early stage. Since I had an affinity for complex systems, therefore it was an exciting intellectual validation for me excelling in Pure Science.</p>
+<p class="text-gray-300 mb-4 text-justify tracking-wide">
+My trajectory in software development was initially catalyzed by an inquisitive nature concerning the underlying operational paradigms of system, which evolved into a career in resolving intractable challenges through advanced breaching techniques. I am now a dedicated Full Stack Developer with the technical expertise in crafting digital systems that are reliable (Robust), seamless in functionality (Scalable), and visually captivating (Enhanced UI/UX) while utilising the latest technologies.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 </div>
-
-                <div class="glass-accent p-6 rounded-xl glow-effect">
-                    <h3 class="text-xl font-semibold mb-4">Backend Development</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium">Node.js</span>
-                                <span class="text-sm font-medium">88%</span>
-                            </div>
-                            <div class="w-full bg-gray-800 rounded-full h-2.5">
-                                <div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-orange-300 to-orange-500" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium">Python</span>
-                                <span class="text-sm font-medium">85%</span>
-                            </div>
-                            <div class="w-full bg-gray-800 rounded-full h-2.5">
-                                <div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-orange-300 to-orange-500" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium">C/C++</span>
-                                <span class="text-sm font-medium">75%</span>
-                            </div>
-                            <div class="w-full bg-gray-800 rounded-full h-2.5">
-                                <div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-orange-300 to-orange-500" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium">Express.js</span>
-                                <span class="text-sm font-medium">82%</span>
-                            </div>
-                            <div class="w-full bg-gray-800 rounded-full h-2.5">
-                                <div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-orange-300 to-orange-500" style="width: 82%"></div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </div>
+               
+<div class="about-item flex items-center">
+<div class="about-icon">
+<i class="fas fa-user-graduate text-white"></i>
+</div>
+<div>
+<h4 class="font-medium">Education</h4>
+<p class="text-gray-400 text-sm">BSc in Computer Science</p>
+</div>
+</div>
+<div class="about-item flex items-center">
+<div class="about-icon">
+<i class="fas fa-briefcase text-white"></i>
+</div>
+<div>
+<h4 class="font-medium">Experience</h4>
+<p class="text-gray-400 text-sm">3+ Years</p>
+</div>
+</div>
+<div class="about-item flex items-center">
+<div class="about-icon">
+<i class="fas fa-laptop-code text-white"></i>
+</div>
+<div>
+<h4 class="font-medium">Projects</h4>
+<p class="text-gray-400 text-sm">8+ Completed</p>
+</div>
+</div>
+<div class="about-item flex items-center">
+<div class="about-icon">
+<i class="fas fa-book-journal-whills text-white"></i>
+</div>
+<div>
+<h4 class="font-medium">Research Paper</h4>
+<p class="text-gray-400 text-sm">3+</p>
+</div>
+</div>
 
-            <div class="text-center">
-                <h3 class="text-xl font-semibold mb-6">Other Tools & Technologies</h3>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
-                        <i class="fab fa-git-alt text-orange-400 text-xl mr-2"></i>
-                        <span>Git</span>
-                    </div>
-                    <div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
-                        <i class="fab fa-docker text-orange-400 text-xl mr-2"></i>
-                        <span>Docker</span>
-                    </div>
-                    <div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
-                        <i class="fab fa-google text-orange-400 text-xl mr-2"></i>
-                        <span>Google Cloud</span>
-                    </div>
-                    <div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
-                        <i class="fas fa-server text-orange-400 text-xl mr-2"></i>
-                        <span>Nginx</span>
-                    </div>
-                    <div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
-                        <i class="fab fa-linux text-orange-400 text-xl mr-2"></i>
-                        <span>Linux</span>
-                    </div>
-                    <div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
-                        <i class="fas fa-database text-orange-400 text-xl mr-2"></i>
-                        <span>MongoDB</span>
-                    </div>
-                    <div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
-                        <i class="fas fa-network-wired text-orange-400 text-xl mr-2"></i>
-                        <span>Postman API</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1200">
-        <div class="glass-card p-8 md:p-12 rounded-2xl">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold section-title gradient-text ">Projects </h2>
-                <p class="text-gray-300 mt-6 max-w-2xl mx-auto">
-                    Here are some of my recent projects. Each one was built to solve a specific problem or explore new technologies.
-                </p>
-            </div>
+<!-- Skills Section -->
+<section id="skills" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1200">
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-               <div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1 flex flex-col">
-                    <div class="h-48 overflow-hidden">
-                        <img src="Picture1.png" alt="Project 1" class="project-image">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-center mb-2">
-                            <div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
-                                <i class="fas fa-blog text-white"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold">Blogging Website</h3>
-                        </div>
-                        <p class="text-gray-300 mb-4 text-justify tracking-wide">
-                           In this project, I have combined React, Node.js, and Amazon Web Services (AWS) in a full-stack, full-featured website, including user-friendly forms for posting articles and comments. Learnt how to create an interface from React components, develop a Node.js server, tie in a MongoDB database, add user authentication with Firebase Auth.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">React</span>
-                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Google Cloud</span>
-                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Node.js</span>
-                        </div>
-                        <div class="project-footer mt-auto">
-                            <a href="https://vue-app-deployment.onrender.com/products" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
-                                <i class="mr-1"></i> 
-                            </a>
-                            <a href="https://github.com/RaadKamal/Full-Stack-My-Blog" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
-                                <i class="fab fa-github mr-1"></i> Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
+<div class="glass-card p-8 md:p-12 rounded-2xl">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold section-title gradient-text">Skills</h2>
+<p class="text-gray-300 mt-6 max-w-2xl mx-auto">
+Here are the technologies and tools I work with on a daily basis.
+</p>
+</div>
 
-                <!-- Project 2 -->
-                <div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1">
-                    <div class="h-48 overflow-hidden">
-                        <img src="Picture2.jpg" alt="Project 2" class="project-image">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-center mb-2">
-                            <div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
-                                <i class="fas fa-shopping-cart text-white"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold">E-commerce Platform</h3>
-                        </div>
-                        <p class="text-gray-300 mb-4 text-justify tracking-wide">
-                           Vue.js to build a simple front-end; Node.js and MongoDB to construct the back end; Axios to communicate between the front and back ends; add authentication with Firebase Authentication; and finally, took it live via dashboard rendering. Configured my site with Postman and Express. This project is integrated with GitHub Codespaces.The design aims to provide a streamlined shopping experience.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Vue.js</span>
-                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Firebase</span>
-                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">MongoDB</span>
-                        </div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+<div class="glass-accent p-6 rounded-xl glow-effect">
+<h3 class="text-xl font-semibold mb-4">Frontend Development</h3>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium">HTML/CSS</span>
+<span class="text-sm font-medium">95%</span>
+</div>
+<div class="w-full bg-gray-800 rounded-full h-2.5">
+<div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-orange-300 to-orange-500" style="width: 95%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium">JavaScript</span>
+<span class="text-sm font-medium">90%</span>
+</div>
+<div class="w-full bg-gray-800 rounded-full h-2.5">
+<div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-orange-300 to-orange-500" style="width: 90%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium">React</span>
+<span class="text-sm font-medium">85%</span>
+</div>
+<div class="w-full bg-gray-800 rounded-full h-2.5">
+<div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-orange-300 to-orange-500" style="width: 85%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium">Vue.js</span>
+<span class="text-sm font-medium">80%</span>
+</div>
+<div class="w-full bg-gray-800 rounded-full h-2.5">
+<div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-orange-300 to-orange-500" style="width: 80%"></div>
+</div>
+</div>
+</div>
+</div>
 
-                        <div class="project-footer mt-auto">
-                            <a href="https://vue-app-deployment.onrender.com/products" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
-                                <i class="fas fa-external-link-alt mr-1"></i> Live Demo
-                            </a>
-                            <a href="https://github.com/RaadKamal/Full-Stack-Ecommerce" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
-                                <i class="fab fa-github mr-1"></i> Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
+<div class="glass-accent p-6 rounded-xl glow-effect">
+<h3 class="text-xl font-semibold mb-4">Backend Development</h3>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium">Node.js</span>
+<span class="text-sm font-medium">88%</span>
+</div>
+<div class="w-full bg-gray-800 rounded-full h-2.5">
+<div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-orange-300 to-orange-500" style="width: 88%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium">Python</span>
+<span class="text-sm font-medium">85%</span>
+</div>
+<div class="w-full bg-gray-800 rounded-full h-2.5">
+<div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-orange-300 to-orange-500" style="width: 85%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium">C/C++</span>
+<span class="text-sm font-medium">75%</span>
+</div>
+<div class="w-full bg-gray-800 rounded-full h-2.5">
+<div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-orange-300 to-orange-500" style="width: 75%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="text-sm font-medium">Express.js</span>
+<span class="text-sm font-medium">82%</span>
+</div>
+<div class="w-full bg-gray-800 rounded-full h-2.5">
+<div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-orange-300 to-orange-500" style="width: 82%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
+<div class="text-center">
+<h3 class="text-xl font-semibold mb-6">Other Tools & Technologies</h3>
+<div class="flex flex-wrap justify-center gap-4">
+<div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
+<i class="fab fa-git-alt text-orange-400 text-xl mr-2"></i>
+<span>Git</span>
+</div>
+<div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
+<i class="fab fa-docker text-orange-400 text-xl mr-2"></i>
+<span>Docker</span>
+</div>
+<div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
+<i class="fab fa-google text-orange-400 text-xl mr-2"></i>
+<span>Google Cloud</span>
+</div>
+<div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
+<i class="fas fa-server text-orange-400 text-xl mr-2"></i>
+<span>Nginx</span>
+</div>
+<div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
+<i class="fab fa-linux text-orange-400 text-xl mr-2"></i>
+<span>Linux</span>
+</div>
+<div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
+<i class="fas fa-database text-orange-400 text-xl mr-2"></i>
+<span>MongoDB</span>
+</div>
+<div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
+<i class="fas fa-network-wired text-orange-400 text-xl mr-2"></i>
+<span>Postman API</span>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-                <!-- Project 3 -->
-                <div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1">
-                    <div class="h-48 overflow-hidden">
-                        <img src="Picture3.jpg" alt="Project 3" class="project-image">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-center mb-2">
-                            <div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
-                                <i class="fas fa-television text-white"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold">Movie Guide</h3>
-                        </div>
-                        <p class="text-gray-300 mb-4 text-justify tracking-wide">
-                           The movie guide, developed using Android Studio with Kotlin, enables users to filter and select their preferred films. This project has been implemented following Agile development methodologies and adheres to established principles of software engineering for academic purposes. Such as SOLID principles and Test Driven Development.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Android Studio</span>
-                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Kotlin</span>
-                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">SQLite</span>
-                        </div>
+<!-- Projects Section -->
+<section id="projects" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1200">
+<div class="glass-card p-8 md:p-12 rounded-2xl">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold section-title gradient-text ">Projects </h2>
+<p class="text-gray-300 mt-6 max-w-2xl mx-auto">
+Here are some of my recent projects. Each one was built to solve a specific problem or explore new technologies.
+</p>
+</div>
 
-                         <div class="project-footer mt-auto">
-                            <a href="https://vue-app-deployment.onrender.com/products" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
-                                <i class="mr-1"></i> 
-                            </a>
-                            <a href="https://github.com/RaadKamal/Movie_Recommendation_App-main" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
-                                <i class="fab fa-github mr-1"></i> Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 4 -->
-                <div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1">
-                    <div class="h-48 overflow-hidden">
-                        <img src="Picture4.jpg" alt="Project 4" class="project-image">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center mb-2">
-                            <div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
-                                <i class="fas fa-chart-line text-white"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold">Blockchain DataAnalytics</h3>
-                        </div>
-                        <p class="text-gray-300 mb-4 text-justify tracking-wide">
-                            This project leverages  Scikit-Learn and XGBoost to effectively detect ransomware payments in Blockchain. It systematically identifies patterns associated with these attacks, significantly strengthening cybersecurity measures.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Machine learning</span>
-                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Python</span>
-                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Artificial Intelligent</span>
-                        </div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1 flex flex-col">
+<div class="h-48 overflow-hidden">
+<img src="Picture1.png" alt="Project 1" class="project-image">
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center mb-2">
+<div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
+<i class="fas fa-blog text-white"></i>
+</div>
+<h3 class="text-xl font-semibold">Blogging Website</h3>
+</div>
+<p class="text-gray-300 mb-4 text-justify tracking-wide">
+In this project, I have combined React, Node.js, and Amazon Web Services (AWS) in a full-stack, full-featured website, including user-friendly forms for posting articles and comments. Learnt how to create an interface from React components, develop a Node.js server, tie in a MongoDB database, add user authentication with Firebase Auth.
+</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">React</span>
+<span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Google Cloud</span>
+<span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Node.js</span>
+</div>
+<div class="project-footer mt-auto">
+<a href="https://vue-app-deployment.onrender.com/products" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
+<i class="mr-1"></i> 
+</a>
+<a href="https://github.com/RaadKamal/Full-Stack-My-Blog" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
+<i class="fab fa-github mr-1"></i> Code
+</a>
+</div>
+</div>
+</div>
 
-                        <div class="project-footer mt-auto">
-                            <a href="https://vue-app-deployment.onrender.com/products" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
-                                <i class="mr-1"></i> 
-                            </a>
-                            <a href="https://github.com/RaadKamal/BlockchainDataAnalytics-1/tree/master" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
-                                <i class="fab fa-github mr-1"></i> Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                 <!-- Project 5 -->
-                <div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1">
-                    <div class="h-48 overflow-hidden">
-                        <img src="Picture5.jpg" alt="Project 5" class="project-image">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-center mb-2">
-                            <div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
-                                <i class="fas fa-suitcase-medical text-white"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold">Radiant Health</h3>
-                        </div>
-                        <p class="text-gray-300 mb-4 text-justify tracking-wide">
-                            This Prototype provides a distinctive user interface and user experience (UI/UX) by utilizing visual indicators, one of which is red marks on the screen, to highlight unmet goals. It is a research-based initiative conducted as part of a third-year course  Human-Computer Interaction (HCI).
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">UI</span>
-                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">UX</span>
-                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Javascript</span>
-                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">HTML/CSS</span>
-                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">jQuery</span>
-                        </div>
+<!-- Project 2 -->
+<div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1">
+<div class="h-48 overflow-hidden">
+<img src="Picture2.jpg" alt="Project 2" class="project-image">
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center mb-2">
+<div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
+<i class="fas fa-shopping-cart text-white"></i>
+</div>
+<h3 class="text-xl font-semibold">E-commerce Platform</h3>
+</div>
+<p class="text-gray-300 mb-4 text-justify tracking-wide">
+Vue.js to build a simple front-end; Node.js and MongoDB to construct the back end; Axios to communicate between the front and back ends; add authentication with Firebase Authentication; and finally, took it live via dashboard rendering. Configured my site with Postman and Express. This project is integrated with GitHub Codespaces.The design aims to provide a streamlined shopping experience.
+</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Vue.js</span>
+<span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Firebase</span>
+<span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">MongoDB</span>
+</div>
 
-                        <div class="project-footer mt-auto">
-                            <a href="https://vue-app-deployment.onrender.com/products" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
-                                <i class="mr-1"></i> 
-                            </a>
-                            <a href="https://github.com/RaadKamal/Full-Stack-Ecommerce" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
-                                <i class="fab fa-github mr-1"></i> Code
-                            </a>
-                        </div>
-                      </div>
-                    </div>
-
-                <!-- Project 7 -->
-                <div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1">
-                    <div class="h-48 overflow-hidden">
-                        <img src="Picture7.jpg" alt="Project 7" class="project-image">
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-center mb-2">
-                            <div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-1000 to-black-900">
-                                <i class="fa-solid fa-address-card text-white""></i>
-                            </div>
-                            <h3 class="text-xl font-semibold">Portfolio</h3>
-                        </div>
-                        <p class="text-gray-300 mb-4">
-                           
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">HTML</span>
-                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Tailwind CSS</span>
-                            <span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Javascript</span>
-                            
-                          
-                        </div>
-                        <div class="flex justify-between">
-                            
-                            <a class="text-blue-400  font-medium flex items-center">
-                                <i class="blinking-dot mr-1"></i> Completed
-                            </a>
-                           
-                        </div>
-                    </div>
-
-                
-                </div>
-            
-
-            </div>
-
-             <div class="text-center mt-12">
-                <a href="https://github.com/RaadKamal?tab=repositories" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 glass-accent glow-effect">
-                    View All Projects
-                    <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Resume Section -->
-    <section id="resume" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1200">
-        <div class="glass-card p-8 md:p-12 rounded-2xl">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold section-title gradient-text">Resume</h2>
-                <p class="text-gray-300 mt-6 max-w-2xl mx-auto">
-                    
-                </p>
-                   <h1></h1>
-
-                <div id="pdfWrapper" class="pdf-container collapsed super-flowing-glow">
-                    <iframe class="pdf-viewer" src="My_Resume.pdf#toolbar=0&navpanes=0"></iframe>
-                </div>
-                <button id="pdfToggleButton" class="inline-flex items-center px-6 py-2 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 glass-accent glow-effect"> Expand PDF </button>
-       
-            </div>
-        </div>
-    </section>
-                 
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1200">
-        <div class="glass-card p-8 md:p-12 rounded-2xl">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold section-title gradient-text">Get In Touch</h2>
-                <p class="text-gray-300 mt-6 max-w-2xl mx-auto">
-                    Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
-                </p>
-            </div>
-
-            <div class="flex flex-col md:flex-row gap-8">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <form class="space-y-6">
-                        <div>
-                          <button type="button" id="sendMessageButton" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 glass-accent glow-effect">
-                            Send Message
-                        </div>
-                        <div class="mt-8">
-                            <h4 class="font-medium mb-4">Let me follow you</h4>
-                            <div class="flex space-x-4 icon-container-js">
-                                <a href="https://www.x.com/KamalRaad52013" class="social-icon glass-accent p-3 rounded-full text-black-400 hover:bg-gray-800 transition duration-300 icon-item-js">
-                                    <i class="fab fa-x fa-lg"></i>
-                                </a>
-                                <a href="https://www.github.com/RaadKamal" class="social-icon glass-accent p-3 rounded-full text-gray-300 hover:bg-gray-800 transition duration-300 icon-item-js">
-                                    <i class="fab fa-github fa-lg"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/in/raadkamal99" class="social-icon glass-accent p-3 rounded-full text-blue-400 hover:bg-gray-800 transition duration-300 icon-item-js">
-                                    <i class="fab fa-linkedin fa-lg"></i>
-                                </a>
-                                <a href="https://www.facebook.com/mostafaraad.kamal.1/" class="social-icon glass-accent p-3 rounded-full text-blue-500 hover:bg-gray-800 transition duration-300 icon-item-js">
-                                    <i class="fab fa-facebook-f fa-lg"></i>
-                                </a>
-                                <a href="https://www.instagram.com/kammd1702/" class="social-icon glass-accent p-3 rounded-full text-red-500 hover:bg-gray-800 transition duration-300 icon-item-js">
-                                    <i class="fab fa-instagram fa-lg"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-                <div class="md:w-1/2">
-                    <div class="space-y-4">
-                        <div class="contact-info-item flex items-start">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Location</h4>
-                                <p class="text-gray-400">Winnipeg, MB, Canada</p>
-                            </div>
-                        </div>
-                        <div class="contact-info-item flex items-start">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Email</h4>
-                                <p class="text-gray-400">riyadhkamalx@gmail</p>
-                            </div>
-                        </div>
-                        <div class="contact-info-item flex items-start">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Phone</h4>
-                                <p class="text-gray-400">+1 (431) 996-1804</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-8">
-        <div class="max-w-3x2 mx-auto px-0 sm:px-1 lg:px-8" >
-            <div class="flex flex-col md:flex-row justify-between style="align-items: flex-start;">
-                 <div class="mb-4 md:mb-0 pl-4" style="text-align: left;">
-                    <a href="#" class="text-xl font-bold gradient-text">Raad</a>
-                    <p class="text-gray-500 mt-2">Full Stack Developer</p>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center ">
-                <p class="text-gray-500 text-sm mb-4 md:mb-0">
-                    &copy; 2026 Mostafa Raad Kamal. All rights reserved.
-                </p>
-                <div class="flex space-x-4">
-
-                    <a href="#" class=" text-gray-500 hover:text-white transition duration-300">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-
-                </div>
-            </div>
-        </div>
-    </footer>
-        <script>
-           // Mobile menu toggle
-        document.getElementById('menu-btn').addEventListener('click', function() {
-            this.classList.toggle('active');
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('mobile-menu').classList.add('hidden');
-                document.getElementById('menu-btn').classList.remove('active');
-            });
-        });
+<div class="project-footer mt-auto">
+<a href="https://vue-app-deployment.onrender.com/products" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
+<i class="fas fa-external-link-alt mr-1"></i> Live Demo
+</a>
+<a href="https://github.com/RaadKamal/Full-Stack-Ecommerce" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
+<i class="fab fa-github mr-1"></i> Code
+</a>
+</div>
+</div>
+</div>
 
 
-        // Highlight active navigation link
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
+<!-- Project 3 -->
+<div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1">
+<div class="h-48 overflow-hidden">
+<img src="Picture3.jpg" alt="Project 3" class="project-image">
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center mb-2">
+<div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
+<i class="fas fa-television text-white"></i>
+</div>
+<h3 class="text-xl font-semibold">Movie Guide</h3>
+</div>
+<p class="text-gray-300 mb-4 text-justify tracking-wide">
+The movie guide, developed using Android Studio with Kotlin, enables users to filter and select their preferred films. This project has been implemented following Agile development methodologies and adheres to established principles of software engineering for academic purposes. Such as SOLID principles and Test Driven Development.
+</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Android Studio</span>
+<span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Kotlin</span>
+<span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">SQLite</span>
+</div>
 
-        window.addEventListener('scroll', () => {
-            let current = '';
+<div class="project-footer mt-auto">
+<a href="https://vue-app-deployment.onrender.com/products" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
+<i class="mr-1"></i> 
+</a>
+<a href="https://github.com/RaadKamal/Movie_Recommendation_App-main" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
+<i class="fab fa-github mr-1"></i> Code
+</a>
+</div>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1">
+<div class="h-48 overflow-hidden">
+<img src="Picture4.jpg" alt="Project 4" class="project-image">
+</div>
+<div class="p-6">
+<div class="flex items-center mb-2">
+<div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
+<i class="fas fa-chart-line text-white"></i>
+</div>
+<h3 class="text-xl font-semibold">Blockchain DataAnalytics</h3>
+</div>
+<p class="text-gray-300 mb-4 text-justify tracking-wide">
+This project leverages  Scikit-Learn and XGBoost to effectively detect ransomware payments in Blockchain. It systematically identifies patterns associated with these attacks, significantly strengthening cybersecurity measures.
+</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Machine learning</span>
+<span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Python</span>
+<span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Artificial Intelligent</span>
+</div>
 
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
+<div class="project-footer mt-auto">
+<a href="https://vue-app-deployment.onrender.com/products" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
+<i class="mr-1"></i> 
+</a>
+<a href="https://github.com/RaadKamal/BlockchainDataAnalytics-1/tree/master" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
+<i class="fab fa-github mr-1"></i> Code
+</a>
+</div>
+</div>
+</div>
 
-                if (window.pageYOffset >= (sectionTop - 100)) {
-                    current = section.getAttribute('id');
-                }
-            });
+<!-- Project 5 -->
+<div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1">
+<div class="h-48 overflow-hidden">
+<img src="Picture5.jpg" alt="Project 5" class="project-image">
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center mb-2">
+<div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
+<i class="fas fa-suitcase-medical text-white"></i>
+</div>
+<h3 class="text-xl font-semibold">Radiant Health</h3>
+</div>
+<p class="text-gray-300 mb-4 text-justify tracking-wide">
+This Prototype provides a distinctive user interface and user experience (UI/UX) by utilizing visual indicators, one of which is red marks on the screen, to highlight unmet goals. It is a research-based initiative conducted as part of a third-year course  Human-Computer Interaction (HCI).
+</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">UI</span>
+<span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">UX</span>
+<span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Javascript</span>
+<span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">HTML/CSS</span>
+<span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">jQuery</span>
+</div>
 
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
+<div class="project-footer mt-auto">
+<a href="https://vue-app-deployment.onrender.com/products" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
+<i class="mr-1"></i> 
+</a>
+<a href="https://github.com/RaadKamal/Full-Stack-Ecommerce" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
+<i class="fab fa-github mr-1"></i> Code
+</a>
+</div>
+</div>
+</div>
 
-        // Animate skill bars on scroll
-        const skillBars = document.querySelectorAll('.skill-bar');
+<!-- Project 7 -->
+<div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1">
+<div class="h-48 overflow-hidden">
+<img src="Picture7.jpg" alt="Project 7" class="project-image">
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center mb-2">
+<div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-1000 to-black-900">
+<i class="fa-solid fa-address-card text-white""></i>
+</div>
+<h3 class="text-xl font-semibold">Portfolio</h3>
+</div>
+<p class="text-gray-300 mb-4">
 
-        const animateSkillBars = () => {
-            skillBars.forEach(bar => {
-                const width = bar.style.width;
-                bar.style.width = '0';
-                setTimeout(() => {
-                    bar.style.width = width;
-                }, 100);
-            });
-        };
+</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">HTML</span>
+<span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Tailwind CSS</span>
+<span class="glass-accent text-orange-500 text-xs px-2 py-1 rounded">Javascript</span>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateSkillBars();
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
 
-        document.querySelectorAll('#skills').forEach(section => {
-            observer.observe(section);
-        });
-        document.addEventListener('DOMContentLoaded', function() {
-          const sendMessageButton = document.getElementById('sendMessageButton');
+</div>
+<div class="flex justify-between">
 
-          sendMessageButton.addEventListener('click', function() {
-            const recipient = 'mostafaraadkamal9@gmail.com';
-            const subject = encodeURIComponent('Inquiry for an Interview');
-            const body = encodeURIComponent('Hello, I am contacting you...');
-            const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
+<a class="text-blue-400  font-medium flex items-center">
+<i class="blinking-dot mr-1"></i> Completed
+</a>
 
-            // Create a temporary <a> element
-            const tempLink = document.createElement('a');
-            tempLink.href = mailtoLink;
-            tempLink.style.display = 'none'; // Hide it from the user
-            document.body.appendChild(tempLink);
+</div>
+</div>
 
-            // Programmatically click the link
-            tempLink.click();
 
-            // Remove the temporary link
-            document.body.removeChild(tempLink);
-    });
-  });
+</div>
+
+
+</div>
+
+<div class="text-center mt-12">
+<a href="https://github.com/RaadKamal?tab=repositories" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 glass-accent glow-effect">
+View All Projects
+<i class="fas fa-arrow-right ml-2"></i>
+</a>
+</div>
+</div>
+</section>
+
+<!-- Resume Section -->
+<section id="resume" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1200">
+<div class="glass-card p-8 md:p-12 rounded-2xl">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold section-title gradient-text">Resume</h2>
+<p class="text-gray-300 mt-6 max-w-2xl mx-auto">
+
+</p>
+<h1></h1>
+
+<div id="pdfWrapper" class="pdf-container collapsed super-flowing-glow">
+<iframe class="pdf-viewer" src="My_Resume.pdf#toolbar=0&navpanes=0"></iframe>
+</div>
+<button id="pdfToggleButton" class="inline-flex items-center px-6 py-2 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 glass-accent glow-effect"> Expand PDF </button>
+
+</div>
+</div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1200">
+<div class="glass-card p-8 md:p-12 rounded-2xl">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold section-title gradient-text">Get In Touch</h2>
+<p class="text-gray-300 mt-6 max-w-2xl mx-auto">
+Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
+</p>
+</div>
+
+<div class="flex flex-col md:flex-row gap-8">
+<div class="md:w-1/2 mb-8 md:mb-0">
+<form class="space-y-6">
+<div>
+<button type="button" id="sendMessageButton" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 glass-accent glow-effect">
+Send Message
+</div>
+<div class="mt-8">
+<h4 class="font-medium mb-4">Let me follow you</h4>
+<div class="flex space-x-4 icon-container-js">
+<a href="https://www.x.com/KamalRaad52013" class="social-icon glass-accent p-3 rounded-full text-black-400 hover:bg-gray-800 transition duration-300 icon-item-js">
+<i class="fab fa-x fa-lg"></i>
+</a>
+<a href="https://www.github.com/RaadKamal" class="social-icon glass-accent p-3 rounded-full text-gray-300 hover:bg-gray-800 transition duration-300 icon-item-js">
+<i class="fab fa-github fa-lg"></i>
+</a>
+<a href="https://www.linkedin.com/in/raadkamal99" class="social-icon glass-accent p-3 rounded-full text-blue-400 hover:bg-gray-800 transition duration-300 icon-item-js">
+<i class="fab fa-linkedin fa-lg"></i>
+</a>
+<a href="https://www.facebook.com/mostafaraad.kamal.1/" class="social-icon glass-accent p-3 rounded-full text-blue-500 hover:bg-gray-800 transition duration-300 icon-item-js">
+<i class="fab fa-facebook-f fa-lg"></i>
+</a>
+<a href="https://www.instagram.com/kammd1702/" class="social-icon glass-accent p-3 rounded-full text-red-500 hover:bg-gray-800 transition duration-300 icon-item-js">
+<i class="fab fa-instagram fa-lg"></i>
+</a>
+</div>
+</div>
+</form>
+</div>
+
+<div class="md:w-1/2">
+<div class="space-y-4">
+<div class="contact-info-item flex items-start">
+<div class="contact-icon">
+<i class="fas fa-map-marker-alt text-white"></i>
+</div>
+<div>
+<h4 class="font-medium">Location</h4>
+<p class="text-gray-400">Winnipeg, MB, Canada</p>
+</div>
+</div>
+<div class="contact-info-item flex items-start">
+<div class="contact-icon">
+<i class="fas fa-envelope text-white"></i>
+</div>
+<div>
+<h4 class="font-medium">Email</h4>
+<p class="text-gray-400">riyadhkamalx@gmail</p>
+</div>
+</div>
+<div class="contact-info-item flex items-start">
+<div class="contact-icon">
+<i class="fas fa-phone-alt text-white"></i>
+</div>
+<div>
+<h4 class="font-medium">Phone</h4>
+<p class="text-gray-400">+1 (431) 996-1804</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="py-8">
+<div class="max-w-3x2 mx-auto px-0 sm:px-1 lg:px-8" >
+<div class="flex flex-col md:flex-row justify-between style="align-items: flex-start;">
+<div class="mb-4 md:mb-0 pl-4" style="text-align: left;">
+<a href="#" class="text-xl font-bold gradient-text">Raad</a>
+<p class="text-gray-500 mt-2">Full Stack Developer</p>
+</div>
+</div>
+<div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center ">
+<p class="text-gray-500 text-sm mb-4 md:mb-0">
+&copy; 2026 Mostafa Raad Kamal. All rights reserved.
+</p>
+<div class="flex space-x-4">
+
+<a href="#" class=" text-gray-500 hover:text-white transition duration-300">
+<i class="fab fa-twitter"></i>
+</a>
+
+</div>
+</div>
+</div>
+</footer>
+<script>
+// Mobile menu toggle
+document.getElementById('menu-btn').addEventListener('click', function() {
+this.classList.toggle('active');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenu.classList.toggle('hidden');
+});
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('#mobile-menu a').forEach(link => {
+link.addEventListener('click', () => {
+document.getElementById('mobile-menu').classList.add('hidden');
+document.getElementById('menu-btn').classList.remove('active');
+});
+});
+
+
+// Highlight active navigation link
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', () => {
+let current = '';
+
+sections.forEach(section => {
+const sectionTop = section.offsetTop;
+const sectionHeight = section.clientHeight;
+
+if (window.pageYOffset >= (sectionTop - 100)) {
+current = section.getAttribute('id');
+}
+});
+
+navLinks.forEach(link => {
+link.classList.remove('active');
+if (link.getAttribute('href') === `#${current}`) {
+link.classList.add('active');
+}
+});
+});
+
+// Animate skill bars on scroll
+const skillBars = document.querySelectorAll('.skill-bar');
+
+const animateSkillBars = () => {
+skillBars.forEach(bar => {
+const width = bar.style.width;
+bar.style.width = '0';
+setTimeout(() => {
+bar.style.width = width;
+}, 100);
+});
+};
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+animateSkillBars();
+observer.unobserve(entry.target);
+}
+});
+}, { threshold: 0.1 });
+
+document.querySelectorAll('#skills').forEach(section => {
+observer.observe(section);
+});
+document.addEventListener('DOMContentLoaded', function() {
+const sendMessageButton = document.getElementById('sendMessageButton');
+
+sendMessageButton.addEventListener('click', function() {
+const recipient = 'mostafaraadkamal9@gmail.com';
+const subject = encodeURIComponent('Inquiry for an Interview');
+const body = encodeURIComponent('Hello, I am contacting you...');
+const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
+
+// Create a temporary <a> element
+const tempLink = document.createElement('a');
+tempLink.href = mailtoLink;
+tempLink.style.display = 'none'; // Hide it from the user
+document.body.appendChild(tempLink);
+
+// Programmatically click the link
+tempLink.click();
+
+// Remove the temporary link
+document.body.removeChild(tempLink);
+});
+});
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const iconContainer = document.querySelector('.icon-container-js');
-  const icons = document.querySelectorAll('.icon-container-js .icon-item-js');
-  const staggerDelay = 600;
+const iconContainer = document.querySelector('.icon-container-js');
+const icons = document.querySelectorAll('.icon-container-js .icon-item-js');
+const staggerDelay = 600;
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // The icon container is now in the viewport
-        icons.forEach((icon, index) => {
-          setTimeout(() => {
-            icon.classList.add('visible');
-          }, index * staggerDelay);
-        });
-
-        // REMOVED: observer.unobserve(iconContainer);
-      } else {
-        // The icon container is no longer in the viewport
-        // Optionally, you might want to reset the state of the icons here
-        icons.forEach(icon => {
-          icon.classList.remove('visible');
-        });
-      }
-    });
-  }, {
-    threshold: 0.1 // Trigger when at least 10% of the container is visible
-  });
-
-  // Start observing the icon container
-  if (iconContainer) {
-    observer.observe(iconContainer);
-  }
+const observer = new IntersectionObserver((entries, observer) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+// The icon container is now in the viewport
+icons.forEach((icon, index) => {
+setTimeout(() => {
+icon.classList.add('visible');
+}, index * staggerDelay);
 });
 
-    ScrollReveal({
-      reset: true,
-      distance: '90px',
-      duration: 800,
-      delay: 200,
-      easing: 'ease-in-out'
+// REMOVED: observer.unobserve(iconContainer);
+} else {
+// The icon container is no longer in the viewport
+// Optionally, you might want to reset the state of the icons here
+icons.forEach(icon => {
+icon.classList.remove('visible');
+});
+}
+});
+}, {
+threshold: 0.1 // Trigger when at least 10% of the container is visible
+});
 
-    });
+// Start observing the icon container
+if (iconContainer) {
+observer.observe(iconContainer);
+}
+});
 
-    ScrollReveal().reveal('.reveal-top', { origin: 'top' });
-    ScrollReveal().reveal('.reveal-left', { origin: 'left' });
-    ScrollReveal().reveal('.reveal-bottom', { origin: 'bottom' });
-    ScrollReveal().reveal('.reveal-scale', { scale: 0.8 });
+ScrollReveal({
+reset: true,
+distance: '90px',
+duration: 800,
+delay: 200,
+easing: 'ease-in-out'
 
-    // You can also override default settings for specific elements using data attributes
-    // like 'data-sr-delay' and 'data-sr-duration' in the HTML.
-    const pdfToggleButton = document.getElementById('pdfToggleButton');
-        const pdfWrapper = document.getElementById('pdfWrapper');
-        const pdfViewer = document.querySelector('.pdf-viewer'); // Get the iframe/embed element
+});
 
-        let isPdfVisible = false; // Track the state of the PDF
+ScrollReveal().reveal('.reveal-top', { origin: 'top' });
+ScrollReveal().reveal('.reveal-left', { origin: 'left' });
+ScrollReveal().reveal('.reveal-bottom', { origin: 'bottom' });
+ScrollReveal().reveal('.reveal-scale', { scale: 0.8 });
 
-        // Set initial height for collapsed state (if you want a small preview)
-        // If you want it completely hidden, set height: 0 in CSS and remove this.
-        // pdfWrapper.style.height = '50px'; // Example: show a 50px high preview
+// You can also override default settings for specific elements using data attributes
+// like 'data-sr-delay' and 'data-sr-duration' in the HTML.
+const pdfToggleButton = document.getElementById('pdfToggleButton');
+const pdfWrapper = document.getElementById('pdfWrapper');
+const pdfViewer = document.querySelector('.pdf-viewer'); // Get the iframe/embed element
 
-        pdfToggleButton.addEventListener('click', () => {
-            if (isPdfVisible) {
-                // Collapse the PDF
-                pdfWrapper.classList.add('collapsed');
-                pdfWrapper.style.height = '0'; // Explicitly set height to 0 for collapsing
-                pdfToggleButton.textContent = 'Expand PDF';
-            } else {
-                // Expand the PDF
-                pdfWrapper.classList.remove('collapsed');
-                // Set the height back to its expanded height (or auto, but fixed height is often smoother for transitions)
-                pdfWrapper.style.height = '700px'; // Use default viewer height or 800px
-                pdfToggleButton.textContent = 'Collapse';
-            }
-            isPdfVisible = !isPdfVisible; // Toggle the state
-        });
+let isPdfVisible = false; // Track the state of the PDF
 
-        // Optional: If you want to load the PDF only when expanded (for performance)
-        // pdfViewer.src = ''; // Initially empty
-        // pdfToggleButton.addEventListener('click', () => {
-        //     if (!isPdfVisible && pdfViewer.src === '') {
-        //         pdfViewer.src = 'your-document.pdf#toolbar=0&navpanes=0';
-        //     }
-        //     // ... rest of the toggle logic ...
-        // });
+// Set initial height for collapsed state (if you want a small preview)
+// If you want it completely hidden, set height: 0 in CSS and remove this.
+// pdfWrapper.style.height = '50px'; // Example: show a 50px high preview
+
+pdfToggleButton.addEventListener('click', () => {
+if (isPdfVisible) {
+// Collapse the PDF
+pdfWrapper.classList.add('collapsed');
+pdfWrapper.style.height = '0'; // Explicitly set height to 0 for collapsing
+pdfToggleButton.textContent = 'Expand PDF';
+} else {
+// Expand the PDF
+pdfWrapper.classList.remove('collapsed');
+// Set the height back to its expanded height (or auto, but fixed height is often smoother for transitions)
+pdfWrapper.style.height = '700px'; // Use default viewer height or 800px
+pdfToggleButton.textContent = 'Collapse';
+}
+isPdfVisible = !isPdfVisible; // Toggle the state
+});
+
+// Optional: If you want to load the PDF only when expanded (for performance)
+// pdfViewer.src = ''; // Initially empty
+// pdfToggleButton.addEventListener('click', () => {
+//     if (!isPdfVisible && pdfViewer.src === '') {
+//         pdfViewer.src = 'your-document.pdf#toolbar=0&navpanes=0';
+//     }
+//     // ... rest of the toggle logic ...
+// });
 
 
-    </script>
+</script>
 
 
 
-    <p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with AI</p>
- </body>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with AI</p>
+</body>
 </html>
