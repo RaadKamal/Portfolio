@@ -618,6 +618,84 @@
     </section>
 
     <!-- About Section -->
+    <nav class="fixed w-full z-50 nav-glass full-width-nav">
+        <div class="max-w-3x2 mx-auto px-0 sm:px-1 lg:px-8" >
+            <div class="flex justify-between h-16 items-center" style="border: none;">
+                <div class="flex items-center">
+                     <img src="tablink.ico" alt="Welcome Image" width="45" height="45" style="vertical-align: middle; margin-right: 3x;">
+                    <a href="#" class="text-xl font-bold gradient-text">Welcome to my Portfolio!</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="#about" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">About</a>
+                    <a href="#skills" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Skills</a>
+                    <a href="#projects" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Projects</a>
+                    <a href="My_Resume.pdf" download="My_Resume.pdf" class="glass-button border-2 border-indigo-400 text-white-300 px-3 py-2 rounded-lg font-medium hover:bg-white-800 transition duration-300 glow-effect">Resume <i class="fa fa-download"></i></a>
+                    <a href="#contact" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars menu-icon text-xl"></i>
+                        <i class="fas fa-times close-icon text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+
+        <div id="mobile-menu" class="hidden md:hidden" style="border: none;">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
+                <a href="#home" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Home</a>
+                <a href="#about" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">About</a>
+                <a href="#skills" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Skills</a>
+                <a href="#projects" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Projects</a>
+                <a href="My_Resume.pdf" download="My_Resume.pdf" class="nav-link hover:text-white-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Resume <i class="fa fa-download"></i></a>
+                <a href="#contact" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1200">
+        <div class="glass-card p-8 md:p-12 rounded-2xl">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 mb-10 md:mb-0 max-w-lg mx-auto md:max-w-none">
+                   <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                        Hey, I'm <span class="gradient-text ">Mostafa Raad Kamal</span>
+                    </h1>
+
+
+                    <h2 class="text-2xl md:text-3xl font-medium mb-6 text-orange-400 typewriter">
+                        <b>Full Stack Dev</b>
+                    </h2>
+                        
+
+                     <p class="text-gray-300 mb-8 ">
+                        "Every conflict is an iteration upon the last. Every bug, a victory"
+                    </p>
+
+
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects" class="glass-button bg-gradient-to-r from-green-500 to-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition duration-300 glow-effect">
+                            View My Work
+                        </a>
+                        <a href="#contact" class="glass-button border-2 border-indigo-400 text-white-300 px-8 py-3 rounded-lg font-medium hover:bg-white-800 transition duration-300 glow-effect">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center float">
+                    <div class="profile-circle">
+                        <img src="Profile1.jpg" alt="Raad Kamal" class="profile-img">
+                        <div class="profile-badge">
+                            <b><i class="fas fa-code fa-lg text-white text-xl"></i></b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
     <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1200">
         <div class="glass-card p-8 md:p-12 rounded-2xl">
             <div class="text-center mb-12">
@@ -627,62 +705,64 @@
                 </p>
             </div>
                  
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center float">
-                    <div class="profile-circle">
-                        <img src="Profile2.jpg" alt="Raad Kamal1" class="profile-img">
-
-                    </div>
-                </div>
-                <div class="md:w-2/3 md:pl-12 ">
-		
-                    <p class="text-gray-300 mb-4 text-justify tracking-wide">
-                        Raised by my engineer elder brother, I was around both physical and technical systems at an early stage. Since I had an affinity for complex systems, therefore it was an exciting intellectual validation for me excelling in Pure Science.</p>
-                    <p class="text-gray-300 mb-4 text-justify tracking-wide">
-                        My trajectory in software development was initially catalyzed by an inquisitive nature concerning the underlying operational paradigms of system, which evolved into a career in resolving intractable challenges through advanced breaching techniques. I am now a dedicated Full Stack Developer with the technical expertise in crafting digital systems that are reliable (Robust), seamless in functionality (Scalable), and visually captivating (Enhanced UI/UX) while utilising the latest technologies.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-               
-                        <div class="about-item flex items-center">
-                            <div class="about-icon">
-                                <i class="fas fa-user-graduate text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Education</h4>
-                                <p class="text-gray-400 text-sm">BSc in Computer Science</p>
+            <div class="about-card glow-effect">
+                <div class="about-content">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/3 mb-8 md:mb-0 about-image-container">
+                            <div class="profile-circle">
+                                <img src="Profile2.jpg" alt="Raad Kamal1" class="profile-img">
                             </div>
                         </div>
-                        <div class="about-item flex items-center">
-                            <div class="about-icon">
-                                <i class="fas fa-briefcase text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Experience</h4>
-                                <p class="text-gray-400 text-sm">3+ Years</p>
+                        <div class="md:w-2/3 md:pl-8">
+                            <p class="text-gray-300 mb-4 text-justify tracking-wide">
+                                Raised by my engineer elder brother, I was around both physical and technical systems at an early stage. Since I had an affinity for complex systems, therefore it was an exciting intellectual validation for me excelling in Pure Science.</p>
+                            <p class="text-gray-300 mb-4 text-justify tracking-wide">
+                                My trajectory in software development was initially catalyzed by an inquisitive nature concerning the underlying operational paradigms of system, which evolved into a career in resolving intractable challenges through advanced breaching techniques. I am now a dedicated Full Stack Developer with the technical expertise in crafting digital systems that are reliable (Robust), seamless in functionality (Scalable), and visually captivating (Enhanced UI/UX) while utilising the latest technologies.</p>
+                            
+                            <div class="about-stats">
+                                <div class="about-stats-item glow-effect">
+                                    <div class="about-icon">
+                                        <i class="fas fa-user-graduate"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Education</h4>
+                                        <p class="text-gray-400 text-sm">BSc in Computer Science</p>
+                                    </div>
+                                </div>
+                                <div class="about-stats-item glow-effect">
+                                    <div class="about-icon">
+                                        <i class="fas fa-briefcase"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Experience</h4>
+                                        <p class="text-gray-400 text-sm">3+ Years</p>
+                                    </div>
+                                </div>
+                                <div class="about-stats-item glow-effect">
+                                    <div class="about-icon">
+                                        <i class="fas fa-laptop-code"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Projects</h4>
+                                        <p class="text-gray-400 text-sm">8+ Completed</p>
+                                    </div>
+                                </div>
+                                <div class="about-stats-item glow-effect">
+                                    <div class="about-icon">
+                                        <i class="fas fa-book-journal-whills"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium">Research Paper</h4>
+                                        <p class="text-gray-400 text-sm">3+</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                            <div class="about-item flex items-center">
-                            <div class="about-icon">
-                                <i class="fas fa-laptop-code text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Projects</h4>
-                                <p class="text-gray-400 text-sm">8+ Completed</p>
-                            </div>
-                        </div>
-                           <div class="about-item flex items-center">
-                            <div class="about-icon">
-                                <i class="fas fa-book-journal-whills text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium">Research Paper</h4>
-                                <p class="text-gray-400 text-sm">3+</p>
-                            </div>
-                        </div>
-			    
                     </div>
                 </div>
             </div>
         </div>
+ 
     </section>
 
     <!-- Skills Section -->
