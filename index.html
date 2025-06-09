@@ -573,31 +573,6 @@ border-radius: 0;
     box-shadow: 0 0 25px rgba(0, 191, 255, 0.6); /* Blue shade */
   }
 }
-.my-name {
-            font-size: 3em; /* Larger font size */
-            color: #333;
-            font-weight: bold;
-            white-space: nowrap; /* Prevent text wrapping */
-
-            /* --- Animation Properties --- */
-            position: relative; /* Crucial for animating 'left' */
-            left: -150%; /* Start completely off-screen to the left (adjust percentage if needed) */
-            opacity: 0; /* Start invisible */
-            animation: slideInFromLeft 1.2s ease-out forwards; /* Name of animation, duration, timing, fill-mode */
-            animation-delay: 0.5s; /* Start animation after 0.5 seconds */
-        }
-
-        /* --- Keyframe Animation Definition --- */
-        @keyframes slideInFromLeft {
-            0% {
-                left: -150%; /* At the start of the animation, be off-screen */
-                opacity: 0;
-            }
-            100% {
-                left: 0; /* At the end, move to its natural left position */
-                opacity: 1;
-            }
-        }
 
 
 
