@@ -104,7 +104,47 @@ margin-right: 8px; /* Space between the dot and text */
 /* Apply the blinking animation */
 animation: blink-animation 1s steps(1, start) infinite;
 }
+        .glowing-text {
+            color: red; /* The base color of the text itself */
+            font-size: 4em; /* Adjust text size as needed */
+            
+            /* Initial very subtle glow using rgba for transparency.
+               This is the glow when it's "down." */
+            text-shadow: 0 0 5px rgba(255, 0, 0, 0.2); 
 
+            /*
+             * Applies the animation:
+             * - 'slow-glow': The name of our animation defined below.
+             * - '3s': The duration of one full glow cycle (glow up AND glow down).
+             * - 'infinite': The animation will repeat forever.
+             * - 'ease-in-out': This timing function makes the animation start slowly,
+             * speed up in the middle, and slow down at the end,
+             * creating a very smooth, natural flow.
+             */
+            animation: slow-glow 3s infinite ease-in-out;
+        }
+
+        /*
+         * Keyframes for the 'slow-glow' animation:
+         * Defines how the text-shadow changes over the animation's duration.
+         */
+        @keyframes slow-glow {
+            0% {
+                /* At the start (0% of the animation cycle), the glow is faint. */
+                text-shadow: 0 0 5px rgba(255, 0, 0, 0.2); 
+            }
+            50% {
+                /* At the midpoint (50%), the glow is at its peak brightness and spread. */
+                text-shadow:
+                    0 0 10px rgba(255, 0, 0, 0.5),  /* Inner, brighter glow */
+                    0 0 20px rgba(255, 0, 0, 0.7),  /* Stronger, wider glow */
+                    0 0 30px rgba(255, 0, 0, 0.5);  /* Outermost, softer glow */
+            }
+            100% {
+                /* At the end (100%), the glow returns to its faint initial state,
+                   creating a seamless loop back to the beginning. */
+                text-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+            }
 .icon-item-js {
 opacity: 0;
 transform: scale(0.5) rotate(-15deg); /* Optional: different starting appearance */
@@ -1071,7 +1111,7 @@ A strategic collection of my best projects, code samples, and technical contribu
 <div class="flex justify-between">
 
 <a class="text-blue-400  font-medium flex items-center">
-<i class="blinking-dot mr-1"></i> Completed (Working on Consistency and Fading)
+<i class="glowing-text mr-1"></i> Completed (Working on Consistency and Fading)
 
 	
 </a>
