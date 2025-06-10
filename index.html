@@ -16,14 +16,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 body {
-font-family: 'Poppins', sans-serif;
-scroll-behavior: smooth;
-background-color: #0a0a0a;
-background-image: 
-radial-gradient(at 81% 27%, rgba(31, 120, 31, 0.15) 0, transparent 50%), 
-radial-gradient(at 9% 89%, rgba(46, 139, 46, 0.15) 0, transparent 50%);
-min-height: 100vh;
-color: #e5e7eb;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  background-color: #0a0a0a;
+  background-image:
+    radial-gradient(at 81% 27%, rgba(31, 120, 31, 0.15) 0, transparent 50%),
+    radial-gradient(at 9% 89%, rgba(46, 139, 46, 0.15) 0, transparent 50%);
+  min-height: 100vh;
+  color: #e5e7eb;
+
+  /* --- NEW CSS FOR 90% VIEW --- */
+  transform: scale(0.9);
+  transform-origin: top left; /* Ensures scaling starts from the top-left corner */
+  width: calc(100% / 0.9); /* Adjusts the width to prevent horizontal scrollbar if scaled down */
+  height: calc(100% / 0.9); /* Adjusts the height to prevent vertical scrollbar if scaled down */
+  overflow: auto; /* Ensures scrollbars appear if content overflows after scaling */
+  /* --- END NEW CSS --- */
 }
 #sendMessageButton:active,
 #sendMessageButton:focus {
