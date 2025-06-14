@@ -726,9 +726,8 @@ Raised by my engineer elder brother, I was around both physical and technical sy
 <p class="text-gray-300 mb-4 text-justify tracking-wide">
 My trajectory in software development was initially catalyzed by an inquisitive nature concerning the underlying operational paradigms of system, which evolved into a career in resolving intractable challenges through advanced breaching techniques. I am now a dedicated Full Stack Developer with the technical expertise in crafting digital systems that are reliable (Robust), seamless in functionality (Scalable), and visually helpful (Enhanced UI/UX) while utilising the latest technologies.</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-             
                
-<div class="about-item flex items-center">
+<div class="about-item flex items-center reveal-right" data-sr-duration="800" data-sr-delay="100">
 <div class="about-icon">
 <i class="fas fa-user-graduate text-white"></i>
 </div>
@@ -737,7 +736,7 @@ My trajectory in software development was initially catalyzed by an inquisitive 
 <p class="text-gray-400 text-sm">BSc in Computer Science</p>
 </div>
 </div>
-<div class="about-item flex items-center">
+<div class="about-item flex items-center reveal-right" data-sr-duration="800" data-sr-delay="200">
 <div class="about-icon">
 <i class="fas fa-briefcase text-white"></i>
 </div>
@@ -746,7 +745,7 @@ My trajectory in software development was initially catalyzed by an inquisitive 
 <p class="text-gray-400 text-sm">NULL Years</p>
 </div>
 </div>
-<div class="about-item flex items-center">
+<div class="about-item flex items-center reveal-right" data-sr-duration="800" data-sr-delay="300">
 <div class="about-icon">
 <i class="fas fa-laptop-code text-white"></i>
 </div>
@@ -755,7 +754,7 @@ My trajectory in software development was initially catalyzed by an inquisitive 
 <p class="text-gray-400 text-sm">8+ Completed</p>
 </div>
 </div>
-<div class="about-item flex items-center">
+<div class="about-item flex items-center reveal-right" data-sr-duration="800" data-sr-delay="400">
 <div class="about-icon">
 <i class="fas fa-book-journal-whills text-white"></i>
 </div>
@@ -764,7 +763,6 @@ My trajectory in software development was initially catalyzed by an inquisitive 
 <p class="text-gray-400 text-sm">3+</p>
 </div>
 </div>
-
 </div>
 </div>
 </div>
@@ -1497,6 +1495,7 @@ easing: 'ease-in-out'
 
 ScrollReveal().reveal('.reveal-top', { origin: 'top' });
 ScrollReveal().reveal('.reveal-left', { origin: 'left' });
+ScrollReveal().reveal('.reveal-right', { origin: 'right' });
 ScrollReveal().reveal('.reveal-bottom', { origin: 'bottom' });
 ScrollReveal().reveal('.reveal-scale', { scale: 0.8 });
 
