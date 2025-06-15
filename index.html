@@ -105,16 +105,82 @@ margin-right: 8px; /* Space between the dot and text */
 animation: blink-animation 1s steps(1, start) infinite;
 }
 
-        .glowing-text {
-            color: red; /* The base color of the text itself */
-            font-size: 1.2em; /* Adjust text size as needed */
-            
-            /* Add a subtle, consistent red glow. This glow won't fade with the text's opacity. */
-            text-shadow:
-                0 0 10px rgba(255, 0, 0, 0.7),
-                0 0 20px rgba(255, 0, 0, 0.5);
-            opacity: 1; /* Static opacity */
-        }
+
+
+Explain
+
+.glowing-text {
+
+color: red; /* The base color of the text itself */
+
+font-size: 1.2em; /* Adjust text size as needed */
+
+
+
+/* Add a subtle, consistent red glow. This glow won't fade with the text's opacity. */
+
+text-shadow:
+
+0 0 10px rgba(255, 0, 0, 0.7),
+
+0 0 20px rgba(255, 0, 0, 0.5);
+
+
+
+/*
+
+            * Applies the animation:
+
+            * - 'subtle-fade': The name of our animation defined below.
+
+            * - '3s': The duration of one full fade cycle (fade down AND fade up).
+
+            * - 'infinite': The animation will repeat forever.
+
+            * - 'ease-in-out': This timing function makes the animation start slowly,
+
+            * speed up in the middle, and slow down at the end, for a smooth fade.
+
+            */
+
+animation: subtle-fade 3s infinite ease-in-out;
+
+}
+
+
+
+/*
+
+        * Keyframes for the 'subtle-fade' animation:
+
+        * Defines how the text's opacity changes over the animation's duration.
+
+        */
+
+@keyframes subtle-fade {
+
+0% {
+
+opacity: 0.2; /* Start visible, but very faint */
+
+}
+
+50% {
+
+opacity: 1; /* Fully visible at the midpoint */
+
+}
+
+100% {
+
+opacity: 0.2; /* Fade back to very faint */
+
+}
+
+}
+
+
+	
 .icon-item-js {
 opacity: 0;
 transform: scale(0.5) rotate(-15deg); /* Optional: different starting appearance */
