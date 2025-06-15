@@ -107,7 +107,6 @@ animation: blink-animation 1s steps(1, start) infinite;
 
 
 
-Explain
 
 .glowing-text {
 
@@ -178,8 +177,6 @@ opacity: 0.2; /* Fade back to very faint */
 }
 
 }
-
-
 	
 .icon-item-js {
 opacity: 0;
@@ -621,34 +618,64 @@ padding-bottom: 20px
 margin: 0;
 border-radius: 0;
 }
+	
 .super-flowing-glow {
-  width: auto; /* Example dimensions height: 100%; */
-  background-color: #333; /* For contrast */
-  border-radius: 7px; /* Optional: for a softer look */
-  margin: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-family: sans-serif;
 
-  /* Base glow */
-  box-shadow: 0 0 45px rgba(0, 191, 255, 0.6); /* Blue shade */
-  animation: superGlow 2.5s infinite ease-in-out alternate;
+width: auto; /* Example dimensions height: 100%; */
+
+background-color: #333; /* For contrast */
+
+border-radius: 7px; /* Optional: for a softer look */
+
+margin: 50px;
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+color: white;
+
+font-family: sans-serif;
+
+
+
+/* Base glow */
+
+box-shadow: 0 0 45px rgba(0, 191, 255, 0.6); /* Blue shade */
+
+animation: superGlow 2.5s infinite ease-in-out alternate;
+
 }
+
+
 
 @keyframes superGlow {
-  0% {
-    box-shadow: 0 0 25px rgba(0, 191, 255, 0.6); /* Blue shade */
-  }
-  50% {
-    box-shadow: 0 0 55px rgba(0, 191, 255, 1), /* Darker, full intensity blue */
-                0 0 60px rgba(0, 191, 255, 0.4); /* Lighter, softer blue layer */
-  }
-  100% {
-    box-shadow: 0 0 25px rgba(0, 191, 255, 0.6); /* Blue shade */
-  }
+
+0% {
+
+box-shadow: 0 0 25px rgba(0, 191, 255, 0.6); /* Blue shade */
+
 }
+
+50% {
+
+box-shadow: 0 0 55px rgba(0, 191, 255, 1), /* Darker, full intensity blue */
+
+0 0 60px rgba(0, 191, 255, 0.4); /* Lighter, softer blue layer */
+
+}
+
+100% {
+
+box-shadow: 0 0 25px rgba(0, 191, 255, 0.6); /* Blue shade */
+
+}
+
+}
+
+
 
 
 
