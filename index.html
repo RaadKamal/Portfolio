@@ -113,32 +113,7 @@ animation: blink-animation 1s steps(1, start) infinite;
             text-shadow:
                 0 0 10px rgba(255, 0, 0, 0.7),
                 0 0 20px rgba(255, 0, 0, 0.5);
-
-            /*
-             * Applies the animation:
-             * - 'subtle-fade': The name of our animation defined below.
-             * - '3s': The duration of one full fade cycle (fade down AND fade up).
-             * - 'infinite': The animation will repeat forever.
-             * - 'ease-in-out': This timing function makes the animation start slowly,
-             * speed up in the middle, and slow down at the end, for a smooth fade.
-             */
-            animation: subtle-fade 3s infinite ease-in-out;
-        }
-
-        /*
-         * Keyframes for the 'subtle-fade' animation:
-         * Defines how the text's opacity changes over the animation's duration.
-         */
-        @keyframes subtle-fade {
-            0% {
-                opacity: 0.2; /* Start visible, but very faint */
-            }
-            50% {
-                opacity: 1; /* Fully visible at the midpoint */
-            }
-            100% {
-                opacity: 0.2; /* Fade back to very faint */
-            }
+            opacity: 1; /* Static opacity */
         }
 .icon-item-js {
 opacity: 0;
@@ -624,7 +599,7 @@ Your browser does not support the video tag.
 
 </div>
 <!-- Navigation -->
-<nav class="fixed w-full z-50 nav-glass full-width-nav">
+<nav class="fixed w-full z-50 nav-glass full-width-nav reveal-top" data-sr-duration="800">
 <div class="max-w-3x2 mx-auto px-0 sm:px-1 lg:px-8" >
 <div class="flex justify-between h-16 items-center" style="border: none;">
 <div class="flex items-center">
@@ -661,10 +636,10 @@ Your browser does not support the video tag.
 </div>
 </nav>
 <!-- Hero Section -->
-<section id="home" class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1500">
+<section id="home" class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
 <div class="glass-card p-8 md:p-12 rounded-2xl">
 <div class="flex flex-col md:flex-row items-center">
-<div class="w-full md:w-1/2 mb-10 md:mb-0 max-w-lg mx-auto md:max-w-none">
+<div class="w-full md:w-1/2 mb-10 md:mb-0 max-w-lg mx-auto md:max-w-none reveal-left" data-sr-duration="1000">
 <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
 Hello, I'm <span class="my-name gradient-text ">Mostafa Raad Kamal</span>
 </h1>
@@ -680,7 +655,7 @@ Hello, I'm <span class="my-name gradient-text ">Mostafa Raad Kamal</span>
 </p>
 
 
-<div class="flex flex-wrap gap-4">
+<div class="flex flex-wrap gap-4 reveal-bottom" data-sr-duration="1000" data-sr-delay="400">
 <a href="#projects" class="glass-button bg-gradient-to-r from-yellow-600 to-yellow-400 hover:from-yellow-500 hover:to-yellow-400 text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition duration-300 glow-effect">
 View My Work
 </a>
@@ -689,7 +664,7 @@ Contact Me
 </a>
 </div>
 </div>
-<div class="md:w-1/2 flex justify-center float">
+<div class="md:w-1/2 flex justify-center float reveal-right" data-sr-duration="1000" data-sr-delay="200">
 <div class="profile-circle">
 <img src="Profile1.jpg" alt="Raad Kamal" class="profile-img">
 <!--<div class="profile-badge">-->
@@ -1484,19 +1459,30 @@ observer.observe(iconContainer);
 });
 
 ScrollReveal({
-reset: true,
-distance: '90px',
-duration: 800,
-delay: 200,
-easing: 'ease-in-out'
-
+reset: false,
+distance: '60px',
+duration: 1000,
+delay: 100,
+easing: 'ease-in-out',
+mobile: false
 });
 
-ScrollReveal().reveal('.reveal-top', { origin: 'top' });
-ScrollReveal().reveal('.reveal-left', { origin: 'left' });
-ScrollReveal().reveal('.reveal-right', { origin: 'right' });
-ScrollReveal().reveal('.reveal-bottom', { origin: 'bottom' });
-ScrollReveal().reveal('.reveal-scale', { scale: 0.8 });
+ScrollReveal().reveal('.reveal-top', { 
+  origin: 'top',
+  distance: '40px'
+});
+ScrollReveal().reveal('.reveal-left', { 
+  origin: 'left',
+  distance: '80px'
+});
+ScrollReveal().reveal('.reveal-right', { 
+  origin: 'right',
+  distance: '80px'
+});
+ScrollReveal().reveal('.reveal-bottom', { 
+  origin: 'bottom',
+  distance: '40px'
+});
 
 // You can also override default settings for specific elements using data attributes
 // like 'data-sr-delay' and 'data-sr-duration' in the HTML.
