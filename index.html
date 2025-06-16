@@ -1,416 +1,416 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:image" content="prolink.jpeg" />
-<title>Mostafa Raad Kamal - Portfolio</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/scrollreveal"></script>
-
-<link rel="icon" href="tablink.ico" type="image/ico" sizes="128x128" >
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-body {More action
-font-family: "Allerta Stencil", Sans-serif;
-scroll-behavior: smooth;
-background-color: #0a0a0a;
-background-image: 
-radial-gradient(at 89% 9%, rgba(31, 120, 31, 0.15) 0, transparent 50%), 
-radial-gradient(at 9% 89%, rgba(46, 139, 46, 0.15) 0, transparent 50%);
-min-height: 100vh;
-color: #e5e7eb;
-}
-#sendMessageButton:active,
-#sendMessageButton:focus {
-outline: none; /* Remove the default focus outline */
-box-shadow: 0 0 0 2px darkgreen; /* Add a dark green "border" using box-shadow */
-}
-.gradient-text {
-background: linear-gradient(90deg, #ef4444, #f97316);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="prolink.jpeg" />
+    <title>Mostafa Raad Kamal - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <link rel="icon" href="tablink.ico" type="image/ico" sizes="128x128" >
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: "Allerta Stencil", Sans-serif;
+            scroll-behavior: smooth;
+            background-color: #0a0a0a;
+            background-image:
+                    radial-gradient(at 89% 9%, rgba(31, 120, 31, 0.15) 0, transparent 50%),
+                    radial-gradient(at 9% 89%, rgba(46, 139, 46, 0.15) 0, transparent 50%);
+            min-height: 100dvh;
+            color: #e5e7eb;
+        }
+        #sendMessageButton:active,
+        #sendMessageButton:focus {
+            outline: none; /* Remove the default focus outline */
+            box-shadow: 0 0 0 2px darkgreen; /* Add a dark green "border" using box-shadow */
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #ef4444, #f97316);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .pdf-container {
+            border: 3px solid #0047AB;
+            margin-top: 10px;
+            overflow: hidden; /* Hide overflow when collapsed */
+            transition: height 0.3s ease-in-out; /* Smooth transition for height */
+        }
+
+        .pdf-container.collapsed {
+            height: 155px; /* Or a small initial height, e.g., 50px for a preview */
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 650px; /* Default height when expanded */
+            border: none;
+        }
+        #pdfWrapper {
+            /* ... (existing styles) ... */
+            margin-top: 50px;    /* Adds 20 pixels of space above the PDF wrapper */
+            margin-bottom: 50px; /* Adds 20 pixels of space below the PDF wrapper */
+        }
+
+        .toggle-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
 
-.pdf-container {
-border: 3px solid #0047AB;
-margin-top: 10px;
-overflow: hidden; /* Hide overflow when collapsed */
-transition: height 0.3s ease-in-out; /* Smooth transition for height */
-}
+        .toggle-button:hover {
+            background-color: #32CD32;
+        }
 
-.pdf-container.collapsed {
-height: 155px; /* Or a small initial height, e.g., 50px for a preview */
-}
+        /* Basic styling for the body */
 
-.pdf-viewer {
-width: 100%;
-height: 650px; /* Default height when expanded */
-border: none;
-}
-#pdfWrapper {
-/* ... (existing styles) ... */
-margin-top: 50px;    /* Adds 20 pixels of space above the PDF wrapper */
-margin-bottom: 50px; /* Adds 20 pixels of space below the PDF wrapper */
-}
+        /* Orange Glow Elements */
+        .orange-glow {
+            transition: all 0.3s ease;
+        }
 
-.toggle-button {
-background-color: #007bff;
-color: white;
-padding: 10px 15px;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-font-size: 16px;
-}
+        .orange-glow:hover {
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.7);
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.7);
+        }
+        /* Ensure your Tailwind CSS is imported or linked before this CSS */
 
-.toggle-button:hover {
-background-color: #32CD32;
-}
+        /* Keyframes for blinking opacity */
+        @keyframes blink-animation {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
 
-/* Basic styling for the body */
+        .blinking-dot {
+            /* Make the <i> tag a visible circle */
+            display: inline-block; /* Essential to give it width/height */
+            width: 8px; /* Size of the dot */
+            height: 8px;
+            background-color: #ff0000; /* A red color for the dot */
+            border-radius: 50%; /* Makes it a circle */
+            margin-right: 8px; /* Space between the dot and text */
 
-/* Orange Glow Elements */
-.orange-glow {
-transition: all 0.3s ease;
-}
+            /* Apply the blinking animation */
+            animation: blink-animation 1s steps(1, start) infinite;
+        }
 
-.orange-glow:hover {
-box-shadow: 0 0 25px rgba(245, 158, 11, 0.7);
-box-shadow: 0 0 25px rgba(59, 130, 246, 0.7);
-}
-/* Ensure your Tailwind CSS is imported or linked before this CSS */
 
-/* Keyframes for blinking opacity */
-@keyframes blink-animation {
-0%, 100% { opacity: 1; }
-50% { opacity: 0; }
-}
 
-.blinking-dot {
-/* Make the <i> tag a visible circle */
-display: inline-block; /* Essential to give it width/height */
-width: 8px; /* Size of the dot */
-height: 8px;
-background-color: #ff0000; /* A red color for the dot */
-border-radius: 50%; /* Makes it a circle */
-margin-right: 8px; /* Space between the dot and text */
 
-/* Apply the blinking animation */
-animation: blink-animation 1s steps(1, start) infinite;
-}
+        .glowing-text {
 
+            color: red; /* The base color of the text itself */
 
+            font-size: 1.2em; /* Adjust text size as needed */
 
 
-.glowing-text {
 
-color: red; /* The base color of the text itself */
+            /* Add a subtle, consistent red glow. This glow won't fade with the text's opacity. */
 
-font-size: 1.2em; /* Adjust text size as needed */
+            text-shadow:
 
+                    0 0 10px rgba(255, 0, 0, 0.7),
 
+                    0 0 20px rgba(255, 0, 0, 0.5);
 
-/* Add a subtle, consistent red glow. This glow won't fade with the text's opacity. */
 
-text-shadow:
 
-0 0 10px rgba(255, 0, 0, 0.7),
+            /*
+            
+                        * Applies the animation:
+            
+                        * - 'subtle-fade': The name of our animation defined below.
+            
+                        * - '3s': The duration of one full fade cycle (fade down AND fade up).
+            
+                        * - 'infinite': The animation will repeat forever.
+            
+                        * - 'ease-in-out': This timing function makes the animation start slowly,
+            
+                        * speed up in the middle, and slow down at the end, for a smooth fade.
+            
+                        */
 
-0 0 20px rgba(255, 0, 0, 0.5);
+            animation: subtle-fade 3s infinite ease-in-out;
 
+        }
 
 
-/*
 
-            * Applies the animation:
+        /*
+        
+                * Keyframes for the 'subtle-fade' animation:
+        
+                * Defines how the text's opacity changes over the animation's duration.
+        
+                */
 
-            * - 'subtle-fade': The name of our animation defined below.
+        @keyframes subtle-fade {
 
-            * - '3s': The duration of one full fade cycle (fade down AND fade up).
+            0% {
 
-            * - 'infinite': The animation will repeat forever.
+                opacity: 0.2; /* Start visible, but very faint */
 
-            * - 'ease-in-out': This timing function makes the animation start slowly,
+            }
 
-            * speed up in the middle, and slow down at the end, for a smooth fade.
+            50% {
 
-            */
+                opacity: 1; /* Fully visible at the midpoint */
 
-animation: subtle-fade 3s infinite ease-in-out;
+            }
 
-}
+            100% {
 
+                opacity: 0.2; /* Fade back to very faint */
 
+            }
 
-/*
+        }
 
-        * Keyframes for the 'subtle-fade' animation:
+        .icon-item-js {
+            opacity: 0;
+            transform: scale(0.5) rotate(-15deg); /* Optional: different starting appearance */
+            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+        }
 
-        * Defines how the text's opacity changes over the animation's duration.
+        .icon-item-js.visible {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
 
-        */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw; /* Use viewport width */
+            height: 100vh; /* Use viewport height */
+            overflow: hidden;
+            z-index: -1;
+        }
 
-@keyframes subtle-fade {
+        .background-video video {
+            /* Cover the viewport while maintaining aspect ratio */
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover; /* Important for scaling */
+            position: fixed; /* Ensure it stays fullscreen */
+            top: 0;
+            left: 0;
+        }
 
-0% {
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-opacity: 0.2; /* Start visible, but very faint */
 
-}
 
-50% {
+        /* Mobile menu button animation */
+        #menu-btn {
+            transition: all 0.3s ease;
+            position: relative;
+            width: 24px;
+            height: 24px;
+        }
 
-opacity: 1; /* Fully visible at the midpoint */
+        #menu-btn .menu-icon,
+        #menu-btn .close-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
+        }
 
-}
-
-100% {
-
-opacity: 0.2; /* Fade back to very faint */
-
-}
-
-}
-	
-.icon-item-js {
-opacity: 0;
-transform: scale(0.5) rotate(-15deg); /* Optional: different starting appearance */
-transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-}
-
-.icon-item-js.visible {
-opacity: 1;
-transform: scale(1) rotate(0deg);
-}
-
-.background-video {
-position: fixed;
-top: 0;
-left: 0;
-width: 100vw; /* Use viewport width */
-height: 100vh; /* Use viewport height */
-overflow: hidden;
-z-index: -1;
-}
-
-.background-video video {
-/* Cover the viewport while maintaining aspect ratio */
-width: 100vw;
-height: 100vh;
-object-fit: cover; /* Important for scaling */
-position: fixed; /* Ensure it stays fullscreen */
-top: 0;
-left: 0;
-}
-
-.content {
-position: relative;
-z-index: 1;
-color: white;
-padding: 20px;
-text-align: center;
-}
-
-
-
-/* Mobile menu button animation */
-#menu-btn {
-transition: all 0.3s ease;
-position: relative;
-width: 24px;
-height: 24px;
-}
-
-#menu-btn .menu-icon,
-#menu-btn .close-icon {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-transition: all 0.3s ease;
-}
-
-#menu-btn .close-icon {
-opacity: 0;
-}
-
-#menu-btn.active .menu-icon {
-opacity: 0;
-}
-
-#menu-btn.active .close-icon {
-opacity: 1;
-}
-
-/* Enhanced Glassmorphism */
-.glass-card {
-background: rgba(15, 15, 15, 0.15);
-backdrop-filter: blur(25px);
--webkit-backdrop-filter: blur(25px);
-border-radius: 20px;
-
-box-shadow: 0 8px 42px 0 rgba(0, 0, 0, 0.8);
-transition: all 0.3s ease;
-color: #f3f4f6;
-}
-
-.glass-card:hover {
-background: rgba(0, 0, 0, 0);
-box-shadow: 0 8px 42px 0 rgba(0, 0, 0, 0.9);
-transform: translateY(-2px);
-}
-
-.glass-accent {
-background: rgba(20, 20, 20, 0.2);
-backdrop-filter: blur(15px);
--webkit-backdrop-filter: blur(15px);
-
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-}
-
-.skill-bar {
-transition: width 1.5s ease-in-out;
-}
-
-
-.nav-link {
-position: relative;
-color: #f3f4f6;
-}
-
-.nav-link::after {
-content: '';
-position: absolute;
-width: 0;
-height: 2px;
-bottom: 0;
-left: 0;
-background: linear-gradient(90deg, #ef4444, #f97316);
-transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-width: 100%;
-}
-
-.active::after {
-width: 100%;
-}
-
-.typewriter {
-overflow: hidden;
-border-right: .11em solid #8A2BE2;
-white-space: nowrap;
-margin: 0 auto;
-letter-spacing: .15em;
-animation: 
-typing 3.5s steps(40, end),
-blink-caret .75s step-end infinite;
-}
-
-@keyframes typing {
-from { width: 0 }
-to { width: 100% }
-}
-
-@keyframes blink-caret {
-from, to { border-color: transparent }
-50% { border-color: #8A2BE2; }
-}
-
-.section-title {
-position: relative;
-display: inline-block;
-}
-
-.section-title::after {
-content: '';
-position: absolute;
-width: 100%;
-height: 4px;
-bottom: -8px;
-left: 0;
-background: linear-gradient(90deg, #ef4444, #f97316);
-border-radius: 2px;
-}
-
-input, textarea {
-background-color: rgba(15, 15, 15, 0.2);
-backdrop-filter: blur(10px);
-border: 1px solid rgba(255, 255, 255, 0.15);
-color: #f3f4f6;
-transition: all 0.3s ease;
-}
-
-input:focus, textarea:focus {
-background-color: rgba(25, 25, 25, 0.3);
-border-color: #3b82f6;
-outline: none;
-box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4);
-}
-
-label {
-color: #f3f4f6;
-}
-
-footer {
-background-color: rgba(10, 10, 10, 0.7);
-backdrop-filter: blur(15px);
-}
-
-.project-image {
-height: 200px;
-width: 100%;
-object-fit: cover;
-border-top-left-radius: 16px;
-border-top-right-radius: 16px;
-}
-/* Project card footer */
-.project-footer {
-display: flex;
-justify-content: space-between;
-margin-top: auto;
-padding-top: 16px;
-}
-
-.project-live-demo {
-margin-right: auto;
-}
-
-.project-code {
-margin-left: auto;
-}
-
-.profile-circle {
-position: relative;
-width: 300px;
-height: 300px;
-border-radius: 50%;
-background: linear-gradient(135deg, rgba(200, 50, 50, 0.8), rgba(210, 80, 15, 0.8));
-display: flex;
-align-items: center;
-justify-content: center;
-box-shadow: 0 0 40px rgb(255, 127, 80, 0.6);
-backdrop-filter: blur(10px);
-border: 1px solid rgba(255, 255, 255, 0.25);
-}
-
-
-
-.profile-img {
-width: 280px;
-height: 280px;
-border-radius: 50%;
-object-fit: cover;
-box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6);
-}
-	        @keyframes spin {
+        #menu-btn .close-icon {
+            opacity: 0;
+        }
+
+        #menu-btn.active .menu-icon {
+            opacity: 0;
+        }
+
+        #menu-btn.active .close-icon {
+            opacity: 1;
+        }
+
+        /* Enhanced Glassmorphism */
+        .glass-card {
+            background: rgba(15, 15, 15, 0.15);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-radius: 20px;
+
+            box-shadow: 0 8px 42px 0 rgba(0, 0, 0, 0.8);
+            transition: all 0.3s ease;
+            color: #f3f4f6;
+        }
+
+        .glass-card:hover {
+            background: rgba(0, 0, 0, 0);
+            box-shadow: 0 8px 42px 0 rgba(0, 0, 0, 0.9);
+            transform: translateY(-2px);
+        }
+
+        .glass-accent {
+            background: rgba(20, 20, 20, 0.2);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .skill-bar {
+            transition: width 1.5s ease-in-out;
+        }
+
+
+        .nav-link {
+            position: relative;
+            color: #f3f4f6;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, #ef4444, #f97316);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .active::after {
+            width: 100%;
+        }
+
+        .typewriter {
+            overflow: hidden;
+            border-right: .11em solid #8A2BE2;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation:
+                    typing 3.5s steps(40, end),
+                    blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #8A2BE2; }
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            bottom: -8px;
+            left: 0;
+            background: linear-gradient(90deg, #ef4444, #f97316);
+            border-radius: 2px;
+        }
+
+        input, textarea {
+            background-color: rgba(15, 15, 15, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #f3f4f6;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            background-color: rgba(25, 25, 25, 0.3);
+            border-color: #3b82f6;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4);
+        }
+
+        label {
+            color: #f3f4f6;
+        }
+
+        footer {
+            background-color: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(15px);
+        }
+
+        .project-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+        }
+        /* Project card footer */
+        .project-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-top: 16px;
+        }
+
+        .project-live-demo {
+            margin-right: auto;
+        }
+
+        .project-code {
+            margin-left: auto;
+        }
+
+        .profile-circle {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(200, 50, 50, 0.8), rgba(210, 80, 15, 0.8));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 40px rgb(255, 127, 80, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+
+
+        .profile-img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6);
+        }
+        @keyframes spin {
             from {
                 transform: rotateY(0deg); /* Start at 0 degrees rotation around Y-axis */
             }
@@ -450,7 +450,7 @@ box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6);
 
             /* Animation properties: spin and pulse-glow combined */
             animation: spin 1s linear infinite, /* Main spinning animation */
-                       pulse-glow 2s ease-in-out infinite alternate; /* Pulsating glow effect */
+            pulse-glow 2s ease-in-out infinite alternate; /* Pulsating glow effect */
             /* spin: The name of the @keyframes rule for rotation */
             /* 1s: Duration of one spin cycle */
             /* linear: Timing function for spin */
@@ -470,822 +470,822 @@ box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6);
             font-weight: bold; /* Bold text */
             text-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
         }
-	
-
-/* Floating elements effect */
-.float {
-animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-0% { transform: translateY(0px); }
-50% { transform: translateY(-15px); }
-100% { transform: translateY(0px); }
-}
-
-/* Social icons */
-.social-icon {
-transition: all 0.3s ease;
-backdrop-filter: blur(10px);
-}
-
-.social-icon:hover {
-transform: scale(1.1) translateY(-3px);
-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-}
-
-.contact-info-item {
-background: rgba(20, 20, 20, 0.2);
-backdrop-filter: blur(15px);
-border-radius: 16px;
-padding: 16px;
-margin-bottom: 16px;
-
-transition: all 0.3s ease;
-}
-
-.contact-info-item:hover {
-background: rgba(25, 25, 25, 0.3);
-border-color: rgba(255, 255, 255, 0.25);
-}
-
-.contact-icon {
-background: linear-gradient(135deg, rgba(255, 0, 0, 0.8), rgba(255, 165, 0, 0.8));
-width: 48px;
-height: 48px;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-margin-right: 16px;
-box-shadow: 0 0 20px rgba(220, 20, 60, 0.6);
-}
-
-.about-icon {
-background: linear-gradient(135deg, rgba(255, 0, 0, 0.8), rgba(255, 165, 0, 0.8));
-width: 48px;
-height: 48px;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-margin-right: 16px;
-box-shadow: 0 0 20px rgba(220, 20, 60, 0.6);
-}
-
-.about-item {
-background: rgba(20, 20, 20, 0.2);
-backdrop-filter: blur(15px);
-border-radius: 16px;
-padding: 16px;
-margin-bottom: 16px;
-transition: all 0.3s ease;
-}
-
-.about-item:hover {
-background: rgba(25, 25, 25, 0.3);
-border-color: rgba(255, 255, 255, 0.25);
-}
-.glass-button-gradient {
-/* Core glass morphism effect */
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-transition: all 0.3s ease;
-
-/* Semi-transparent white background for the "glass" */
-background-color: rgba(255, 255, 255, 0.15);
-
-/* Subtle border for definition */
-border: 1px solid rgba(255, 255, 255, 0.2);
-
-/* Gradient text */
-background-image: linear-gradient(90deg, #00008B,#006400);/* Your gradient colors */
--webkit-background-clip: text;
-background-clip: text;
-color: transparent; /* Make the text transparent to show the gradient */
-
-/* Padding, rounded corners, font, etc. */
-padding: 12px 24px;
-border-radius: 8px;
-font-family: sans-serif; /* Or your preferred font */
-font-weight: bold;
-text-decoration: none; /* Remove underline if used on an <a> tag */
-display: inline-block; /* Or block, depending on your layout */
-}
-
-.glass-button-gradient:hover {
-/* Slightly darken the background on hover */
-background-color: rgba(255, 255, 255, 0.25);
-}
-
-/* If you have custom glow-effect styles, they would also be defined separately */
-
-/* Enhanced glow effect */
-.glow-effect {
-transition: all 0.3s ease;
-}
-
-.glow-effect:hover {
-box-shadow: 0 0 25px rgba(34, 139, 34, 0.7);
-transform: translateY(-3px);
-}
-
-.glass-button:hover {
-/* You can add specific hover styles that complement the Tailwind hover */
-backdrop-filter: blur(12px); /* Slightly increase blur on hover */
--webkit-backdrop-filter: blur(12px);
-}
-
-/* Enhanced navigation - Borderless */
-.nav-glass {
-background: rgba(15, 15, 15, 0.2);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-border: none !important;
-}
-
-/* More pronounced glass effect for project cards */
-.project-glass {
-background: rgba(20, 20, 20, 0.15);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-}
-
-/* Full width navigation */
-.full-width-nav {
-width: 100%;
-padding-bottom: 20px
-margin: 0;
-border-radius: 0;
-}
-	
-.super-flowing-glow {
-
-width: auto; /* Example dimensions height: 100%; */
-
-background-color: #333; /* For contrast */
-
-border-radius: 7px; /* Optional: for a softer look */
-
-margin: 50px;
-
-display: flex;
-
-justify-content: center;
-
-align-items: center;
-
-color: white;
-
-font-family: sans-serif;
 
 
+        /* Floating elements effect */
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
 
-/* Base glow */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
 
-box-shadow: 0 0 45px rgba(0, 191, 255, 0.6); /* Blue shade */
+        /* Social icons */
+        .social-icon {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
 
-animation: superGlow 2.5s infinite ease-in-out alternate;
+        .social-icon:hover {
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        }
 
-}
+        .contact-info-item {
+            background: rgba(20, 20, 20, 0.2);
+            backdrop-filter: blur(15px);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 16px;
+
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-item:hover {
+            background: rgba(25, 25, 25, 0.3);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .contact-icon {
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.8), rgba(255, 165, 0, 0.8));
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            box-shadow: 0 0 20px rgba(220, 20, 60, 0.6);
+        }
+
+        .about-icon {
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.8), rgba(255, 165, 0, 0.8));
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            box-shadow: 0 0 20px rgba(220, 20, 60, 0.6);
+        }
+
+        .about-item {
+            background: rgba(20, 20, 20, 0.2);
+            backdrop-filter: blur(15px);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .about-item:hover {
+            background: rgba(25, 25, 25, 0.3);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+        .glass-button-gradient {
+            /* Core glass morphism effect */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+
+            /* Semi-transparent white background for the "glass" */
+            background-color: rgba(255, 255, 255, 0.15);
+
+            /* Subtle border for definition */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+            /* Gradient text */
+            background-image: linear-gradient(90deg, #00008B,#006400);/* Your gradient colors */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent; /* Make the text transparent to show the gradient */
+
+            /* Padding, rounded corners, font, etc. */
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-family: sans-serif; /* Or your preferred font */
+            font-weight: bold;
+            text-decoration: none; /* Remove underline if used on an <a> tag */
+            display: inline-block; /* Or block, depending on your layout */
+        }
+
+        .glass-button-gradient:hover {
+            /* Slightly darken the background on hover */
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+
+        /* If you have custom glow-effect styles, they would also be defined separately */
+
+        /* Enhanced glow effect */
+        .glow-effect {
+            transition: all 0.3s ease;
+        }
+
+        .glow-effect:hover {
+            box-shadow: 0 0 25px rgba(34, 139, 34, 0.7);
+            transform: translateY(-3px);
+        }
+
+        .glass-button:hover {
+            /* You can add specific hover styles that complement the Tailwind hover */
+            backdrop-filter: blur(12px); /* Slightly increase blur on hover */
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Enhanced navigation - Borderless */
+        .nav-glass {
+            background: rgba(15, 15, 15, 0.2);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: none !important;
+        }
+
+        /* More pronounced glass effect for project cards */
+        .project-glass {
+            background: rgba(20, 20, 20, 0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        /* Full width navigation */
+        .full-width-nav {
+            width: 100%;
+            padding-bottom: 20px;
+            margin: 0;
+            border-radius: 0;
+        }
+
+        .super-flowing-glow {
+
+            width: auto; /* Example dimensions height: 100%; */
+
+            background-color: #333; /* For contrast */
+
+            border-radius: 7px; /* Optional: for a softer look */
+
+            margin: 50px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            color: white;
+
+            font-family: sans-serif;
 
 
 
-@keyframes superGlow {
+            /* Base glow */
 
-0% {
+            box-shadow: 0 0 45px rgba(0, 191, 255, 0.6); /* Blue shade */
 
-box-shadow: 0 0 25px rgba(0, 191, 255, 0.6); /* Blue shade */
+            animation: superGlow 2.5s infinite ease-in-out alternate;
 
-}
-
-50% {
-
-box-shadow: 0 0 55px rgba(0, 191, 255, 1), /* Darker, full intensity blue */
-
-0 0 60px rgba(0, 191, 255, 0.4); /* Lighter, softer blue layer */
-
-}
-
-100% {
-
-box-shadow: 0 0 25px rgba(0, 191, 255, 0.6); /* Blue shade */
-
-}
-
-}
+        }
 
 
 
+        @keyframes superGlow {
+
+            0% {
+
+                box-shadow: 0 0 25px rgba(0, 191, 255, 0.6); /* Blue shade */
+
+            }
+
+            50% {
+
+                box-shadow: 0 0 55px rgba(0, 191, 255, 1), /* Darker, full intensity blue */
+
+                0 0 60px rgba(0, 191, 255, 0.4); /* Lighter, softer blue layer */
+
+            }
+
+            100% {
+
+                box-shadow: 0 0 25px rgba(0, 191, 255, 0.6); /* Blue shade */
+
+            }
+
+        }
 
 
-	
-}
-</style>
+
+
+
+
+        
+    </style>
 </head>
 <body class="min-h-screen">
 <div class="background-video">
-<video autoplay loop muted playsinline>
-<source src="Final.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+    <video autoplay loop muted playsinline>
+        <source src="Final.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
 </div>
 <!-- Navigation -->
 <nav class="fixed w-full z-50 nav-glass full-width-nav reveal-top" data-sr-duration="800">
-<div class="max-w-3x2 mx-auto px-0 sm:px-1 lg:px-8" >
-<div class="flex justify-between h-16 items-center" style="border: none;">
-<div class="flex items-center">
-<img src="tablink.ico" alt="Welcome Image" width="45" height="45" style="vertical-align: middle; margin-right: 3px;">
-<a href="#" class="text-xl font-bold gradient-text">Welcome to my Portfolio!</a>
-</div>
-<div class="hidden md:flex items-center space-x-8">
-<a href="#home" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Home</a>
-<a href="#about" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">About</a>
-<a href="#skills" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Skills</a>
-<a href="#projects" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Projects</a>
-<a href="My_Resume.pdf" download="My_Resume.pdf" class="glass-button border-2 border-indigo-400 text-white-300 px-3 py-2 rounded-lg font-medium hover:bg-white-800 transition duration-300 glow-effect">Resume <i class="fa fa-download"></i></a>
-<a href="#contact" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Contact</a>
-</div>
-<div class="md:hidden flex items-center">
-<button id="menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
-<i class="fas fa-bars menu-icon text-xl"></i>
-<i class="fas fa-times close-icon text-xl"></i>
-</button>
-</div>
-</div>
-</div>
-<!-- Mobile menu -->
+    <div class="max-w-3x2 mx-auto px-0 sm:px-1 lg:px-8" >
+        <div class="flex justify-between h-16 items-center" style="border: none;">
+            <div class="flex items-center">
+                <img src="tablink.ico" alt="Welcome Image" width="45" height="45" style="vertical-align: middle; margin-right: 3px;">
+                <a href="#" class="text-xl font-bold gradient-text">Welcome to my Portfolio!</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Home</a>
+                <a href="#about" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">About</a>
+                <a href="#skills" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Skills</a>
+                <a href="#projects" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Projects</a>
+                <a href="My_Resume.pdf" download="My_Resume.pdf" class="glass-button border-2 border-indigo-400 text-white-300 px-3 py-2 rounded-lg font-medium hover:bg-white-800 transition duration-300 glow-effect">Resume <i class="fa fa-download"></i></a>
+                <a href="#contact" class="nav-link hover:text-indigo-300 px-3 py-2 text-sm font-medium">Contact</a>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button id="menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                    <i class="fas fa-bars menu-icon text-xl"></i>
+                    <i class="fas fa-times close-icon text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile menu -->
 
-<div id="mobile-menu" class="hidden md:hidden" style="border: none;">
-<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
-<a href="#home" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Home</a>
-<a href="#about" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">About</a>
-<a href="#skills" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Skills</a>
-<a href="#projects" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Projects</a>
-<a href="My_Resume.pdf" download="My_Resume.pdf" class="nav-link hover:text-white-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Resume <i class="fa fa-download"></i></a>
-<a href="#contact" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Contact</a>
-</div>
-</div>
+    <div id="mobile-menu" class="hidden md:hidden" style="border: none;">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
+            <a href="#home" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Home</a>
+            <a href="#about" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">About</a>
+            <a href="#skills" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Skills</a>
+            <a href="#projects" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Projects</a>
+            <a href="My_Resume.pdf" download="My_Resume.pdf" class="nav-link hover:text-white-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Resume <i class="fa fa-download"></i></a>
+            <a href="#contact" class="nav-link hover:text-indigo-300 px-3 py-2 block text-sm font-medium text-gray-300 rounded-md">Contact</a>
+        </div>
+    </div>
 </nav>
 <!-- Hero Section -->
 <section id="home" class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-<div class="glass-card p-8 md:p-12 rounded-2xl">
-<div class="flex flex-col md:flex-row items-center">
-<div class="w-full md:w-1/2 mb-10 md:mb-0 max-w-lg mx-auto md:max-w-none">
-<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 reveal-top" data-sr-duration="1000" data-sr-delay="400">
-Hello, I'm <span class="my-name gradient-text ">Mostafa Raad Kamal</span>
-</h1>
+    <div class="glass-card p-8 md:p-12 rounded-2xl">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 mb-10 md:mb-0 max-w-lg mx-auto md:max-w-none">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 reveal-top" data-sr-duration="1000" data-sr-delay="400">
+                    Hello, I'm <span class="my-name gradient-text ">Mostafa Raad Kamal</span>
+                </h1>
 
 
-<h2 class="text-2xl md:text-3xl font-medium mb-6 text-violet-400 typewriter">
-<b>Full Stack Dev</b>
-</h2>
+                <h2 class="text-2xl md:text-3xl font-medium mb-6 text-violet-400 typewriter">
+                    <b>Full Stack Dev</b>
+                </h2>
 
 
-<p class="text-gray-300 mb-8 ">
-"Every conflict is an iteration upon the last. Every bug, a victory"
-</p>
+                <p class="text-gray-300 mb-8 ">
+                    "Every conflict is an iteration upon the last. Every bug, a victory"
+                </p>
 
 
-<div class="flex flex-wrap gap-4 reveal-bottom" data-sr-duration="1000" data-sr-delay="400">
-<a href="#projects" class="glass-button bg-gradient-to-r from-yellow-600 to-yellow-400 hover:from-yellow-500 hover:to-yellow-400 text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition duration-300 glow-effect">
-View My Work
-</a>
-<a href="#contact" class="glass-button border-2 border-indigo-400 text-white-300 px-8 py-3 rounded-lg font-medium hover:bg-white-800 transition duration-300 glow-effect">
-Contact Me
-</a>
-</div>
-</div>
-<div class="md:w-1/2 flex justify-center float reveal-right" data-sr-duration="1000" data-sr-delay="200">
-<div class="profile-circle">
-<img src="Profile1.jpg" alt="Raad Kamal" class="profile-img">
-<!--<div class="profile-badge">-->
-<!--<b><i class="fas fa-code fa-lg text-white text-xl"></i></b>-->
-</div>
-</div>
-</div>
-</div>
-</div>
+                <div class="flex flex-wrap gap-4 reveal-bottom" data-sr-duration="1000" data-sr-delay="400">
+                    <a href="#projects" class="glass-button bg-gradient-to-r from-yellow-600 to-yellow-400 hover:from-yellow-500 hover:to-yellow-400 text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition duration-300 glow-effect">
+                        View My Work
+                    </a>
+                    <a href="#contact" class="glass-button border-2 border-indigo-400 text-white-300 px-8 py-3 rounded-lg font-medium hover:bg-white-800 transition duration-300 glow-effect">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center float reveal-right" data-sr-duration="1000" data-sr-delay="200">
+                <div class="profile-circle">
+                    <img src="Profile1.jpg" alt="Raad Kamal" class="profile-img">
+                    <!--<div class="profile-badge">-->
+                    <!--<b><i class="fas fa-code fa-lg text-white text-xl"></i></b>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 </section>
 
 <!-- About Section -->
 <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1200">
-<div class="glass-card p-8 md:p-12 rounded-2xl">
-<div class="text-center mb-12">
-<h2 class="text-3xl font-bold section-title gradient-text">Biography</h2>
-<p class="text-gray-300 mt-6 max-w-2xl mx-auto">
-Here is a brief root-cause analysis of my background.
-</p>
-</div>
+    <div class="glass-card p-8 md:p-12 rounded-2xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold section-title gradient-text">Biography</h2>
+            <p class="text-gray-300 mt-6 max-w-2xl mx-auto">
+                Here is a brief root-cause analysis of my background.
+            </p>
+        </div>
 
-<div class="flex flex-col md:flex-row items-center">
-<div class="md:w-1/3 mb-8 md:mb-0 flex justify-center float">
-<div class="profile-circle">
-<img src="Profile2.jpg" alt="Raad Kamal" class="profile-img">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center float">
+                <div class="profile-circle">
+                    <img src="Profile2.jpg" alt="Raad Kamal" class="profile-img">
 
-</div>
-</div>
-<div class="md:w-2/3 md:pl-12 ">
-		
-		
-<p class="text-gray-300 mb-4 text-justify tracking-wide">Raised by my mechanic elder brother, I was around both physical and technical systems at an early stage. Since I had an affinity for complex systems, therefore it was an exciting intellectual validation for me excelling in Pure Science.</p>
-<p class="text-gray-300 mb-4 text-justify tracking-wide">
-My trajectory in software development was initially catalyzed by an inquisitive nature concerning the underlying operational paradigms of system, which evolved into a career in resolving intractable challenges through advanced breaching techniques. I am now a dedicated Full Stack Developer with the technical expertise in crafting digital systems that are reliable (Robust), seamless in functionality (Scalable), and visually helpful (Enhanced UI/UX) while utilising the latest technologies.</p>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-               
-<div class="about-item flex items-center reveal-right" data-sr-duration="1200" data-sr-delay="300">
-<div class="about-icon">
-<i class="fas fa-user-graduate text-white"></i>
-</div>
-<div>
-<h4 class="font-medium">Education</h4>
-<p class="text-gray-400 text-sm">BSc in Computer Science</p>
-</div>
-</div>
-<div class="about-item flex items-center reveal-right" data-sr-duration="800" data-sr-delay="200">
-<div class="about-icon">
-<i class="fas fa-briefcase text-white"></i>
-</div>
-<div>
-<h4 class="font-medium">Experience</h4>
-<p class="text-gray-400 text-sm">NULL Years</p>
-</div>
-</div>
-<div class="about-item flex items-center reveal-right" data-sr-duration="800" data-sr-delay="300">
-<div class="about-icon">
-<i class="fas fa-laptop-code text-white"></i>
-</div>
-<div>
-<h4 class="font-medium">Projects</h4>
-<p class="text-gray-400 text-sm">8+ Completed</p>
-</div>
-</div>
-<div class="about-item flex items-center reveal-right" data-sr-duration="800" data-sr-delay="400">
-<div class="about-icon">
-<i class="fas fa-book-journal-whills text-white"></i>
-</div>
-<div>
-<h4 class="font-medium">Research Paper</h4>
-<p class="text-gray-400 text-sm">3+</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+                </div>
+            </div>
+            <div class="md:w-2/3 md:pl-12 ">
+
+
+                <p class="text-gray-300 mb-4 text-justify tracking-wide">Raised by my mechanic elder brother, I was around both physical and technical systems at an early stage. Since I had an affinity for complex systems, therefore it was an exciting intellectual validation for me excelling in Pure Science.</p>
+                <p class="text-gray-300 mb-4 text-justify tracking-wide">
+                    My trajectory in software development was initially catalyzed by an inquisitive nature concerning the underlying operational paradigms of system, which evolved into a career in resolving intractable challenges through advanced breaching techniques. I am now a dedicated Full Stack Developer with the technical expertise in crafting digital systems that are reliable (Robust), seamless in functionality (Scalable), and visually helpful (Enhanced UI/UX) while utilising the latest technologies.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                    <div class="about-item flex items-center reveal-right" data-sr-duration="1200" data-sr-delay="300">
+                        <div class="about-icon">
+                            <i class="fas fa-user-graduate text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Education</h4>
+                            <p class="text-gray-400 text-sm">BSc in Computer Science</p>
+                        </div>
+                    </div>
+                    <div class="about-item flex items-center reveal-right" data-sr-duration="800" data-sr-delay="200">
+                        <div class="about-icon">
+                            <i class="fas fa-briefcase text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Experience</h4>
+                            <p class="text-gray-400 text-sm">NULL Years</p>
+                        </div>
+                    </div>
+                    <div class="about-item flex items-center reveal-right" data-sr-duration="800" data-sr-delay="300">
+                        <div class="about-icon">
+                            <i class="fas fa-laptop-code text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Projects</h4>
+                            <p class="text-gray-400 text-sm">8+ Completed</p>
+                        </div>
+                    </div>
+                    <div class="about-item flex items-center reveal-right" data-sr-duration="800" data-sr-delay="400">
+                        <div class="about-icon">
+                            <i class="fas fa-book-journal-whills text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Research Paper</h4>
+                            <p class="text-gray-400 text-sm">3+</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- Skills Section -->
 <section id="skills" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1500">
 
-<div class="glass-card p-8 md:p-12 rounded-2xl">
-<div class="text-center mb-12">
-<h2 class="text-3xl font-bold section-title gradient-text">Skills</h2>
-<p class="text-gray-300 mt-6 max-w-2xl mx-auto">
-Here is the technical arsenal I work with on a daily basis.
-</p>
-</div>
+    <div class="glass-card p-8 md:p-12 rounded-2xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold section-title gradient-text">Skills</h2>
+            <p class="text-gray-300 mt-6 max-w-2xl mx-auto">
+                Here is the technical arsenal I work with on a daily basis.
+            </p>
+        </div>
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-<div class="glass-accent p-6 rounded-xl glow-effect">
-<h3 class="text-xl font-semibold mb-4">Frontend Development</h3>
-<div class="space-y-4">
-<div>
-<div class="flex justify-between mb-1">
-<span class="text-sm font-medium">HTML/CSS</span>
-<span class="text-sm font-medium">95%</span>
-</div>
-<div class="w-full bg-gray-800 rounded-full h-2.5">
-<div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-violet-500 to-violet-300" style="width: 95%"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between mb-1">
-<span class="text-sm font-medium">JavaScript</span>
-<span class="text-sm font-medium">90%</span>
-</div>
-<div class="w-full bg-gray-800 rounded-full h-2.5">
-<div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-violet-500 to-violet-300" style="width: 90%"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between mb-1">
-<span class="text-sm font-medium">React</span>
-<span class="text-sm font-medium">85%</span>
-</div>
-<div class="w-full bg-gray-800 rounded-full h-2.5">
-<div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-violet-500 to-violet-300" style="width: 85%"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between mb-1">
-<span class="text-sm font-medium">Vue.js</span>
-<span class="text-sm font-medium">80%</span>
-</div>
-<div class="w-full bg-gray-800 rounded-full h-2.5">
-<div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-violet-500 to-violet-300" style="width: 80%"></div>
-</div>
-</div>
-</div>
-</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div class="glass-accent p-6 rounded-xl glow-effect">
+                <h3 class="text-xl font-semibold mb-4">Frontend Development</h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-medium">HTML/CSS</span>
+                            <span class="text-sm font-medium">95%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2.5">
+                            <div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-violet-500 to-violet-300" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-medium">JavaScript</span>
+                            <span class="text-sm font-medium">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2.5">
+                            <div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-violet-500 to-violet-300" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-medium">React</span>
+                            <span class="text-sm font-medium">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2.5">
+                            <div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-violet-500 to-violet-300" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-medium">Vue.js</span>
+                            <span class="text-sm font-medium">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2.5">
+                            <div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-violet-500 to-violet-300" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<div class="glass-accent p-6 rounded-xl glow-effect">
-<h3 class="text-xl font-semibold mb-4">Backend Development</h3>
-<div class="space-y-4">
-<div>
-<div class="flex justify-between mb-1">
-<span class="text-sm font-medium">Node.js</span>
-<span class="text-sm font-medium">88%</span>
-</div>
-<div class="w-full bg-gray-800 rounded-full h-2.5">
-<div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-violet-500 to-violet-300" style="width: 88%"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between mb-1">
-<span class="text-sm font-medium">Python</span>
-<span class="text-sm font-medium">85%</span>
-</div>
-<div class="w-full bg-gray-800 rounded-full h-2.5">
-<div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-violet-500 to-violet-300" style="width: 85%"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between mb-1">
-<span class="text-sm font-medium">C/C++</span>
-<span class="text-sm font-medium">75%</span>
-</div>
-<div class="w-full bg-gray-800 rounded-full h-2.5">
-<div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-violet-500 to-violet-300" style="width: 75%"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between mb-1">
-<span class="text-sm font-medium">Express.js</span>
-<span class="text-sm font-medium">82%</span>
-</div>
-<div class="w-full bg-gray-800 rounded-full h-2.5">
-<div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-violet-500 to-violet-300" style="width: 82%"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <div class="glass-accent p-6 rounded-xl glow-effect">
+                <h3 class="text-xl font-semibold mb-4">Backend Development</h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-medium">Node.js</span>
+                            <span class="text-sm font-medium">88%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2.5">
+                            <div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-violet-500 to-violet-300" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-medium">Python</span>
+                            <span class="text-sm font-medium">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2.5">
+                            <div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-violet-500 to-violet-300" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-medium">C/C++</span>
+                            <span class="text-sm font-medium">75%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2.5">
+                            <div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-violet-500 to-violet-300" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-medium">Express.js</span>
+                            <span class="text-sm font-medium">82%</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-2.5">
+                            <div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-violet-500 to-violet-300" style="width: 82%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<div class="text-center">
-<h3 class="text-xl font-semibold mb-6">Other Tools & Technologies</h3>
-<div class="flex flex-wrap justify-center gap-4">
-<div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
-<i class="fab fa-git-alt text-violet-400 text-xl mr-2"></i>
-<span>Git</span>
-</div>
-<div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
-<i class="fab fa-docker text-violet-400 text-xl mr-2"></i>
-<span>Docker</span>
-</div>
-<div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
-<i class="fab fa-google text-violet-400 text-xl mr-2"></i>
-<span>Google Cloud</span>
-</div>
-<div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
-<i class="fas fa-server text-violet-400 text-xl mr-2"></i>
-<span>Nginx</span>
-</div>
-<div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
-<i class="fab fa-linux text-violet-400 text-xl mr-2"></i>
-<span>Linux</span>
-</div>
-<div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
-<i class="fas fa-database text-violet-400 text-xl mr-2"></i>
-<span>MongoDB</span>
-</div>
-<div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
-<i class="fas fa-network-wired text-violet-400 text-xl mr-2"></i>
-<span>Postman API</span>
-</div>
-</div>
-</div>
-</div>
+        <div class="text-center">
+            <h3 class="text-xl font-semibold mb-6">Other Tools & Technologies</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
+                    <i class="fab fa-git-alt text-violet-400 text-xl mr-2"></i>
+                    <span>Git</span>
+                </div>
+                <div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
+                    <i class="fab fa-docker text-violet-400 text-xl mr-2"></i>
+                    <span>Docker</span>
+                </div>
+                <div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
+                    <i class="fab fa-google text-violet-400 text-xl mr-2"></i>
+                    <span>Google Cloud</span>
+                </div>
+                <div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
+                    <i class="fas fa-server text-violet-400 text-xl mr-2"></i>
+                    <span>Nginx</span>
+                </div>
+                <div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
+                    <i class="fab fa-linux text-violet-400 text-xl mr-2"></i>
+                    <span>Linux</span>
+                </div>
+                <div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
+                    <i class="fas fa-database text-violet-400 text-xl mr-2"></i>
+                    <span>MongoDB</span>
+                </div>
+                <div class="glass-accent px-4 py-3 rounded-lg flex items-center glow-effect">
+                    <i class="fas fa-network-wired text-violet-400 text-xl mr-2"></i>
+                    <span>Postman API</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- Projects Section -->
 <section id="projects" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1500">
-<div class="glass-card p-8 md:p-12 rounded-2xl">
-<div class="text-center mb-12">
-<h2 class="text-3xl font-bold section-title gradient-text ">Projects </h2>
-<p class="text-gray-300 mt-6 max-w-2xl mx-auto">
-Here are some of the projects under my belt. Each one was built to solve a specific problem or add a new skill to my library.
-</p>
-</div>
+    <div class="glass-card p-8 md:p-12 rounded-2xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold section-title gradient-text ">Projects </h2>
+            <p class="text-gray-300 mt-6 max-w-2xl mx-auto">
+                Here are some of the projects under my belt. Each one was built to solve a specific problem or add a new skill to my library.
+            </p>
+        </div>
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- Project 1 -->
-<div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1 flex flex-col">
-<div class="h-48 overflow-hidden">
-<img src="Picture1.png" alt="Project 1" class="project-image">
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center mb-2">
-<div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
-<i class="fas fa-blog text-white"></i>
-</div>
-<h3 class="text-xl font-semibold">Blogging Website</h3>
-</div>
-<p class="text-gray-300 mb-4 text-justify tracking-wide">
-In this project, I have combined React, Node.js, and Amazon Web Services (AWS) in a full-stack, full-featured website, including user-friendly forms for posting articles and comments. Learnt how to create an interface from React components, develop a Node.js server, tie in a MongoDB database, add user authentication with Firebase Auth.
-</p>
-<div class="flex flex-wrap gap-2 mb-4">
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">React</span>
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Google Cloud</span>
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Node.js</span>
-</div>
-<div class="project-footer mt-auto">
-<a href="https://vue-app-deployment.onrender.com/products" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
-<i class="mr-1"></i> 
-</a>
-<a href="https://github.com/RaadKamal/Full-Stack-My-Blog" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
-<i class="fab fa-github mr-1"></i> Code
-</a>
-</div>
-</div>
-</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1 flex flex-col">
+                <div class="h-48 overflow-hidden">
+                    <img src="Picture1.png" alt="Project 1" class="project-image">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex items-center mb-2">
+                        <div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
+                            <i class="fas fa-blog text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Blogging Website</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 text-justify tracking-wide">
+                        In this project, I have combined React, Node.js, and Amazon Web Services (AWS) in a full-stack, full-featured website, including user-friendly forms for posting articles and comments. Learnt how to create an interface from React components, develop a Node.js server, tie in a MongoDB database, add user authentication with Firebase Auth.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">React</span>
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Google Cloud</span>
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Node.js</span>
+                    </div>
+                    <div class="project-footer mt-auto">
+                        <a href="https://vue-app-deployment.onrender.com/products" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
+                            <i class="mr-1"></i>
+                        </a>
+                        <a href="https://github.com/RaadKamal/Full-Stack-My-Blog" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
+                            <i class="fab fa-github mr-1"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-<!-- Project 2 -->
-<div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1 flex flex-col">
-<div class="h-48 overflow-hidden">
-<img src="Picture2.jpg" alt="Project 2" class="project-image">
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center mb-2">
-<div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
-<i class="fas fa-shopping-cart text-white"></i>
-</div>
-<h3 class="text-xl font-semibold">E-commerce Platform</h3>
-</div>
-<p class="text-gray-300 mb-4 text-justify tracking-wide">
-Vue.js to build a simple front-end; Node.js and MongoDB to construct the back end; Axios to communicate between the front and back ends; add authentication with Firebase Authentication; and finally, took it live via dashboard rendering. Configured my site with Postman and Express. This project is integrated with GitHub Codespaces.The design aims to provide a streamlined shopping experience.
-</p>
-<div class="flex flex-wrap gap-2 mb-4">
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Vue.js</span>
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Firebase</span>
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">MongoDB</span>
-</div>
+            <!-- Project 2 -->
+            <div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1 flex flex-col">
+                <div class="h-48 overflow-hidden">
+                    <img src="Picture2.jpg" alt="Project 2" class="project-image">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex items-center mb-2">
+                        <div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
+                            <i class="fas fa-shopping-cart text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">E-commerce Platform</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 text-justify tracking-wide">
+                        Vue.js to build a simple front-end; Node.js and MongoDB to construct the back end; Axios to communicate between the front and back ends; add authentication with Firebase Authentication; and finally, took it live via dashboard rendering. Configured my site with Postman and Express. This project is integrated with GitHub Codespaces.The design aims to provide a streamlined shopping experience.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Vue.js</span>
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Firebase</span>
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">MongoDB</span>
+                    </div>
 
-<div class="project-footer mt-auto">
-<a href="https://vue-app-deployment.onrender.com/products" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
-<i class="fas fa-external-link-alt mr-1"></i> Live Demo
-</a>
-<a href="https://github.com/RaadKamal/Full-Stack-Ecommerce" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
-<i class="fab fa-github mr-1"></i> Code
-</a>
-</div>
-</div>
-</div>
-
-
-<!-- Project 3 -->
-<div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1 flex flex-col">
-<div class="h-48 overflow-hidden">
-<img src="Picture3.jpg" alt="Project 3" class="project-image">
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center mb-2">
-<div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
-<i class="fas fa-television text-white"></i>
-</div>
-<h3 class="text-xl font-semibold">Movie Guide</h3>
-
-	
-</div>
-<p class="text-gray-300 mb-4 text-justify tracking-wide">
-The movie guide, developed on Android Studio using Kotlin, enables users to filter and select their preferred films from aggregated datasets just by asking Quizlets to the user, facilitating personalized film recommendations. This project has been implemented following Agile development methodologies and adheres to established principles of software engineering for academic purposes. We successfully followed SOLID principles, MVC design pattern and Test-Driven Development in our iterative approach.
-</p>
-<div class="flex flex-wrap gap-2 mb-4">
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Android Studio</span>
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Kotlin</span>
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">SQLite</span>
-</div>
-
-<div class="project-footer mt-auto">
-<a href="https://vue-app-deployment.onrender.com/products" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
-<i class="mr-1"></i> 
-</a>
-<a href="https://github.com/RaadKamal/Movie_Recommendation_App-main" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
-<i class="fab fa-github mr-1"></i> Code
-</a>
-</div>
-</div>
-</div>
-<!-- Project 4 -->
-<div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1 flex flex-col">
-<div class="h-48 overflow-hidden">
-<img src="Picture4.jpg" alt="Project 4" class="project-image">
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center mb-2">
-<div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
-<i class="fas fa-chart-line text-white"></i>
-</div>
-<h3 class="text-xl font-semibold">Blockchain DataAnalytics</h3>
-</div>
-<p class="text-gray-300 mb-4 text-justify tracking-wide">
-In this project, we created a Python network with transaction ID, then we leveraged Scikit-Learn and XGBoost to effectively detect ransomware payments in Blockchain. The way we did it is by performing a time series analysis to detect anomalies and identify payment trends in a 24-hour snapshot, yielding valuable financial insights that led us to Darknet Market.
-</p>
-<div class="flex flex-wrap gap-2 mb-4">
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Machine learning</span>
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Python</span>
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Artificial Intelligent</span>
-</div>
-
-<div class="project-footer mt-auto">
-<a href="https://vue-app-deployment.onrender.com/products" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
-<i class="mr-1"></i> 
-</a>
-<a href="https://github.com/RaadKamal/BlockchainDataAnalytics-1/tree/master" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
-<i class="fab fa-github mr-1"></i> Code
-</a>
-</div>
-</div>
-</div>
-
-<!-- Project 5 -->
-<div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1 flex flex-col">
-<div class="h-48 overflow-hidden">
-<img src="Picture5.jpg" alt="Project 5" class="project-image">
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center mb-2">
-<div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
-<i class="fas fa-suitcase-medical text-white"></i>
-</div>
-<h3 class="text-xl font-semibold">Radiant Health</h3>
-</div>
-<p class="text-gray-300 mb-4 text-justify tracking-wide">
-This Prototype provides a distinctive user interface and user experience (UI/UX) by utilizing visual indicators, one of which is red marks on the screen, to highlight unmet goals. It is a research-based initiative conducted as part of a third-year course  Human-Computer Interaction (HCI). The development process includes seven steps: investigation and research, ideation and analysis, storyboarding, low-fidelity paper prototypes, evaluation and iteration, high-fidelity prototypes, and heuristic evaluation and reflection.
-</p>
-<div class="flex flex-wrap gap-2 mb-4">
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">UI</span>
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">UX</span>
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Javascript</span>
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">HTML/CSS</span>
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">jQuery</span>
-</div>
-
-<div class="project-footer mt-auto">
-<a href="https://vue-app-deployment.onrender.com/products" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
-<i class="mr-1"></i> 
-</a>
-<a href="https://github.com/RaadKamal/Fitness-Tracker/tree/main/Fitness-Tracker/COMP_3020_MS3_GroupP" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
-<i class="fab fa-github mr-1"></i> Code
-</a>
-</div>
-</div>
-</div>
-
-<!-- Project 7 -->
-<div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1 flex flex-col">
-<div class="h-48 overflow-hidden">
-<img src="Picture7.jpg" alt="Project 7" class="project-image">
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center mb-2">
-<div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-1000 to-black-900">
-<i class="fa-solid fa-address-card text-white"></i>
-</div>
-<h3 class="text-xl font-semibold">Portfolio</h3>
-</div>
-<p class="text-gray-300 mb-4 text-justify tracking-wide">
-A strategic collection of my best projects, code samples, and technical contributions designed to demonstrate my skills, experience, and problem-solving capabilities specifically tailored for the tech industry. This is my professional highlight reel thoughtfully utilized defocusing and refocusing techniques at the same time to respectfully capture your attention. It brings more clarity to your navigation and your control.
-</p>
-<div class="flex flex-wrap gap-2 mb-4">
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Deepsite</span>
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Huggingface</span>
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Artificial Intelligence</span>
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">HTML</span>
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Tailwind CSS</span>
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Javascript</span>
+                    <div class="project-footer mt-auto">
+                        <a href="https://vue-app-deployment.onrender.com/products" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
+                            <i class="fas fa-external-link-alt mr-1"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/RaadKamal/Full-Stack-Ecommerce" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
+                            <i class="fab fa-github mr-1"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
 
 
-</div>
-<div class="flex justify-between">
-
-<a class="glowing-text  font-medium flex items-center">
-<i class="mr-1"></i> Completed (Working on Consistency and Fading)
-
-	
-</a>
-
-</div>
-</div>
-
-
-</div>
+            <!-- Project 3 -->
+            <div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1 flex flex-col">
+                <div class="h-48 overflow-hidden">
+                    <img src="Picture3.jpg" alt="Project 3" class="project-image">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex items-center mb-2">
+                        <div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
+                            <i class="fas fa-television text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Movie Guide</h3>
 
 
+                    </div>
+                    <p class="text-gray-300 mb-4 text-justify tracking-wide">
+                        The movie guide, developed on Android Studio using Kotlin, enables users to filter and select their preferred films from aggregated datasets just by asking Quizlets to the user, facilitating personalized film recommendations. This project has been implemented following Agile development methodologies and adheres to established principles of software engineering for academic purposes. We successfully followed SOLID principles, MVC design pattern and Test-Driven Development in our iterative approach.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Android Studio</span>
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Kotlin</span>
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">SQLite</span>
+                    </div>
+
+                    <div class="project-footer mt-auto">
+                        <a href="https://vue-app-deployment.onrender.com/products" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
+                            <i class="mr-1"></i>
+                        </a>
+                        <a href="https://github.com/RaadKamal/Movie_Recommendation_App-main" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
+                            <i class="fab fa-github mr-1"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 4 -->
+            <div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1 flex flex-col">
+                <div class="h-48 overflow-hidden">
+                    <img src="Picture4.jpg" alt="Project 4" class="project-image">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex items-center mb-2">
+                        <div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
+                            <i class="fas fa-chart-line text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Blockchain DataAnalytics</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 text-justify tracking-wide">
+                        In this project, we created a Python network with transaction ID, then we leveraged Scikit-Learn and XGBoost to effectively detect ransomware payments in Blockchain. The way we did it is by performing a time series analysis to detect anomalies and identify payment trends in a 24-hour snapshot, yielding valuable financial insights that led us to Darknet Market.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Machine learning</span>
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Python</span>
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Artificial Intelligent</span>
+                    </div>
+
+                    <div class="project-footer mt-auto">
+                        <a href="https://vue-app-deployment.onrender.com/products" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
+                            <i class="mr-1"></i>
+                        </a>
+                        <a href="https://github.com/RaadKamal/BlockchainDataAnalytics-1/tree/master" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
+                            <i class="fab fa-github mr-1"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1 flex flex-col">
+                <div class="h-48 overflow-hidden">
+                    <img src="Picture5.jpg" alt="Project 5" class="project-image">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex items-center mb-2">
+                        <div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
+                            <i class="fas fa-suitcase-medical text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Radiant Health</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 text-justify tracking-wide">
+                        This Prototype provides a distinctive user interface and user experience (UI/UX) by utilizing visual indicators, one of which is red marks on the screen, to highlight unmet goals. It is a research-based initiative conducted as part of a third-year course  Human-Computer Interaction (HCI). The development process includes seven steps: investigation and research, ideation and analysis, storyboarding, low-fidelity paper prototypes, evaluation and iteration, high-fidelity prototypes, and heuristic evaluation and reflection.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">UI</span>
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">UX</span>
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Javascript</span>
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">HTML/CSS</span>
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">jQuery</span>
+                    </div>
+
+                    <div class="project-footer mt-auto">
+                        <a href="https://vue-app-deployment.onrender.com/products" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
+                            <i class="mr-1"></i>
+                        </a>
+                        <a href="https://github.com/RaadKamal/Fitness-Tracker/tree/main/Fitness-Tracker/COMP_3020_MS3_GroupP" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
+                            <i class="fab fa-github mr-1"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 7 -->
+            <div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1 flex flex-col">
+                <div class="h-48 overflow-hidden">
+                    <img src="Picture7.jpg" alt="Project 7" class="project-image">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex items-center mb-2">
+                        <div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-1000 to-black-900">
+                            <i class="fa-solid fa-address-card text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Portfolio</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 text-justify tracking-wide">
+                        A strategic collection of my best projects, code samples, and technical contributions designed to demonstrate my skills, experience, and problem-solving capabilities specifically tailored for the tech industry. This is my professional highlight reel thoughtfully utilized defocusing and refocusing techniques at the same time to respectfully capture your attention. It brings more clarity to your navigation and your control.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Deepsite</span>
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Huggingface</span>
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Artificial Intelligence</span>
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">HTML</span>
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Tailwind CSS</span>
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">Javascript</span>
+
+
+                    </div>
+                    <div class="flex justify-between">
+
+                        <a class="glowing-text  font-medium flex items-center">
+                            <i class="mr-1"></i> Completed (Working on Consistency and Fading)
+
+
+                        </a>
+
+                    </div>
+                </div>
+
+
+            </div>
 
 
 
-<!-- Project 8 -->
-<div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1 flex flex-col">
-<div class="h-48 overflow-hidden">
-<img src="Picture8.jpg" alt="Project 1" class="project-image">
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center mb-2">
-<div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
-<i class="fas fa-people-roof text-white"></i>
-</div>
-<h3 class="text-xl font-semibold">Bracket Manager</h3>
-</div>
-<p class="text-gray-300 mb-4 text-justify tracking-wide">
-[Insert Info] 
-<div class="flex flex-wrap gap-2 mb-4">
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">[Insert Tech]</span>
-
-</div>
-<div class="project-footer mt-auto">
-<a href="#" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
-<i class="mr-1">NULL</i> 
-</a>
-<a href="https://github.com/RaadKamal/Bracket" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
-<i class="fab fa-github mr-1"></i> Code
-</a>
-</div>
-</div>
-</div>
-
-<!-- Project 9 -->
-<div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1 flex flex-col">
-<div class="h-48 overflow-hidden">
-<img src="Picture9.jpg" alt="Project 1" class="project-image">
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center mb-2">
-<div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
-<i class="fas fa-utensils text-white"></i>
-</div>
-<h3 class="text-xl font-semibold">Online Restaurant Business</h3>
-</div>
-<p class="text-gray-300 mb-4 text-justify tracking-wide">
-[Insert Info] 
-<div class="flex flex-wrap gap-2 mb-4">
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">[Insert Tech]</span>
-
-</div>
-<div class="project-footer mt-auto">
-<a href="#" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
-<i class="mr-1">NULL</i> 
-</a>
-<a href="https://github.com/RaadKamal/Online_Restaurant_Business" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
-<i class="fab fa-github mr-1"></i> Code
-</a>
-</div>
-</div>
-</div>	
-<!-- Project 10 -->
-<div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1 flex flex-col">
-<div class="h-48 overflow-hidden">
-<img src="Picture10.jpg" alt="Project 1" class="project-image">
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center mb-2">
-<div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
-<i class="fas fa-shirt text-white"></i>
-</div>
-<h3 class="text-xl font-semibold">Clothing Application Framework</h3>
-</div>
-<p class="text-gray-300 mb-4 text-justify tracking-wide">
-[Insert Info] 
-<div class="flex flex-wrap gap-2 mb-4">
-<span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">[Insert Tech]</span>
-
-</div>
-<div class="project-footer mt-auto">
-<a href="#" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
-<i class="mr-1">NULL</i> 
-</a>
-<a href="https://github.com/RaadKamal/Clothing_App" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
-<i class="fab fa-github mr-1"></i> Code
-</a>
-</div>
-</div>
-</div>	
 
 
+            <!-- Project 8 -->
+            <div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1 flex flex-col">
+                <div class="h-48 overflow-hidden">
+                    <img src="Picture8.jpg" alt="Project 1" class="project-image">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex items-center mb-2">
+                        <div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
+                            <i class="fas fa-people-roof text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Bracket Manager</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 text-justify tracking-wide">
+                        [Insert Info]
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">[Insert Tech]</span>
 
-	
-</div>
+                    </div>
+                    <div class="project-footer mt-auto">
+                        <a href="#" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
+                            <i class="mr-1">NULL</i>
+                        </a>
+                        <a href="https://github.com/RaadKamal/Bracket" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
+                            <i class="fab fa-github mr-1"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 9 -->
+            <div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1 flex flex-col">
+                <div class="h-48 overflow-hidden">
+                    <img src="Picture9.jpg" alt="Project 1" class="project-image">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex items-center mb-2">
+                        <div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
+                            <i class="fas fa-utensils text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Online Restaurant Business</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 text-justify tracking-wide">
+                        [Insert Info]
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">[Insert Tech]</span>
+
+                    </div>
+                    <div class="project-footer mt-auto">
+                        <a href="#" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
+                            <i class="mr-1">NULL</i>
+                        </a>
+                        <a href="https://github.com/RaadKamal/Online_Restaurant_Business" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
+                            <i class="fab fa-github mr-1"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 10 -->
+            <div class="project-glass rounded-xl overflow-hidden transition duration-300 glow-effect hover:transform hover:-translate-y-1 flex flex-col">
+                <div class="h-48 overflow-hidden">
+                    <img src="Picture10.jpg" alt="Project 1" class="project-image">
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex items-center mb-2">
+                        <div class="glass-accent p-2 rounded-full mr-3 bg-gradient-to-r from-black-900 to-black-1000">
+                            <i class="fas fa-shirt text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Clothing Application Framework</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 text-justify tracking-wide">
+                        [Insert Info]
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="glass-accent text-violet-500 text-xs px-2 py-1 rounded">[Insert Tech]</span>
+
+                    </div>
+                    <div class="project-footer mt-auto">
+                        <a href="#" class="project-live-demo text-blue-400 hover:text-blue-300 font-medium flex items-center">
+                            <i class="mr-1">NULL</i>
+                        </a>
+                        <a href="https://github.com/RaadKamal/Clothing_App" class="project-code text-gray-400 hover:text-gray-300 font-medium flex items-center">
+                            <i class="fab fa-github mr-1"></i> Code
+                        </a>
+                    </div>
+                </div>
+            </div>
 
 
-<div class="text-center mt-12">
-<a href="https://github.com/RaadKamal?tab=repositories" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-yellow-600 to-yellow-400 hover:from-yellow-500 hover:to-yellow-400 glass-accent glow-effect">
-View All Projects
-<i class="fas fa-arrow-right ml-2"></i>
-</a>
-</div>
-</div>
-	
+
+
+        </div>
+
+
+        <div class="text-center mt-12">
+            <a href="https://github.com/RaadKamal?tab=repositories" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-yellow-600 to-yellow-400 hover:from-yellow-500 hover:to-yellow-400 glass-accent glow-effect">
+                View All Projects
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </div>
+
 
 
 
@@ -1293,331 +1293,331 @@ View All Projects
 </section>
 
 <!-- Soft Section -->
-<section id="resume" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1500">
-  <div class="glass-card p-8 md:p-12 rounded-2xl">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold section-title gradient-text">Soft Skills</h2>
-      <p class="text-gray-300 mt-6 max-w-2xl mx-auto">
-        Beyond technical expertise, I possess the following interpersonal skills that complement my development work.
-      </p>
+<section id="Soft" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1500">
+    <div class="glass-card p-8 md:p-12 rounded-2xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold section-title gradient-text">Soft Skills</h2>
+            <p class="text-gray-300 mt-6 max-w-2xl mx-auto">
+                Beyond technical expertise, I possess the following interpersonal skills that complement my development work.
+            </p>
 
 
-      
+
+        </div>
     </div>
-  </div>
 </section>
-	
+
 <!-- Resume Section -->
 <section id="resume" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1500">
-<div class="glass-card p-8 md:p-12 rounded-2xl">
-<div class="text-center mb-12">
-<h2 class="text-3xl font-bold section-title gradient-text">Resume</h2>
-<p class="text-gray-300 mt-6 max-w-2xl mx-auto">
+    <div class="glass-card p-8 md:p-12 rounded-2xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold section-title gradient-text">Resume</h2>
+            <p class="text-gray-300 mt-6 max-w-2xl mx-auto">
 
-</p>
-<h1></h1>
+            </p>
+            <h1></h1>
 
-<div id="pdfWrapper" class="pdf-container collapsed super-flowing-glow">
-<iframe class="pdf-viewer" src="My_Resume.pdf#toolbar=0&navpanes=0"></iframe>
-</div>
-<button id="pdfToggleButton" class="inline-flex items-center px-6 py-2 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-yellow-600 to-yellow-400 hover:from-yellow-500 hover:to-yellow-400 glass-accent glow-effect"> Expand PDF </button>
+            <div id="pdfWrapper" class="pdf-container collapsed super-flowing-glow">
+                <iframe class="pdf-viewer" src="My_Resume.pdf#toolbar=0&navpanes=0"></iframe>
+            </div>
+            <button id="pdfToggleButton" class="inline-flex items-center px-6 py-2 border border-transparent text-base font-medium rounded-lg shadow-sm text-white bg-gradient-to-r from-yellow-600 to-yellow-400 hover:from-yellow-500 hover:to-yellow-400 glass-accent glow-effect"> Expand PDF </button>
 
-</div>
-</div>
+        </div>
+    </div>
 </section>
 
 
 <!-- Contact Section -->
 <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto reveal-bottom" data-sr-duration="1500">
-<div class="glass-card p-8 md:p-12 rounded-2xl">
-<div class="text-center mb-12">
-<h2 class="text-3xl font-bold section-title gradient-text">Get In Touch</h2>
-<p class="text-gray-300 mt-6 max-w-2xl mx-auto">
-Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
-</p>
-</div>
+    <div class="glass-card p-8 md:p-12 rounded-2xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold section-title gradient-text">Get In Touch</h2>
+            <p class="text-gray-300 mt-6 max-w-2xl mx-auto">
+                Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
+            </p>
+        </div>
 
-<div class="flex flex-col md:flex-row gap-8">
-<div class="md:w-1/2 mb-8 md:mb-0">
-<form class="space-y-6">
-<div>
-<button type="button" id="sendMessageButton" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gradient-to-r from-yellow-600 to-yellow-400 hover:from-yellow-500 hover:to-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 glass-accent glow-effect">
-Send Message 
-</button>
-</div>
-<div class="mt-8">
-<h4 class="font-medium mb-4">Let me follow you</h4>
-<div class="flex space-x-4 icon-container-js">
-<a href="https://www.x.com/KamalRaad52013" class="social-icon glass-accent p-3 rounded-full text-black-400 hover:bg-gray-800 transition duration-300 icon-item-js">
-<i class="fab fa-x fa-lg"></i>
-</a>
-<a href="https://www.github.com/RaadKamal" class="social-icon glass-accent p-3 rounded-full text-gray-300 hover:bg-gray-800 transition duration-300 icon-item-js">
-<i class="fab fa-github fa-lg"></i>
-</a>
-<a href="https://www.linkedin.com/in/raadkamal99" class="social-icon glass-accent p-3 rounded-full text-blue-400 hover:bg-gray-800 transition duration-300 icon-item-js">
-<i class="fab fa-linkedin fa-lg"></i>
-</a>
-<a href="https://www.facebook.com/mostafaraad.kamal.1/" class="social-icon glass-accent p-3 rounded-full text-blue-500 hover:bg-gray-800 transition duration-300 icon-item-js">
-<i class="fab fa-facebook-f fa-lg"></i>
-</a>
-<a href="https://www.instagram.com/kammd1702/" class="social-icon glass-accent p-3 rounded-full text-red-500 hover:bg-gray-800 transition duration-300 icon-item-js">
-<i class="fab fa-instagram fa-lg"></i>
-</a>
-</div>
-</div>
-</form>
-</div>
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <form class="space-y-6">
+                    <div>
+                        <button type="button" id="sendMessageButton" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gradient-to-r from-yellow-600 to-yellow-400 hover:from-yellow-500 hover:to-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 glass-accent glow-effect">
+                            Send Message
+                        </button>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="font-medium mb-4">Let me follow you</h4>
+                        <div class="flex space-x-4 icon-container-js">
+                            <a href="https://www.x.com/KamalRaad52013" class="social-icon glass-accent p-3 rounded-full text-black-400 hover:bg-gray-800 transition duration-300 icon-item-js">
+                                <i class="fab fa-x fa-lg"></i>
+                            </a>
+                            <a href="https://www.github.com/RaadKamal" class="social-icon glass-accent p-3 rounded-full text-gray-300 hover:bg-gray-800 transition duration-300 icon-item-js">
+                                <i class="fab fa-github fa-lg"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/raadkamal99" class="social-icon glass-accent p-3 rounded-full text-blue-400 hover:bg-gray-800 transition duration-300 icon-item-js">
+                                <i class="fab fa-linkedin fa-lg"></i>
+                            </a>
+                            <a href="https://www.facebook.com/mostafaraad.kamal.1/" class="social-icon glass-accent p-3 rounded-full text-blue-500 hover:bg-gray-800 transition duration-300 icon-item-js">
+                                <i class="fab fa-facebook-f fa-lg"></i>
+                            </a>
+                            <a href="https://www.instagram.com/kammd1702/" class="social-icon glass-accent p-3 rounded-full text-red-500 hover:bg-gray-800 transition duration-300 icon-item-js">
+                                <i class="fab fa-instagram fa-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
 
-<div class="md:w-1/2">
-<div class="space-y-4">
-<div class="contact-info-item flex items-start">
-<div class="contact-icon">
-<i class="fas fa-map-marker-alt text-white"></i>
-</div>
-<div>
-<h4 class="font-medium">Location</h4>
-<p class="text-gray-400">Winnipeg, MB, Canada</p>
-</div>
-</div>
-<div class="contact-info-item flex items-start">
-<div class="contact-icon">
-<i class="fas fa-envelope text-white"></i>
-</div>
-<div>
-<h4 class="font-medium">Email</h4>
-<p class="text-gray-400">riyadhkamalx@gmail</p>
-</div>
-</div>
-<div class="contact-info-item flex items-start">
-<div class="contact-icon">
-<i class="fas fa-phone-alt text-white"></i>
-</div>
-<div>
-<h4 class="font-medium">Phone</h4>
-<p class="text-gray-400">+1 (431) 996-1804</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+            <div class="md:w-1/2">
+                <div class="space-y-4">
+                    <div class="contact-info-item flex items-start">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Location</h4>
+                            <p class="text-gray-400">Winnipeg, MB, Canada</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item flex items-start">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Email</h4>
+                            <p class="text-gray-400">riyadhkamalx@gmail</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item flex items-start">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-medium">Phone</h4>
+                            <p class="text-gray-400">+1 (431) 996-1804</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- Footer -->
 <footer class="py-8">
-<div class="max-w-3x2 mx-auto px-0 sm:px-1 lg:px-8" >
-<div class="flex flex-col md:flex-row justify-between style="align-items: flex-start;">
-<div class="mb-4 md:mb-0 pl-4" style="text-align: left;">
-<a href="#" class="text-xl font-bold gradient-text">Raad</a>
-<p class="text-gray-500 mt-2">Full Stack Developer</p>
-</div>
-</div>
-<div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center ">
-<p class="text-gray-500 text-sm mb-4 md:mb-0">
-&copy; 2026 Mostafa Raad Kamal. All rights reserved.
-</p>
-<div class="flex space-x-4">
+    <div class="max-w-3x2 mx-auto px-0 sm:px-1 lg:px-8" >
+        <div class="flex flex-col md:flex-row justify-between style="align-items: flex-start;">
+        <div class="mb-4 md:mb-0 pl-4" style="text-align: left;">
+            <a href="#" class="text-xl font-bold gradient-text">Raad</a>
+            <p class="text-gray-500 mt-2">Full Stack Developer</p>
+        </div>
+    </div>
+    <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center ">
+        <p class="text-gray-500 text-sm mb-4 md:mb-0">
+            &copy; 2026 Mostafa Raad Kamal. All rights reserved.
+        </p>
+        <div class="flex space-x-4">
 
-<a href="#" class=" text-gray-500 hover:text-white transition duration-300">
-<i class="fab fa-twitter"></i>
-</a>
+            <a href="#" class=" text-gray-500 hover:text-white transition duration-300">
+                <i class="fab fa-twitter"></i>
+            </a>
 
-</div>
-</div>
-</div>
+        </div>
+    </div>
+    </div>
 </footer>
 <script>
-// Mobile menu toggle
-document.getElementById('menu-btn').addEventListener('click', function() {
-this.classList.toggle('active');
-const mobileMenu = document.getElementById('mobile-menu');
-mobileMenu.classList.toggle('hidden');
-});
+    // Mobile menu toggle
+    document.getElementById('menu-btn').addEventListener('click', function() {
+        this.classList.toggle('active');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('#mobile-menu a').forEach(link => {
-link.addEventListener('click', () => {
-document.getElementById('mobile-menu').classList.add('hidden');
-document.getElementById('menu-btn').classList.remove('active');
-});
-});
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.add('hidden');
+            document.getElementById('menu-btn').classList.remove('active');
+        });
+    });
 
 
-// Highlight active navigation link
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('.nav-link');
+    // Highlight active navigation link
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-window.addEventListener('scroll', () => {
-let current = '';
+    window.addEventListener('scroll', () => {
+        let current = '';
 
-sections.forEach(section => {
-const sectionTop = section.offsetTop;
-const sectionHeight = section.clientHeight;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
 
-if (window.pageYOffset >= (sectionTop - 100)) {
-current = section.getAttribute('id');
-}
-});
+            if (window.pageYOffset >= (sectionTop - 100)) {
+                current = section.getAttribute('id');
+            }
+        });
 
-navLinks.forEach(link => {
-link.classList.remove('active');
-if (link.getAttribute('href') === `#${current}`) {
-link.classList.add('active');
-}
-});
-});
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
 
-// Animate skill bars on scroll
-const skillBars = document.querySelectorAll('.skill-bar');
+    // Animate skill bars on scroll
+    const skillBars = document.querySelectorAll('.skill-bar');
 
-const animateSkillBars = () => {
-skillBars.forEach(bar => {
-const width = bar.style.width;
-bar.style.width = '0';
-setTimeout(() => {
-bar.style.width = width;
-}, 100);
-});
-};
+    const animateSkillBars = () => {
+        skillBars.forEach(bar => {
+            const width = bar.style.width;
+            bar.style.width = '0';
+            setTimeout(() => {
+                bar.style.width = width;
+            }, 100);
+        });
+    };
 
-const observer = new IntersectionObserver((entries) => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-animateSkillBars();
-observer.unobserve(entry.target);
-}
-});
-}, { threshold: 0.1 });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateSkillBars();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
 
-document.querySelectorAll('#skills').forEach(section => {
-observer.observe(section);
-});
-document.addEventListener('DOMContentLoaded', function() {
-const sendMessageButton = document.getElementById('sendMessageButton');
+    document.querySelectorAll('#skills').forEach(section => {
+        observer.observe(section);
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+        const sendMessageButton = document.getElementById('sendMessageButton');
 
-sendMessageButton.addEventListener('click', function() {
-const recipient = 'mostafaraadkamal9@gmail.com';
-const subject = encodeURIComponent('Inquiry for an Interview');
-const body = encodeURIComponent('Hello, I am contacting you...');
-const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
+        sendMessageButton.addEventListener('click', function() {
+            const recipient = 'mostafaraadkamal9@gmail.com';
+            const subject = encodeURIComponent('Inquiry for an Interview');
+            const body = encodeURIComponent('Hello, I am contacting you...');
+            const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
 
 // Create a temporary <a> element
-const tempLink = document.createElement('a');
-tempLink.href = mailtoLink;
-tempLink.style.display = 'none'; // Hide it from the user
-document.body.appendChild(tempLink);
+            const tempLink = document.createElement('a');
+            tempLink.href = mailtoLink;
+            tempLink.style.display = 'none'; // Hide it from the user
+            document.body.appendChild(tempLink);
 
 // Programmatically click the link
-tempLink.click();
+            tempLink.click();
 
 // Remove the temporary link
-document.body.removeChild(tempLink);
-});
-});
+            document.body.removeChild(tempLink);
+        });
+    });
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-const iconContainer = document.querySelector('.icon-container-js');
-const icons = document.querySelectorAll('.icon-container-js .icon-item-js');
-const staggerDelay = 600;
+    document.addEventListener('DOMContentLoaded', () => {
+        const iconContainer = document.querySelector('.icon-container-js');
+        const icons = document.querySelectorAll('.icon-container-js .icon-item-js');
+        const staggerDelay = 600;
 
-const observer = new IntersectionObserver((entries, observer) => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
 // The icon container is now in the viewport
-icons.forEach((icon, index) => {
-setTimeout(() => {
-icon.classList.add('visible');
-}, index * staggerDelay);
-});
+                    icons.forEach((icon, index) => {
+                        setTimeout(() => {
+                            icon.classList.add('visible');
+                        }, index * staggerDelay);
+                    });
 
 // REMOVED: observer.unobserve(iconContainer);
-} else {
+                } else {
 // The icon container is no longer in the viewport
 // Optionally, you might want to reset the state of the icons here
-icons.forEach(icon => {
-icon.classList.remove('visible');
-});
-}
-});
-}, {
-threshold: 0.1 // Trigger when at least 10% of the container is visible
-});
+                    icons.forEach(icon => {
+                        icon.classList.remove('visible');
+                    });
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when at least 10% of the container is visible
+        });
 
 // Start observing the icon container
-if (iconContainer) {
-observer.observe(iconContainer);
-}
-});
+        if (iconContainer) {
+            observer.observe(iconContainer);
+        }
+    });
 
-ScrollReveal({
-reset: true,
-distance: '60px',
-duration: 1000,
-delay: 100,
-easing: 'ease-in-out',
-mobile: true
-});
+    ScrollReveal({
+        reset: true,
+        distance: '60px',
+        duration: 1000,
+        delay: 100,
+        easing: 'ease-in-out',
+        mobile: true
+    });
 
-ScrollReveal().reveal('.reveal-top', { 
-  origin: 'top',
-  distance: '40px'
+    ScrollReveal().reveal('.reveal-top', {
+        origin: 'top',
+        distance: '40px'
 
-  
-});
-ScrollReveal().reveal('.reveal-left', { 
-  origin: 'left',
-  distance: '80px'
 
-});
-ScrollReveal().reveal('.reveal-right', { 
-  origin: 'right',
-  distance: '80px'
+    });
+    ScrollReveal().reveal('.reveal-left', {
+        origin: 'left',
+        distance: '80px'
 
-});
-ScrollReveal().reveal('.reveal-bottom', { 
-  origin: 'bottom',
-  distance: '40px'
- 
-});
+    });
+    ScrollReveal().reveal('.reveal-right', {
+        origin: 'right',
+        distance: '80px'
 
-// You can also override default settings for specific elements using data attributes
-// like 'data-sr-delay' and 'data-sr-duration' in the HTML.
-const pdfToggleButton = document.getElementById('pdfToggleButton');
-const pdfWrapper = document.getElementById('pdfWrapper');
-const pdfViewer = document.querySelector('.pdf-viewer'); // Get the iframe/embed element
+    });
+    ScrollReveal().reveal('.reveal-bottom', {
+        origin: 'bottom',
+        distance: '40px'
 
-let isPdfVisible = false; // Track the state of the PDF
+    });
 
-// Set initial height for collapsed state (if you want a small preview)
-// If you want it completely hidden, set height: 0 in CSS and remove this.
-// pdfWrapper.style.height = '50px'; // Example: show a 50px high preview
+    // You can also override default settings for specific elements using data attributes
+    // like 'data-sr-delay' and 'data-sr-duration' in the HTML.
+    const pdfToggleButton = document.getElementById('pdfToggleButton');
+    const pdfWrapper = document.getElementById('pdfWrapper');
+    const pdfViewer = document.querySelector('.pdf-viewer'); // Get the iframe/embed element
 
-pdfToggleButton.addEventListener('click', () => {
-if (isPdfVisible) {
+    let isPdfVisible = false; // Track the state of the PDF
+
+    // Set initial height for collapsed state (if you want a small preview)
+    // If you want it completely hidden, set height: 0 in CSS and remove this.
+    // pdfWrapper.style.height = '50px'; // Example: show a 50px high preview
+
+    pdfToggleButton.addEventListener('click', () => {
+        if (isPdfVisible) {
 // Collapse the PDF
-pdfWrapper.classList.add('collapsed');
-pdfWrapper.style.height = '0'; // Explicitly set height to 0 for collapsing
-pdfToggleButton.textContent = 'Expand PDF';
-} else {
+            pdfWrapper.classList.add('collapsed');
+            pdfWrapper.style.height = '0'; // Explicitly set height to 0 for collapsing
+            pdfToggleButton.textContent = 'Expand PDF';
+        } else {
 // Expand the PDF
-pdfWrapper.classList.remove('collapsed');
+            pdfWrapper.classList.remove('collapsed');
 // Set the height back to its expanded height (or auto, but fixed height is often smoother for transitions)
-pdfWrapper.style.height = '700px'; // Use default viewer height or 800px
-pdfToggleButton.textContent = 'Collapse';
-}
-isPdfVisible = !isPdfVisible; // Toggle the state
-});
+            pdfWrapper.style.height = '700px'; // Use default viewer height or 800px
+            pdfToggleButton.textContent = 'Collapse';
+        }
+        isPdfVisible = !isPdfVisible; // Toggle the state
+    });
 
-// Optional: If you want to load the PDF only when expanded (for performance)
-// pdfViewer.src = ''; // Initially empty
-// pdfToggleButton.addEventListener('click', () => {
-//     if (!isPdfVisible && pdfViewer.src === '') {
-//         pdfViewer.src = 'your-document.pdf#toolbar=0&navpanes=0';
-//     }
-//     // ... rest of the toggle logic ...
-// });
+    // Optional: If you want to load the PDF only when expanded (for performance)
+    // pdfViewer.src = ''; // Initially empty
+    // pdfToggleButton.addEventListener('click', () => {
+    //     if (!isPdfVisible && pdfViewer.src === '') {
+    //         pdfViewer.src = 'your-document.pdf#toolbar=0&navpanes=0';
+    //     }
+    //     // ... rest of the toggle logic ...
+    // });
 
 
 </script>
